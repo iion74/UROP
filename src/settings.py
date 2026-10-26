@@ -52,7 +52,9 @@ class Settings:
     stepwise_policy_path: str = os.getenv(
         "STEPWISE_POLICY_PATH", "data/models/sequential_answer_gain_multiseed/policy_seed42.joblib"
     )
-    stepwise_reader_max_tokens: int = int(os.getenv("STEPWISE_READER_MAX_TOKENS", "256"))
+    # The paper used 256 tokens for English; Korean evidence chains need more
+    # tokens, and a truncated JSON answer would corrupt the observed state.
+    stepwise_reader_max_tokens: int = int(os.getenv("STEPWISE_READER_MAX_TOKENS", "512"))
     stepwise_planner_max_tokens: int = int(os.getenv("STEPWISE_PLANNER_MAX_TOKENS", "80"))
     chunk_size: int = 900
     chunk_overlap: int = 140

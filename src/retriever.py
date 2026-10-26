@@ -146,7 +146,7 @@ class SemanticRetriever:
         metadata_path = self.index_dir / "chunks.json"
         if not index_path.exists() or not metadata_path.exists():
             return False
-        self.index = faiss.read_index(str(index_path))
+        self.index = _read_faiss(index_path)
         raw_chunks = json.loads(metadata_path.read_text(encoding="utf-8"))
         self.chunks = [Chunk(**item) for item in raw_chunks]
         self.chunk_positions = {chunk.chunk_id: index for index, chunk in enumerate(self.chunks)}
@@ -488,7 +488,7 @@ class SemanticRetriever:
 
     def _save(self) -> None:
         self.index_dir.mkdir(parents=True, exist_ok=True)
-        faiss.write_index(self.index, str(self.index_dir / "vectors.faiss"))
+        _write_faiss(self.index, self.index_dir / "vectors.faiss")
         (self.index_dir / "chunks.json").write_text(
             json.dumps([asdict(chunk) for chunk in self.chunks], ensure_ascii=False, indent=2), encoding="utf-8"
         )
@@ -619,6 +619,16 @@ class SemanticRetriever:
 
     def _build_bm25(self) -> None:
         self.bm25 = BM25Okapi([_tokenize(chunk.text) for chunk in self.chunks])
+
+
+def _read_faiss(path: Path) -> faiss.Index:
+    # faiss's own file reader cannot open non-ASCII Windows paths such as
+    # ``UROP 작업``; Python opens the file and faiss only parses the bytes.
+    return faiss.deserialize_index(np.frombuffer(path.read_bytes(), dtype="uint8"))
+
+
+def _write_faiss(index: faiss.Index, path: Path) -> None:
+    path.write_bytes(faiss.serialize_index(index).tobytes())
 
 
 def _clamp(value: float) -> float:
