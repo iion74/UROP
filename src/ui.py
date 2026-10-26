@@ -8,6 +8,7 @@ import streamlit as st
 from .assistant import LocalStudyAssistant, Quiz
 from .curriculum import MODULES, LearningUnit, all_units, module_name
 from .learning_analytics import LearningReport, UnitAnalytics
+from .retriever import reranker_probability
 
 
 STATUS_ICON = {"완료": "●", "복습 필요": "●", "학습 중": "●", "미학습": "○"}
@@ -288,7 +289,7 @@ def render_knowledge_map(assistant: LocalStudyAssistant) -> None:
         width="stretch",
         hide_index=True,
     )
-    st.caption("숙련도 = 학습 상태·학습 밀도·퀴즈 정답률의 가중 평균. 기억 유지율 = exp(-경과일/안정도), "
+    st.caption("숙련도 = 학습 상태·학습 밀도·퀴즈 정답률의 가중 평균. 기억 유지율 = 0.25 + 0.75·exp(-경과일/안정도), "
                "안정도는 복습한 날이 늘수록 두 배씩, 퀴즈 정답률이 높을수록 커집니다.")
 
 
@@ -297,7 +298,7 @@ def _show_sources(sources: list[tuple]) -> None:
         return
     st.markdown('<div class="section-kicker">Retrieved evidence</div>', unsafe_allow_html=True)
     for index, (chunk, score) in enumerate(sources, start=1):
-        st.markdown(f'<div class="source-card"><b>근거 {index}</b> · {chunk.source}<br><span style="color:#667085;font-size:.78rem">Cross-encoder relevance score {score:.1%}</span><br><br>{chunk.text}</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="source-card"><b>근거 {index}</b> · {chunk.source}<br><span style="color:#667085;font-size:.78rem">질문 관련도 {reranker_probability(score):.1%} (cross-encoder)</span><br><br>{chunk.text}</div>', unsafe_allow_html=True)
 
 
 def _show_stepwise_trace(assistant: LocalStudyAssistant) -> None:

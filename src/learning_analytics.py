@@ -29,11 +29,13 @@ from .curriculum import MODULES, LearningUnit, Module, all_units
 STATUS_SCORE = {"완료": 1.0, "학습 중": 0.5, "복습 필요": 0.35}
 # Exposure through questions alone is weaker evidence than a study log.
 QUESTION_ONLY_SCORE = 0.2
-BASE_STABILITY_DAYS = 1.5
+BASE_STABILITY_DAYS = 3.0
 MAX_STABILITY_DAYS = 120.0
+# Ebbinghaus' savings: part of studied material survives long gaps.
+RETENTION_FLOOR = 0.25
 MASTERED = 0.6
 REVIEW_RETENTION = 0.6
-LOW_DENSITY = 0.45
+LOW_DENSITY = 0.3
 LOW_QUIZ_ACCURACY = 0.6
 PREREQUISITE_READY = 0.3
 
@@ -100,12 +102,12 @@ class LearningReport:
 
 
 def retention(days_elapsed: float, review_days: int, quiz_accuracy: float | None) -> float:
-    """Forgetting curve ``exp(-t / S)`` whose stability doubles per review day."""
+    """Forgetting curve ``floor + (1 - floor) * exp(-t / S)``; S doubles per review day."""
     if review_days < 1:
         return 0.0
     quality = 1.0 if quiz_accuracy is None else 0.6 + 0.8 * quiz_accuracy
     stability = min(MAX_STABILITY_DAYS, BASE_STABILITY_DAYS * 2 ** (review_days - 1) * quality)
-    return math.exp(-max(0.0, days_elapsed) / stability)
+    return RETENTION_FLOOR + (1.0 - RETENTION_FLOOR) * math.exp(-max(0.0, days_elapsed) / stability)
 
 
 def _day(timestamp: str) -> date:
@@ -257,11 +259,19 @@ class SemanticUnitIndex:
     calibrated 0-1 relevance.
     """
 
-    def __init__(self, retriever, *, anchors_per_unit: int = 3, match_threshold: float = 0.80) -> None:
+    def __init__(
+        self,
+        retriever,
+        *,
+        anchors_per_unit: int = 3,
+        candidates_per_unit: int = 20,
+        match_threshold: float = 0.80,
+    ) -> None:
         self.retriever = retriever
         self.match_threshold = match_threshold
         self.units = all_units()
         self.anchor_indices: dict[str, list[int]] = {}
+        self.anchor_relevance: dict[str, list[float]] = {}
         self.anchor_vectors: dict[str, np.ndarray] = {}
         self.unit_vectors: dict[str, np.ndarray] = {}
         self._density_cache: dict[tuple[str, str], float] = {}
@@ -273,12 +283,21 @@ class SemanticUnitIndex:
         unit_vectors = np.asarray(retriever._model().encode(queries, normalize_embeddings=True), dtype="float32")
         for unit, unit_vector in zip(self.units, unit_vectors, strict=True):
             prefix = modules[unit.module_id].filename_prefix
-            candidates = [index for index, chunk in enumerate(retriever.chunks) if prefix in chunk.source]
+            candidates = [
+                index for index, chunk in enumerate(retriever.chunks)
+                if prefix in chunk.source and not _is_table_of_contents(chunk.text)
+            ]
             if not candidates:
                 continue
-            scores = vectors[candidates] @ unit_vector
-            best = [candidates[position] for position in np.argsort(scores)[::-1][:anchors_per_unit]]
+            # Embeddings shortlist; the cross-encoder picks passages that are
+            # actually about the unit rather than merely near it.
+            similarity = vectors[candidates] @ unit_vector
+            shortlist = [candidates[position] for position in np.argsort(similarity)[::-1][:candidates_per_unit]]
+            relevance = self._relevance(unit.name, [retriever.chunks[index].text for index in shortlist])
+            order = np.argsort(relevance)[::-1][:anchors_per_unit]
+            best = [shortlist[position] for position in order]
             self.anchor_indices[unit.unit_id] = best
+            self.anchor_relevance[unit.unit_id] = [float(relevance[position]) for position in order]
             self.anchor_vectors[unit.unit_id] = vectors[best]
             self.unit_vectors[unit.unit_id] = unit_vector
 
@@ -288,6 +307,22 @@ class SemanticUnitIndex:
 
     def anchors(self, unit_id: str):
         return [self.retriever.chunks[index] for index in self.anchor_indices.get(unit_id, [])]
+
+    def anchor_sources(self, unit_id: str):
+        """Anchors with scores on the retriever's own (double-sigmoid) scale."""
+        return [
+            (chunk, float(1.0 / (1.0 + np.exp(-relevance))))
+            for chunk, relevance in zip(self.anchors(unit_id), self.anchor_relevance.get(unit_id, []), strict=True)
+        ]
+
+    def _relevance(self, query: str, texts: list[str]) -> np.ndarray:
+        """True 0-1 cross-encoder relevance (sentence-transformers applies the sigmoid)."""
+        if not texts:
+            return np.zeros(0)
+        return np.asarray(
+            self.retriever._reranker().predict([(query, text) for text in texts], show_progress_bar=False),
+            dtype="float64",
+        )
 
     def unit_for_text(self, text: str) -> tuple[str | None, float]:
         if not self.ready or not text.strip():
@@ -318,9 +353,13 @@ class SemanticUnitIndex:
     def _note_density(self, unit_id: str, note: str, anchors) -> float:
         key = (unit_id, note)
         if key not in self._density_cache:
-            ranked = self.retriever._rerank(note, [(chunk, 0.0) for chunk in anchors])
-            self._density_cache[key] = max(score for _, score in ranked)
+            self._density_cache[key] = float(self._relevance(note, [chunk.text for chunk in anchors]).max())
         return self._density_cache[key]
+
+
+def _is_table_of_contents(text: str) -> bool:
+    """NCS PDFs open with dotted contents pages that match every unit name."""
+    return text.count("·") >= 20 or text.count("…") >= 10
 
 
 def notes_by_unit(study_events: Iterable[tuple[str, str, str, int, str]]) -> dict[str, list[str]]:

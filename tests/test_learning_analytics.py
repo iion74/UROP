@@ -14,7 +14,8 @@ def _unit(name: str):
 
 def test_retention_decays_and_grows_with_reviews():
     assert retention(0, 1, None) == 1.0
-    assert retention(3, 1, None) == math.exp(-3 / 1.5)
+    assert retention(3, 1, None) == 0.25 + 0.75 * math.exp(-3 / 3.0)
+    assert retention(10_000, 1, None) > 0.25 - 1e-9  # long-term savings floor
     assert retention(3, 3, None) > retention(3, 1, None)
     assert retention(3, 1, 1.0) > retention(3, 1, 0.0)
     assert retention(3, 0, None) == 0.0

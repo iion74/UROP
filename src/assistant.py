@@ -20,7 +20,7 @@ from .qa_evaluation import (
     ollama_model_identity,
 )
 from .query_rewriter import LEGACY_PROMPT_VERSION, FrozenOllamaQueryRewriter, QueryRewriteCache, QueryRewriterConfig
-from .retriever import SemanticRetriever
+from .retriever import SemanticRetriever, reranker_probability
 from .settings import settings
 
 
@@ -233,7 +233,9 @@ class LocalStudyAssistant:
             except RuntimeError as error:
                 return f"로컬 모델 응답을 받지 못했습니다: `{error}`", []
             self.last_stepwise = result
-            sufficient = bool(sources) and max(score for _, score in sources) >= settings.evidence_min_score
+            sufficient = bool(sources) and max(
+                reranker_probability(score) for _, score in sources
+            ) >= settings.evidence_min_score
             searches = result.total_searches
         else:
             sources = self.search(question)
@@ -287,7 +289,7 @@ class LocalStudyAssistant:
         )
 
     def _unit_sources(self, unit: LearningUnit) -> list[tuple[Chunk, float]]:
-        return [(chunk, 1.0) for chunk in self.unit_index.anchors(unit.unit_id)]
+        return self.unit_index.anchor_sources(unit.unit_id)
 
     def _stepwise_search(self, question: str) -> tuple[StepwiseResult, list[tuple[Chunk, float]]]:
         if self._model_identity is None:

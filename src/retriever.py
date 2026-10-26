@@ -303,7 +303,7 @@ class SemanticRetriever:
             initial_candidate_count=initial_candidate_count,
             reranked_candidate_count=reranked_candidate_count,
             evidence_score=evidence_score,
-            evidence_sufficient=bool(sources) and evidence_score >= settings.evidence_min_score,
+            evidence_sufficient=bool(sources) and reranker_probability(evidence_score) >= settings.evidence_min_score,
             expected_gain=decision.expected_gain,
             expected_utility=decision.expected_utility,
             profile=profile,
@@ -619,6 +619,18 @@ class SemanticRetriever:
 
     def _build_bm25(self) -> None:
         self.bm25 = BM25Okapi([_tokenize(chunk.text) for chunk in self.chunks])
+
+
+def reranker_probability(score: float) -> float:
+    """Undo the extra sigmoid in ``_rerank`` scores.
+
+    sentence-transformers already applies a sigmoid to this cross-encoder, so
+    ``_rerank`` scores lie in (0.5, 0.731).  The paper policy was trained on
+    exactly those values and still consumes them; anything shown to people or
+    compared with an absolute threshold should use the real 0-1 relevance.
+    """
+    clipped = min(max(float(score), 0.5 + 1e-12), 1.0 - 1e-12)
+    return float(np.log(clipped / (1.0 - clipped)))
 
 
 def _read_faiss(path: Path) -> faiss.Index:
