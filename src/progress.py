@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import sqlite3
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 
 
@@ -33,6 +33,27 @@ class ProgressStore:
                 minutes INTEGER NOT NULL,
                 note TEXT NOT NULL
             )""")
+            # Questions and quiz results are text/score logs for the learning
+            # analytics; ``unit_id`` is the semantically matched unit, if any.
+            connection.execute("""CREATE TABLE IF NOT EXISTS question_log (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                created_at TEXT NOT NULL,
+                unit_id TEXT,
+                question TEXT NOT NULL,
+                searches INTEGER NOT NULL
+            )""")
+            connection.execute("""CREATE TABLE IF NOT EXISTS quiz_log (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                created_at TEXT NOT NULL,
+                unit_id TEXT,
+                topic TEXT NOT NULL,
+                total INTEGER NOT NULL,
+                correct INTEGER NOT NULL
+            )""")
+            connection.execute("""CREATE TABLE IF NOT EXISTS preference (
+                key TEXT PRIMARY KEY,
+                value TEXT NOT NULL
+            )""")
 
     def _connect(self) -> sqlite3.Connection:
         return sqlite3.connect(self.database_path)
@@ -61,3 +82,52 @@ class ProgressStore:
         with self._connect() as connection:
             return connection.execute("""SELECT created_at, unit_name, status, minutes, note FROM study_log
                 ORDER BY id DESC LIMIT ?""", (limit,)).fetchall()
+
+    def study_events(self) -> list[tuple[str, str, str, int, str]]:
+        """Every study log as ``(created_at, unit_id, status, minutes, note)``, oldest first."""
+        with self._connect() as connection:
+            return connection.execute(
+                "SELECT created_at, unit_id, status, minutes, note FROM study_log ORDER BY id"
+            ).fetchall()
+
+    def save_question(self, question: str, unit_id: str | None, searches: int) -> None:
+        with self._connect() as connection:
+            connection.execute(
+                "INSERT INTO question_log(created_at,unit_id,question,searches) VALUES(?,?,?,?)",
+                (datetime.now().isoformat(timespec="seconds"), unit_id, question, searches),
+            )
+
+    def question_events(self) -> list[tuple[str, str | None, str]]:
+        """Every question as ``(created_at, unit_id, question)``, oldest first."""
+        with self._connect() as connection:
+            return connection.execute(
+                "SELECT created_at, unit_id, question FROM question_log ORDER BY id"
+            ).fetchall()
+
+    def save_quiz(self, unit_id: str | None, topic: str, total: int, correct: int) -> None:
+        with self._connect() as connection:
+            connection.execute(
+                "INSERT INTO quiz_log(created_at,unit_id,topic,total,correct) VALUES(?,?,?,?,?)",
+                (datetime.now().isoformat(timespec="seconds"), unit_id, topic, total, correct),
+            )
+
+    def quiz_events(self) -> list[tuple[str, str | None, int, int]]:
+        """Every graded quiz as ``(created_at, unit_id, total, correct)``, oldest first."""
+        with self._connect() as connection:
+            return connection.execute(
+                "SELECT created_at, unit_id, total, correct FROM quiz_log ORDER BY id"
+            ).fetchall()
+
+    def exam_date(self) -> date | None:
+        with self._connect() as connection:
+            row = connection.execute("SELECT value FROM preference WHERE key = 'exam_date'").fetchone()
+        try:
+            return date.fromisoformat(row[0]) if row else None
+        except ValueError:
+            return None
+
+    def set_exam_date(self, value: date) -> None:
+        with self._connect() as connection:
+            connection.execute(
+                "INSERT OR REPLACE INTO preference(key, value) VALUES('exam_date', ?)", (value.isoformat(),)
+            )

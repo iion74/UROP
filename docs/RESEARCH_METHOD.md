@@ -76,7 +76,8 @@ HotpotQA 7,405 / MuSiQue-Ans 2,417 / 2WikiMultiHopQA 12,576문항의
 ## 코드
 
 - 학습·평가: [evaluate_sequential_answer_gain_policy.py](../experiments/evaluate_sequential_answer_gain_policy.py)
-- 입력 구성: 위 파일의 `_features_by_step`, [train_reader_free_student_policy.py](../experiments/train_reader_free_student_policy.py)
+- 입력 구성·온라인 실행: [src/answer_gain_policy.py](../src/answer_gain_policy.py)의 `sequential_state`와
+  `StepwiseSearcher`. 학습·재생·웹 앱이 같은 특징 코드를 사용한다.
 - 모델 설정: [evaluate_answer_gain_search_policy.py](../experiments/evaluate_answer_gain_search_policy.py)의 `_model`
 - 5시드 순차 실행: [run_sequential_answer_gain_multiseed.py](../experiments/run_sequential_answer_gain_multiseed.py)
 - 결과 집계: [analyze_sequential_answer_gain_multiseed.py](../experiments/analyze_sequential_answer_gain_multiseed.py)

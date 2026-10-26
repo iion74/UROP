@@ -20,15 +20,8 @@ from sklearn.model_selection import StratifiedKFold
 from experiments.analyze_student_policy_multiseed import _planner_elapsed
 from experiments.evaluate_answer_gain_search_policy import DATASETS, ROOT, _model, _paired_interval
 from experiments.train_adaptive_proof_completion_policy import ACTIONS
-from experiments.train_reader_free_student_policy import (
-    _READER_HISTORY_FEATURES,
-    _evidence_features,
-    _question_features,
-    _retrieval_feature_names,
-    policy_feature_names,
-    policy_features,
-)
-from src.reader_sufficiency import chain_structure_features
+from experiments.train_reader_free_student_policy import policy_feature_names
+from src.answer_gain_policy import sequential_state
 
 
 def _arguments() -> argparse.Namespace:
@@ -60,38 +53,14 @@ def _feature_names(manifest_names: tuple[str, ...]) -> tuple[str, ...]:
 
 def _features_by_step(row: dict, manifest_names: tuple[str, ...]) -> np.ndarray:
     """Use only prefixes available at the decision step; never future or gold data."""
-    retrieval_count = len(_retrieval_feature_names(manifest_names))
-    evidence_count = len(_evidence_features("", {}, set())[1])
-    blocks: list[np.ndarray] = []
-    readers: list[np.ndarray] = []
-    previous_ids: set[str] = set()
     question = str(row.get("question", ""))
-    for step in range(len(ACTIONS) - 1):
-        action = row["actions"][ACTIONS[step]]
-        policy_values = action["policy_features"]
-        if len(policy_values) != len(manifest_names):
+    actions = [row["actions"][name] for name in ACTIONS]
+    for action in actions:
+        if len(action["policy_features"]) != len(manifest_names):
             raise ValueError(f"{row.get('id')}: policy feature schema mismatch")
-        _, evidence_values = _evidence_features(question, action, previous_ids)
-        blocks.append(np.asarray([*policy_values[:retrieval_count], *evidence_values], dtype="float64"))
-        evidence = action.get("candidate_evidence") or action.get("evidence") or ()
-        previous_ids = {
-            str(item["content_id"]) for item in evidence if item.get("content_id")
-        }
-        current_reader = [
-            float(value)
-            for name, value in zip(manifest_names[retrieval_count:], policy_values[retrieval_count:], strict=True)
-            if name not in _READER_HISTORY_FEATURES
-        ]
-        structure = chain_structure_features(
-            question, action.get("evidence_chain", ()), str(action.get("prediction", ""))
-        )
-        readers.append(np.concatenate((current_reader, structure)))
-    _, question_values = _question_features(question)
-    padding = np.zeros(retrieval_count + evidence_count, dtype="float64")
     states = np.vstack([
-        np.concatenate((*blocks[:step + 1], *([padding] * (len(blocks) - step - 1)),
-                        np.asarray(question_values), readers[step]))
-        for step in range(len(blocks))
+        sequential_state(question, actions, step, manifest_names)
+        for step in range(len(ACTIONS) - 1)
     ])
     if states.shape[1] != len(_feature_names(manifest_names)):
         raise RuntimeError("Sequential feature schema mismatch")

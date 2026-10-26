@@ -11,7 +11,17 @@ import streamlit as st
 
 from src.assistant import LocalStudyAssistant
 from src.document_loader import supported_files
-from src.ui import inject_styles, render_chat, render_dashboard, render_knowledge_map, render_quiz, render_study_log
+from src.ui import (
+    PAGES,
+    inject_styles,
+    render_chat,
+    render_dashboard,
+    render_exam_date,
+    render_knowledge_map,
+    render_quiz,
+    render_study_log,
+    reset_run_cache,
+)
 
 
 ROOT = Path(__file__).resolve().parent
@@ -33,7 +43,9 @@ def main() -> None:
         st.markdown("## NOVA\nStudy Map")
         st.caption("LOCAL AI · EXAM PREP")
         st.markdown("<br>", unsafe_allow_html=True)
-        page = st.radio("메뉴", ["대시보드", "학습 기록", "지식 맵", "AI 학습 도우미", "확인 퀴즈"], label_visibility="collapsed")
+        page = st.radio("메뉴", PAGES, key="page", label_visibility="collapsed")
+        st.divider()
+        render_exam_date(assistant)
         st.divider()
         st.markdown("#### Knowledge base")
         st.caption("`data/` 아래의 PDF, TXT, MD, CSV를 로컬 검색 범위로 사용합니다.")
@@ -41,9 +53,10 @@ def main() -> None:
         st.write(f"발견한 자료 **{len(files)}개**")
         status = assistant.index_status
         button_label = "자료 읽기 및 인덱스 생성" if status.state == "missing" else "자료 변경 반영 (전체 인덱스 갱신)"
-        if st.button(button_label, type="primary", use_container_width=True):
+        if st.button(button_label, type="primary", width="stretch"):
             with st.spinner("문서를 읽고 검색 인덱스를 만드는 중입니다..."):
                 result = assistant.build_index()
+            reset_run_cache()
             st.success(f"{result.document_count}개 문서 · {result.chunk_count}개 검색 단위")
         status = assistant.index_status
         if status.state == "ready":
@@ -58,8 +71,9 @@ def main() -> None:
         st.caption(
             "Generation · `qwen3:8b`\n\n"
             "Answer check · structured evidence chain\n\n"
-            "Retrieval · multilingual-e5-base\n\n"
-            f"Routing · {assistant.retriever.policy_mode}"
+            "Retrieval · multilingual-e5-base + bge-reranker\n\n"
+            f"Search control · {assistant.search_mode}"
+            + (f" · `{assistant.policy_name}`" if assistant.policy_name else "")
         )
 
     if page == "대시보드":

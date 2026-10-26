@@ -46,12 +46,23 @@ class Settings:
     policy_model_path: str = os.getenv("POLICY_MODEL_PATH", "")
     policy_min_confidence: float = float(os.getenv("POLICY_MIN_CONFIDENCE", "0.45"))
     policy_min_expected_advantage: float = float(os.getenv("POLICY_MIN_EXPECTED_ADVANTAGE", "0.01"))
+    # The paper's answer-gain STOP/SEARCH policy controls the study assistant's
+    # search depth.  "graph" restores the earlier one-shot graph router.
+    search_control: str = os.getenv("SEARCH_CONTROL", "stepwise")
+    stepwise_policy_path: str = os.getenv(
+        "STEPWISE_POLICY_PATH", "data/models/sequential_answer_gain_multiseed/policy_seed42.joblib"
+    )
+    stepwise_reader_max_tokens: int = int(os.getenv("STEPWISE_READER_MAX_TOKENS", "256"))
+    stepwise_planner_max_tokens: int = int(os.getenv("STEPWISE_PLANNER_MAX_TOKENS", "80"))
     chunk_size: int = 900
     chunk_overlap: int = 140
     # A quiz needs enough evidence to be grounded, but passing every retrieved
     # passage makes local generation noticeably slower.
     quiz_context_chunks: int = int(os.getenv("QUIZ_CONTEXT_CHUNKS", "2"))
-    quiz_max_tokens: int = int(os.getenv("QUIZ_MAX_TOKENS", "420"))
+    # Three structured multiple-choice items in Korean JSON need more room
+    # than the earlier free-text quiz.
+    quiz_max_tokens: int = int(os.getenv("QUIZ_MAX_TOKENS", "1200"))
+    summary_max_tokens: int = int(os.getenv("SUMMARY_MAX_TOKENS", "600"))
     answer_context_characters: int = int(os.getenv("ANSWER_CONTEXT_CHARACTERS", "4800"))
     quiz_context_characters: int = int(os.getenv("QUIZ_CONTEXT_CHARACTERS", "2400"))
     ollama_keep_alive: str = os.getenv("OLLAMA_KEEP_ALIVE", "30m")

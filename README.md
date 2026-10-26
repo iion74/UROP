@@ -1,17 +1,19 @@
-# NOVA UROP — 적응형 검색 제어와 학습 지원 MVP
+# NOVA UROP — 자격증 학습량 AI 분석 도구 (NOVA Study Map)
 
-자격증·NCS 학습을 지원하는 **로컬 RAG 웹 앱**과, 다중 홉 질의응답에서
-**추가 검색의 답변 이득을 예측하는 학습 정책**의 연구 코드·원고·결과를 함께 보관합니다.
+NCS 자격증 수험자의 학습 메모·질문·퀴즈를 NCS 지식 지도에 투사해
+**실제로 확보한 지식량**을 측정하는 **로컬 웹 앱**과, 그 AI 학습 도우미의 검색 엔진으로
+들어간 논문 「다중 홉 질의응답을 위한 답변 이득 예측 기반 단계별 검색 제어」의
+연구 코드·원고·결과를 함께 보관합니다.
 
-> 먼저 구분하세요: 앱의 하이브리드·청크 그래프 라우팅과 논문의 105차원
-> 단계별 검색 정책은 서로 다른 경로입니다. 논문 정책이 현재 앱에 그대로
-> 배포되어 있다고 해석하지 마세요. 이전 실험도 삭제하지 않고 보존했습니다.
+> 논문의 105차원 STOP/SEARCH 정책은 AI 학습 도우미의 검색 제어로 탑재되어 있습니다.
+> 다만 정책은 영어 다중 홉 벤치마크로 학습·검증되었고, 한국어 NCS 자료에서의 성능은
+> 따로 검증하지 않았습니다. 일부 어휘 특징은 영어 토큰 기준이라 한국어 질문에서는 0이 됩니다.
 
 ## 처음 보는 사람을 위한 안내
 
 | 목적 | 읽을 곳 |
 |---|---|
-| 웹 앱 실행 | 아래 **MVP 빠른 시작** |
+| 웹 앱 기능·실행 | 아래 **학습량 분석 웹 앱** |
 | 최종 정책의 구조·학습·105차원 입력 | [연구 방법](docs/RESEARCH_METHOD.md) |
 | 결과 확인·오프라인 재생·전체 재생성 | [재현 가이드](docs/REPRODUCIBILITY.md) |
 | 코드별 역할과 과거 실험 구분 | [실험 코드 목록](docs/EXPERIMENT_CATALOG.md) |
@@ -65,34 +67,56 @@ F1·EM은 100점 기준, `±`는 시드 간 표본 표준편차입니다.
 [집계 JSON](data/benchmarks/multihop/context_reader_aware/analysis/sequential_answer_gain_multiseed.json),
 [시드별 신뢰구간](paper/evidence/seed_confidence_intervals.md).
 
-## MVP 빠른 시작
+## 학습량 분석 웹 앱
 
-Python 3.12 가상환경과 별도 설치된 Ollama를 사용합니다.
+NCS 인공지능 플랫폼 구축(LM2001070101~109) 9개 모듈·63개 세부 단원을
+표준 지식 그래프로 삼습니다. 모든 처리는 로컬(Ollama·GPU)에서 끝나며
+학습 기록은 `data/index/study_progress.sqlite3`에만 저장됩니다.
 
-```bash
+| 화면 | 기능 |
+|---|---|
+| 대시보드 | 지식 커버리지·의미적 학습 밀도·시험일 유효 지식량·지식 연결성, 모듈별 숙련도, AI 학습 페이스메이커 |
+| 학습 기록 | 단원·상태·시간·메모 기록. 메모와 NCS 원문의 의미 일치도를 즉시 표시 |
+| 지식 맵 | 모듈 선수관계 그래프 위에 단원별 숙련도·기억 유지 상태를 색으로 투사, 단원별 지표 표 |
+| AI 학습 도우미 | 논문 정책이 검색을 더 할지 단계마다 판단(검색 1~4회)하고, 그 근거 안에서만 한국어로 답변 |
+| 확인 퀴즈 | 단원 원문 근거로 객관식 3문항 생성·채점, 결과를 숙련도와 망각 예측에 반영 |
+
+**분석 지표 계산** ([learning_analytics.py](src/learning_analytics.py))
+
+- 지식 커버리지: 학습 기록·질문·퀴즈가 닿은 단원 / 전체 단원. 질문은 임베딩 유사도로 단원에 매핑합니다.
+- 의미적 학습 밀도: 학습 메모와 해당 단원 NCS 원문 구절의 cross-encoder 관련도(0~1) 평균.
+- 숙련도: 학습 상태 0.5 · 학습 밀도 0.3 · 퀴즈 정답률 0.2의 가중 평균(없는 항목은 제외).
+- 기억 유지율: `exp(-경과일 / 안정도)`. 안정도는 1.5일에서 시작해 복습한 날마다 두 배,
+  퀴즈 정답률에 비례해 커지는 간이 망각 곡선이며, 시험일까지 연장해 유효 지식량을 계산합니다.
+- AI 페이스메이커: 정답률·학습 밀도·유지율이 낮거나 선수 모듈이 비어 있는 단원을 찾아
+  요약 생성·퀴즈·학습 기록으로 바로 연결합니다.
+
+### 실행 (Windows)
+
+Python 3.12 이상, [Ollama](https://ollama.com), NVIDIA GPU(권장)를 사용합니다.
+
+```powershell
 git clone https://github.com/iion74/UROP.git
 cd UROP
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
+py -3.13 -m venv .venv
+.venv\Scripts\python -m pip install torch --index-url https://download.pytorch.org/whl/cu128
+.venv\Scripts\python -m pip install -r requirements.txt
+copy .env.example .env
 ollama pull qwen3:8b
-streamlit run UROP.py
+.venv\Scripts\streamlit run UROP.py
 ```
 
-Ollama 서버가 실행 중이어야 합니다. 기본 주소는 `http://127.0.0.1:11434`입니다.
-최초 임베딩·재정렬 모델 다운로드에는 네트워크가 필요합니다.
-실행은 GPU 또는 CPU 환경과 모델 크기에 따라 속도·메모리 요구가 달라집니다.
+브라우저에서 `http://localhost:8501`이 열립니다. 같은 네트워크의 다른 기기에서 보려면
+`streamlit run UROP.py --server.address 0.0.0.0`으로 실행합니다.
+최초 실행 시 임베딩·재정렬 모델(약 3GB)을 내려받습니다.
 
-재배포 권한이 있는 PDF·TXT·MD·CSV 학습 자료를 `data/`에 넣고,
-사이드바의 **자료 읽기 및 인덱스 생성**을 누릅니다.
-자료가 바뀌면 인덱스를 갱신해야 하며, 변경이 없으면 기존 인덱스를 재사용합니다.
-실험용 원문 자료와 학습용 문서를 같은 데이터 폴더에 넣으면 함께 검색될 수
-있으므로 MVP와 실험은 별도 작업 복사본을 권장합니다.
+**NCS 학습모듈 준비:** [NCS 학습모듈 파일검색](https://www.ncs.go.kr/unity/th03/ncsModuleFileSearch.do)에서
+세분류 `20010701`(인공지능플랫폼구축)의 학습모듈 9개 PDF를 내려받아 `data/` 아래 아무 폴더에 넣고,
+사이드바의 **자료 읽기 및 인덱스 생성**을 누릅니다. 파일명에 `LM2001070101` 같은 모듈 코드가
+있어야 단원에 연결됩니다. NCS 원본은 재배포하지 않으므로 저장소에 포함하지 않습니다.
 
-MVP는 BM25·벡터 하이브리드 검색, 경량 청크 그래프, 근거 기반 답변·퀴즈,
-학습 기록을 제공합니다. [기존 MVP 상세 설명](docs/LEGACY_MVP_GUIDE.md)은
-개발 이력으로 보존했으며 최종 논문 정책 설명과 구분합니다.
+`SEARCH_CONTROL=graph`로 바꾸면 이전 그래프 라우팅으로 답합니다.
+[기존 MVP 상세 설명](docs/LEGACY_MVP_GUIDE.md)은 개발 이력으로 보존했습니다.
 
 ## 저장소 구조
 

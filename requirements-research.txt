@@ -1,6 +1,6 @@
 # Install the app and the additional tools imported by research scripts.
 -r requirements.txt
-scikit-learn>=1.5,<2
+scikit-learn>=1.9,<2
 joblib>=1.4,<2
 datasets>=3,<5
 gdown>=5,<6

@@ -32,6 +32,8 @@ from experiments.train_multihop_policy import (
     _normalise_processed_record,
     _reservoir_sample,
 )
+from src.answer_gain_policy import CONTEXT_PREFIX_FEATURE_NAMES
+from src.answer_gain_policy import retrieval_features as _retrieval_features
 from src.planned_retrieval import run_planned_retrieval
 from src.qa_evaluation import (
     EVIDENCE_CHAIN_PROMPT_VERSION,
@@ -49,7 +51,6 @@ from src.query_rewriter import (
     QueryRewriterConfig,
 )
 from src.reader_sufficiency import (
-    READER_SUFFICIENCY_FEATURE_NAMES,
     parse_evidence_chain,
     reader_sufficiency_features,
 )
@@ -58,21 +59,6 @@ from src.settings import settings
 
 FORMAT_VERSION = 1
 CONTEXT_MODE = "official_per_question_distractor_reader_aware_v1"
-CONTEXT_PREFIX_FEATURE_NAMES = (
-    "search_step",
-    "candidate_count",
-    "retrieval_score_max",
-    "retrieval_score_mean",
-    "retrieval_score_min",
-    "retrieval_score_gap_1_2",
-    "new_candidate_fraction",
-    "previous_candidate_survival_fraction",
-    "planner_sufficient_known",
-    "planner_reported_sufficient",
-    "planner_missing_information_length",
-    "planner_consecutive_no_new",
-    *READER_SUFFICIENCY_FEATURE_NAMES,
-)
 
 
 def _sanitize_unicode(value):
@@ -213,40 +199,6 @@ def _candidate_rows(sources) -> list[dict]:
         }
         for chunk, score in sources
     ]
-
-
-def _retrieval_features(
-    search_step: int,
-    sources,
-    previous_ids: set[str],
-    planner_step,
-) -> np.ndarray:
-    scores = sorted((float(score) for _, score in sources), reverse=True)
-    current_ids = {chunk.source for chunk, _ in sources}
-    sufficient = planner_step.rewrite.sufficient if planner_step is not None else None
-    missing = planner_step.rewrite.missing_information if planner_step is not None else ""
-    consecutive_no_new = (
-        planner_step.state.consecutive_no_new + int(not planner_step.added_chunks)
-        if planner_step is not None
-        else 0
-    )
-    return np.asarray(
-        [
-            float(search_step),
-            float(len(sources)),
-            max(scores, default=0.0),
-            float(np.mean(scores)) if scores else 0.0,
-            min(scores, default=0.0),
-            scores[0] - scores[1] if len(scores) > 1 else max(scores, default=0.0),
-            len(current_ids - previous_ids) / max(1, len(current_ids)),
-            len(current_ids & previous_ids) / max(1, len(previous_ids)),
-            float(sufficient is not None),
-            float(sufficient is True),
-            min(1.0, len(str(missing).split()) / 24.0),
-            min(1.0, consecutive_no_new / 3.0),
-        ],
-        dtype="float64",
-    )
 
 
 def _evaluate_example(

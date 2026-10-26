@@ -34,6 +34,11 @@ from sklearn.model_selection import StratifiedKFold
 from experiments.train_adaptive_proof_completion_policy import ACTIONS
 from experiments.train_multihop_policy import SUPPORTED_DATASETS, _iter_jsonl
 from experiments.train_reader_aware_sufficiency_policy import _load
+from src.answer_gain_policy import READER_HISTORY_FEATURES as _READER_HISTORY_FEATURES
+from src.answer_gain_policy import evidence_features as _evidence_features
+from src.answer_gain_policy import jaccard as _jaccard
+from src.answer_gain_policy import question_features as _question_features
+from src.answer_gain_policy import words as _words
 from src.reader_sufficiency import CHAIN_STRUCTURE_FEATURE_NAMES, chain_structure_features
 
 
@@ -41,11 +46,6 @@ FORMAT_VERSION = 1
 DECISION_STEP = 2
 FINAL_STEP = 3
 _TOKENS = re.compile(r"[a-z0-9]+")
-_COMPARISON_TERMS = frozenset(
-    {"earlier", "later", "older", "younger", "longer", "more", "less", "same", "both", "first"}
-)
-_BOOLEAN_STARTS = frozenset({"am", "are", "can", "did", "do", "does", "has", "have", "is", "was", "were"})
-_WH_WORDS = ("who", "when", "where", "which", "what", "why", "how")
 _CONTENT_STOPWORDS = frozenset(
     {
         "a", "an", "and", "are", "as", "at", "be", "been", "both", "by", "did", "do", "does",
@@ -55,16 +55,6 @@ _CONTENT_STOPWORDS = frozenset(
     }
 )
 _CAPITALIZED = re.compile(r"\b[A-Z][A-Za-z0-9'’-]*\b")
-_READER_HISTORY_FEATURES = frozenset(
-    {
-        "previous_answer_exact",
-        "previous_answer_f1",
-        "initial_answer_exact",
-        "initial_answer_f1",
-        "answer_history_agreement",
-        "previous_chain_jaccard",
-    }
-)
 
 
 def _arguments() -> argparse.Namespace:
@@ -106,10 +96,6 @@ def _arguments() -> argparse.Namespace:
     return args
 
 
-def _words(text: str) -> set[str]:
-    return set(_TOKENS.findall(str(text).lower()))
-
-
 def _content_words(text: str) -> set[str]:
     return _words(text) - _CONTENT_STOPWORDS
 
@@ -124,80 +110,6 @@ def _entities(text: str) -> set[str]:
         for token in _CAPITALIZED.findall(str(text))
         if token.lower() not in _CONTENT_STOPWORDS
     }
-
-
-def _jaccard(left: set[str], right: set[str]) -> float:
-    if not left and not right:
-        return 1.0
-    return len(left & right) / max(1, len(left | right))
-
-
-def _question_features(question: str) -> tuple[list[str], list[float]]:
-    raw = str(question).strip()
-    tokens = _TOKENS.findall(raw.lower())
-    token_set = set(tokens)
-    first = tokens[0] if tokens else ""
-    names = [
-        "question_token_count",
-        "question_character_count",
-        "question_numeric_fraction",
-        "question_capitalized_token_count",
-        "question_is_boolean",
-        "question_is_comparison",
-        "question_has_and",
-        "question_has_or",
-        *[f"question_starts_{word}" for word in _WH_WORDS],
-    ]
-    values = [
-        min(1.0, len(tokens) / 32.0),
-        min(1.0, len(raw) / 240.0),
-        sum(token.isdigit() for token in tokens) / max(1, len(tokens)),
-        min(1.0, sum(part[:1].isupper() for part in raw.split()[1:]) / 8.0),
-        float(first in _BOOLEAN_STARTS),
-        float(bool(token_set & _COMPARISON_TERMS)),
-        float("and" in token_set),
-        float("or" in token_set),
-        *[float(first == word) for word in _WH_WORDS],
-    ]
-    return names, values
-
-
-def _evidence_features(question: str, action: dict, previous_ids: set[str]) -> tuple[list[str], list[float]]:
-    question_tokens = _words(question)
-    evidence = tuple(action.get("candidate_evidence") or action.get("evidence") or ())
-    ids = {str(item.get("content_id", "")) for item in evidence if item.get("content_id")}
-    title_sets = [_words(str(item.get("title", ""))) for item in evidence]
-    title_union = set().union(*title_sets) if title_sets else set()
-    scores = np.asarray([float(item.get("score", 0.0)) for item in evidence], dtype="float64")
-    overlaps = [_jaccard(question_tokens, title) for title in title_sets]
-    title_hits = [float(bool(question_tokens & title)) for title in title_sets]
-    names = [
-        "evidence_count",
-        "evidence_unique_title_fraction",
-        "evidence_score_std",
-        "evidence_score_range",
-        "question_token_coverage_by_titles",
-        "title_token_precision_for_question",
-        "maximum_question_title_jaccard",
-        "mean_question_title_jaccard",
-        "title_question_hit_fraction",
-        "evidence_new_id_fraction",
-        "evidence_retained_id_fraction",
-    ]
-    values = [
-        min(1.0, len(evidence) / 12.0),
-        len({" ".join(sorted(title)) for title in title_sets}) / max(1, len(title_sets)),
-        min(1.0, float(scores.std()) if len(scores) else 0.0),
-        min(1.0, float(scores.max() - scores.min()) if len(scores) else 0.0),
-        len(question_tokens & title_union) / max(1, len(question_tokens)),
-        len(question_tokens & title_union) / max(1, len(title_union)),
-        max(overlaps, default=0.0),
-        float(np.mean(overlaps)) if overlaps else 0.0,
-        float(np.mean(title_hits)) if title_hits else 0.0,
-        len(ids - previous_ids) / max(1, len(ids)),
-        len(ids & previous_ids) / max(1, len(previous_ids)),
-    ]
-    return names, values
 
 
 def _largest_component_fraction(adjacency: list[set[int]]) -> float:
