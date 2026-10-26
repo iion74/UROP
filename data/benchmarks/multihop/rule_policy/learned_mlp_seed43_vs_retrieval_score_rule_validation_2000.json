@@ -1,0 +1,135 @@
+{
+  "reference": {
+    "name": "retrieval_score_rule",
+    "path": "data/benchmarks/multihop/rule_policy/retrieval_score_saturation_validation_2000_predictions.jsonl"
+  },
+  "candidate": {
+    "name": "learned_mlp_seed43",
+    "path": "data/benchmarks/multihop/policy_eval/stop_value_v7_evidence_survival_seed43_validation_2000_predictions.jsonl"
+  },
+  "datasets": {
+    "hotpotqa": {
+      "n": 2000,
+      "reference": {
+        "em": 0.524,
+        "f1": 0.65950825008325,
+        "average_extra_searches": 2.5875
+      },
+      "candidate": {
+        "em": 0.5215,
+        "f1": 0.6572095127095128,
+        "average_extra_searches": 1.648
+      },
+      "candidate_minus_reference": {
+        "em": {
+          "observed_difference": -0.0025,
+          "ci95_low": -0.0105,
+          "ci95_high": 0.0055,
+          "probability_positive": 0.25545,
+          "win_rate": 0.016,
+          "tie_rate": 0.9655,
+          "loss_rate": 0.0185
+        },
+        "f1": {
+          "observed_difference": -0.0022987373737373726,
+          "ci95_low": -0.010109481421356422,
+          "ci95_high": 0.00532002525252525,
+          "probability_positive": 0.27875,
+          "win_rate": 0.0235,
+          "tie_rate": 0.952,
+          "loss_rate": 0.0245
+        },
+        "average_extra_searches": -0.9395,
+        "cost_adjusted_utility": {
+          "observed_difference": -0.0005203686868686851,
+          "ci95_low": -0.008230407918470416,
+          "ci95_high": 0.007150045454545453,
+          "probability_positive": 0.444
+        }
+      }
+    },
+    "musique": {
+      "n": 2000,
+      "reference": {
+        "em": 0.2435,
+        "f1": 0.3229999575587811,
+        "average_extra_searches": 2.762
+      },
+      "candidate": {
+        "em": 0.225,
+        "f1": 0.3012439181733299,
+        "average_extra_searches": 1.747
+      },
+      "candidate_minus_reference": {
+        "em": {
+          "observed_difference": -0.0185,
+          "ci95_low": -0.028,
+          "ci95_high": -0.0095,
+          "probability_positive": 0.0,
+          "win_rate": 0.013,
+          "tie_rate": 0.9555,
+          "loss_rate": 0.0315
+        },
+        "f1": {
+          "observed_difference": -0.021756039385451148,
+          "ci95_low": -0.031005566510695182,
+          "ci95_high": -0.012613844033825657,
+          "probability_positive": 0.0,
+          "win_rate": 0.024,
+          "tie_rate": 0.926,
+          "loss_rate": 0.05
+        },
+        "average_extra_searches": -1.015,
+        "cost_adjusted_utility": {
+          "observed_difference": -0.01809801969272557,
+          "ci95_low": -0.027139044114994484,
+          "ci95_high": -0.009166760851158652,
+          "probability_positive": 5e-05
+        }
+      }
+    },
+    "2wiki": {
+      "n": 2000,
+      "reference": {
+        "em": 0.4455,
+        "f1": 0.5111371860982156,
+        "average_extra_searches": 2.727
+      },
+      "candidate": {
+        "em": 0.4375,
+        "f1": 0.5016482999843294,
+        "average_extra_searches": 1.938
+      },
+      "candidate_minus_reference": {
+        "em": {
+          "observed_difference": -0.008,
+          "ci95_low": -0.0195,
+          "ci95_high": 0.0035,
+          "probability_positive": 0.0778,
+          "win_rate": 0.03,
+          "tie_rate": 0.932,
+          "loss_rate": 0.038
+        },
+        "f1": {
+          "observed_difference": -0.009488886113886114,
+          "ci95_low": -0.0202896013014763,
+          "ci95_high": 0.0013001362526362415,
+          "probability_positive": 0.04225,
+          "win_rate": 0.0365,
+          "tie_rate": 0.9185,
+          "loss_rate": 0.045
+        },
+        "average_extra_searches": -0.789,
+        "cost_adjusted_utility": {
+          "observed_difference": -0.007166443056943057,
+          "ci95_low": -0.018245985101010106,
+          "ci95_high": 0.00383457535936284,
+          "probability_positive": 0.10335
+        }
+      }
+    }
+  },
+  "search_cost": 0.002,
+  "bootstrap_samples": 20000,
+  "bootstrap_seed": 43
+}

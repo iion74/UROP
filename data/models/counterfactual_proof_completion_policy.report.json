@@ -1,0 +1,100 @@
+{
+  "format_version": 1,
+  "method": "counterfactual_proof_completion_policy",
+  "model": "data/models/counterfactual_proof_completion_policy.joblib",
+  "features": [
+    "candidate_retrieval_score",
+    "candidate_score_from_best",
+    "candidate_score_from_mean",
+    "candidate_reciprocal_rank",
+    "candidate_question_title_jaccard",
+    "candidate_question_text_recall",
+    "candidate_question_title_recall",
+    "candidate_title_exactly_in_question",
+    "candidate_incoming_title_mentions",
+    "candidate_outgoing_title_mentions",
+    "candidate_max_incoming_retrieval_score",
+    "candidate_text_length_log",
+    "candidate_title_length_log",
+    "candidate_question_is_comparison",
+    "candidate_question_is_boolean",
+    "action_is_answer",
+    "action_is_already_selected",
+    "candidate_links_from_selected",
+    "candidate_links_to_selected",
+    "candidate_novel_question_recall",
+    "selected_fraction",
+    "selected_question_coverage",
+    "selected_internal_links",
+    "selected_mean_retrieval_score",
+    "remaining_max_retrieval_score"
+  ],
+  "training": {
+    "hotpotqa": {
+      "trajectory_rows": 1000,
+      "fully_retrieved_training_rows": 942,
+      "counterfactual_states": 7536,
+      "positive_actions": {
+        "RETRIEVE": 7612,
+        "ANSWER": 1884
+      }
+    },
+    "musique": {
+      "trajectory_rows": 1000,
+      "fully_retrieved_training_rows": 523,
+      "counterfactual_states": 4364,
+      "positive_actions": {
+        "RETRIEVE": 4620,
+        "ANSWER": 1046
+      }
+    },
+    "2wiki": {
+      "trajectory_rows": 1000,
+      "fully_retrieved_training_rows": 878,
+      "counterfactual_states": 8256,
+      "positive_actions": {
+        "RETRIEVE": 10142,
+        "ANSWER": 1756
+      }
+    }
+  },
+  "validation": {
+    "hotpotqa": {
+      "n": 2000,
+      "selected_documents": 2.051,
+      "answer_action_rate": 1.0,
+      "source_recall": 0.89975,
+      "all_support_recall": 0.8095,
+      "support_precision": 0.8855416666666667,
+      "top4_source_recall": 0.86425,
+      "top4_all_support_recall": 0.735,
+      "all_evidence_source_recall": 0.9685,
+      "all_evidence_all_support_recall": 0.9375
+    },
+    "musique": {
+      "n": 2000,
+      "selected_documents": 2.2145,
+      "answer_action_rate": 0.9995,
+      "source_recall": 0.5293333333333332,
+      "all_support_recall": 0.2135,
+      "support_precision": 0.6064166666666667,
+      "top4_source_recall": 0.5634583333333333,
+      "top4_all_support_recall": 0.2455,
+      "all_evidence_source_recall": 0.7007916666666667,
+      "all_evidence_all_support_recall": 0.4385
+    },
+    "2wiki": {
+      "n": 2000,
+      "selected_documents": 2.375,
+      "answer_action_rate": 0.9995,
+      "source_recall": 0.887875,
+      "all_support_recall": 0.74,
+      "support_precision": 0.9084249999999999,
+      "top4_source_recall": 0.83875,
+      "top4_all_support_recall": 0.6355,
+      "all_evidence_source_recall": 0.940625,
+      "all_evidence_all_support_recall": 0.8615
+    }
+  },
+  "predictions": "data/models/counterfactual_proof_completion_policy.report.predictions.jsonl"
+}

@@ -1,0 +1,336 @@
+{
+  "format_version": 1,
+  "rule": "retrieval_score_saturation_v1",
+  "rule_description": {
+    "step_0": "continue when initial second-best source score is below threshold[0]",
+    "step_1_2": "continue when last newly-added source score is at least the step threshold",
+    "hard_stop": "planner sufficient, no-new evidence, missing added score, or repeated rewrite",
+    "gold_at_inference": false,
+    "hop_count_at_inference": false
+  },
+  "datasets": [
+    "hotpotqa",
+    "musique",
+    "2wiki"
+  ],
+  "thresholds": [
+    0.7310282806952162,
+    0.5000512869663019,
+    0.501146275008758
+  ],
+  "calibration": {
+    "split": "train",
+    "rows": 3000,
+    "folds": 5,
+    "threshold_steps": 51,
+    "f1_weight": 0.5,
+    "em_weight": 0.5,
+    "search_cost": 0.002,
+    "dataset_harm_penalty": 2.0,
+    "train_row_fingerprint": "a1d047aac2b43f44c8c23f73da9904339604626790b869bc176eb94f3aff8e89"
+  },
+  "train_oof_metrics": {
+    "hotpotqa": {
+      "n": 1000,
+      "direct": {
+        "em": 0.67,
+        "f1": 0.7376432539682539
+      },
+      "policy": {
+        "em": 0.719,
+        "f1": 0.7872384920634922
+      },
+      "gain": {
+        "em": 0.04899999999999993,
+        "f1": 0.04959523809523825
+      },
+      "average_extra_searches": 2.355,
+      "average_total_searches": 3.355,
+      "stop_steps": {
+        "0": {
+          "count": 94,
+          "rate": 0.094
+        },
+        "1": {
+          "count": 6,
+          "rate": 0.006
+        },
+        "2": {
+          "count": 351,
+          "rate": 0.351
+        },
+        "3": {
+          "count": 549,
+          "rate": 0.549
+        }
+      },
+      "source_recall": 0.969,
+      "all_support_recall": 0.939,
+      "average_context_characters": 3803.997,
+      "average_reader_latency_seconds": 0.3286663385995198,
+      "average_planner_latency_seconds": 1.3746473007955937,
+      "oracle_f1": 0.8313903679653679,
+      "oracle_regret_f1": 0.0441518759018759
+    },
+    "musique": {
+      "n": 1000,
+      "direct": {
+        "em": 0.194,
+        "f1": 0.2678291014541015
+      },
+      "policy": {
+        "em": 0.264,
+        "f1": 0.3457056166056166
+      },
+      "gain": {
+        "em": 0.07,
+        "f1": 0.07787651515151511
+      },
+      "average_extra_searches": 2.737,
+      "average_total_searches": 3.737,
+      "stop_steps": {
+        "0": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "1": {
+          "count": 9,
+          "rate": 0.009
+        },
+        "2": {
+          "count": 245,
+          "rate": 0.245
+        },
+        "3": {
+          "count": 746,
+          "rate": 0.746
+        }
+      },
+      "source_recall": 0.7371666666666667,
+      "all_support_recall": 0.509,
+      "average_context_characters": 4266.755,
+      "average_reader_latency_seconds": 0.32521095700189473,
+      "average_planner_latency_seconds": 1.5032144465051243,
+      "oracle_f1": 0.4109089965589966,
+      "oracle_regret_f1": 0.06520337995337995
+    },
+    "2wiki": {
+      "n": 1000,
+      "direct": {
+        "em": 0.428,
+        "f1": 0.45484980019980026
+      },
+      "policy": {
+        "em": 0.639,
+        "f1": 0.67236322011322
+      },
+      "gain": {
+        "em": 0.21100000000000002,
+        "f1": 0.21751341991341977
+      },
+      "average_extra_searches": 2.698,
+      "average_total_searches": 3.698,
+      "stop_steps": {
+        "0": {
+          "count": 26,
+          "rate": 0.026
+        },
+        "1": {
+          "count": 6,
+          "rate": 0.006
+        },
+        "2": {
+          "count": 212,
+          "rate": 0.212
+        },
+        "3": {
+          "count": 756,
+          "rate": 0.756
+        }
+      },
+      "source_recall": 0.9405,
+      "all_support_recall": 0.861,
+      "average_context_characters": 3978.48,
+      "average_reader_latency_seconds": 0.3394234523738851,
+      "average_planner_latency_seconds": 1.501914635571302,
+      "oracle_f1": 0.7347521090021091,
+      "oracle_regret_f1": 0.06238888888888888
+    }
+  },
+  "validation_metrics": {
+    "hotpotqa": {
+      "n": 2000,
+      "direct": {
+        "em": 0.4775,
+        "f1": 0.6096332861582862
+      },
+      "policy": {
+        "em": 0.524,
+        "f1": 0.65950825008325
+      },
+      "gain": {
+        "em": 0.04650000000000004,
+        "f1": 0.04987496392496382
+      },
+      "average_extra_searches": 2.5875,
+      "average_total_searches": 3.5875,
+      "stop_steps": {
+        "0": {
+          "count": 59,
+          "rate": 0.0295
+        },
+        "1": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "2": {
+          "count": 648,
+          "rate": 0.324
+        },
+        "3": {
+          "count": 1293,
+          "rate": 0.6465
+        }
+      },
+      "source_recall": 0.9675,
+      "all_support_recall": 0.9355,
+      "average_context_characters": 3989.221,
+      "average_reader_latency_seconds": 0.3228896821876406,
+      "average_planner_latency_seconds": 1.5743118586183409,
+      "oracle_f1": 0.7017900016650017,
+      "oracle_regret_f1": 0.04228175158175158
+    },
+    "musique": {
+      "n": 2000,
+      "direct": {
+        "em": 0.172,
+        "f1": 0.23813841713841713
+      },
+      "policy": {
+        "em": 0.2435,
+        "f1": 0.3229999575587811
+      },
+      "gain": {
+        "em": 0.07150000000000001,
+        "f1": 0.08486154042036395
+      },
+      "average_extra_searches": 2.762,
+      "average_total_searches": 3.762,
+      "stop_steps": {
+        "0": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "1": {
+          "count": 1,
+          "rate": 0.0005
+        },
+        "2": {
+          "count": 474,
+          "rate": 0.237
+        },
+        "3": {
+          "count": 1525,
+          "rate": 0.7625
+        }
+      },
+      "source_recall": 0.6959583333333332,
+      "all_support_recall": 0.43,
+      "average_context_characters": 4386.0445,
+      "average_reader_latency_seconds": 0.3247457310779719,
+      "average_planner_latency_seconds": 1.5265264454667922,
+      "oracle_f1": 0.3787134346046111,
+      "oracle_regret_f1": 0.05571347704582999
+    },
+    "2wiki": {
+      "n": 2000,
+      "direct": {
+        "em": 0.308,
+        "f1": 0.3660987040737041
+      },
+      "policy": {
+        "em": 0.4455,
+        "f1": 0.5111371860982156
+      },
+      "gain": {
+        "em": 0.1375,
+        "f1": 0.14503848202451147
+      },
+      "average_extra_searches": 2.727,
+      "average_total_searches": 3.727,
+      "stop_steps": {
+        "0": {
+          "count": 40,
+          "rate": 0.02
+        },
+        "1": {
+          "count": 7,
+          "rate": 0.0035
+        },
+        "2": {
+          "count": 412,
+          "rate": 0.206
+        },
+        "3": {
+          "count": 1541,
+          "rate": 0.7705
+        }
+      },
+      "source_recall": 0.9345,
+      "all_support_recall": 0.848,
+      "average_context_characters": 4289.0795,
+      "average_reader_latency_seconds": 0.35804160196130397,
+      "average_planner_latency_seconds": 1.6730784931473317,
+      "oracle_f1": 0.5897927083537378,
+      "oracle_regret_f1": 0.07865552225552226
+    }
+  },
+  "paired_bootstrap_vs_direct": {
+    "hotpotqa": {
+      "em": {
+        "observed_gain": 0.0465,
+        "ci95_low": 0.0335,
+        "ci95_high": 0.0595,
+        "probability_positive": 1.0
+      },
+      "f1": {
+        "observed_gain": 0.049874963924963926,
+        "ci95_low": 0.03704249278499279,
+        "ci95_high": 0.06294436417748916,
+        "probability_positive": 1.0
+      }
+    },
+    "musique": {
+      "em": {
+        "observed_gain": 0.0715,
+        "ci95_low": 0.056,
+        "ci95_high": 0.087,
+        "probability_positive": 1.0
+      },
+      "f1": {
+        "observed_gain": 0.08486154042036395,
+        "ci95_low": 0.06919901119509575,
+        "ci95_high": 0.10022526572487969,
+        "probability_positive": 1.0
+      }
+    },
+    "2wiki": {
+      "em": {
+        "observed_gain": 0.1375,
+        "ci95_low": 0.1185,
+        "ci95_high": 0.1565,
+        "probability_positive": 1.0
+      },
+      "f1": {
+        "observed_gain": 0.14503848202451144,
+        "ci95_low": 0.12633715168410023,
+        "ci95_high": 0.16412335090358987,
+        "probability_positive": 1.0
+      }
+    }
+  },
+  "bootstrap_samples": 20000,
+  "bootstrap_seed": 42,
+  "predictions": "data/benchmarks/multihop/rule_policy/retrieval_score_saturation_validation_2000_predictions.jsonl",
+  "train_oof_predictions": "data/benchmarks/multihop/rule_policy/retrieval_score_saturation_train_1000_oof_predictions.jsonl"
+}

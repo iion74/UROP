@@ -1,0 +1,145 @@
+{
+  "format_version": 7,
+  "policy_type": "cost_aware_bellman_stop_value_v7",
+  "embedding_format_version": 2,
+  "model": "data/models/stop_value_policy_v7_evidence_survival_seed45_1000.pt",
+  "nested_predictions": "data/models/stop_value_policy_v7_evidence_survival_seed45_1000.nested_predictions.jsonl",
+  "datasets": [
+    "hotpotqa",
+    "musique",
+    "2wiki"
+  ],
+  "split": "train",
+  "rows": 3000,
+  "states": 9000,
+  "target": "Q_stop_Q_continue_and_continue_benefit",
+  "continue_target": "bellman",
+  "utility": {
+    "f1_weight": 0.5,
+    "em_weight": 0.5,
+    "search_cost": 0.002
+  },
+  "input_uses_gold": false,
+  "gold_hop_usage": "v6 ablation: training weight and calibration only; never an input feature",
+  "threshold": [
+    -17.1,
+    -16.8,
+    -9.6
+  ],
+  "search_cost": 0.002,
+  "nested_audit": {
+    "hotpotqa": {
+      "n": 1000,
+      "direct_em": 0.67,
+      "direct_f1": 0.7376432539682539,
+      "policy_em": 0.717,
+      "policy_f1": 0.7855630952380952,
+      "em_gain": 0.04699999999999993,
+      "f1_gain": 0.04791984126984128,
+      "oracle_f1": 0.831390367965368,
+      "continue_rate": 0.805,
+      "average_extra_searches": 1.995
+    },
+    "musique": {
+      "n": 1000,
+      "direct_em": 0.194,
+      "direct_f1": 0.26782910145410144,
+      "policy_em": 0.253,
+      "policy_f1": 0.33192466422466416,
+      "em_gain": 0.059,
+      "f1_gain": 0.06409556277056272,
+      "oracle_f1": 0.4109089965589966,
+      "continue_rate": 0.822,
+      "average_extra_searches": 1.935
+    },
+    "2wiki": {
+      "n": 1000,
+      "direct_em": 0.428,
+      "direct_f1": 0.4548498001998002,
+      "policy_em": 0.624,
+      "policy_f1": 0.6582298867798868,
+      "em_gain": 0.196,
+      "f1_gain": 0.2033800865800866,
+      "oracle_f1": 0.7347521090021091,
+      "continue_rate": 0.888,
+      "average_extra_searches": 2.272
+    },
+    "Macro": {
+      "n": 3000,
+      "direct_em": 0.4306666666666667,
+      "direct_f1": 0.4867740518740518,
+      "policy_em": 0.5313333333333333,
+      "policy_f1": 0.5919058820808821,
+      "em_gain": 0.10066666666666663,
+      "f1_gain": 0.10513183020683031,
+      "oracle_f1": 0.6590171578421579,
+      "continue_rate": 0.8383333333333334,
+      "average_extra_searches": 2.0673333333333335
+    },
+    "ranking": {
+      "0": {
+        "positive_rate": 0.19933333333333333,
+        "roc_auc": 0.6685266458553212,
+        "average_precision": 0.39107211289799665
+      },
+      "1": {
+        "positive_rate": 0.107,
+        "roc_auc": 0.6235611232628532,
+        "average_precision": 0.20339055438513157
+      },
+      "2": {
+        "positive_rate": 0.044,
+        "roc_auc": 0.5210089915895355,
+        "average_precision": 0.054306549157488754
+      }
+    }
+  },
+  "fold_macro_gains": [
+    0.09205540983768173,
+    0.11703650087230949,
+    0.11167062123837007,
+    0.13749507280731665,
+    0.06351989827120713
+  ],
+  "config": {
+    "answer_root": "data/benchmarks/multihop/stop_answer_oracle_v7_evidence_survival_train_1000",
+    "trajectory_root": "data/benchmarks/multihop/sequential_search_v6_evidence_survival_train_1000",
+    "index_root": "data/benchmarks/multihop/fixed_corpus/index",
+    "split": "train",
+    "max_rows_per_dataset": 1000,
+    "embedding_model": "intfloat/multilingual-e5-base",
+    "embedding_cache": "data/cache/stop_value_policy_v7_evidence_survival_train_embeddings.npz",
+    "embedding_batch_size": 32,
+    "evidence_characters": 1400,
+    "device": "cuda",
+    "hidden_size": 192,
+    "dropout": 0.25,
+    "epochs": 40,
+    "batch_size": 256,
+    "learning_rate": 0.0008,
+    "weight_decay": 0.0005,
+    "gain_weight": 3.0,
+    "classification_weight": 0.35,
+    "continue_positive_weight": 2.0,
+    "f1_weight": 0.5,
+    "em_weight": 0.5,
+    "continue_target": "bellman",
+    "folds": 5,
+    "calibration_ratio": 0.2,
+    "threshold_min": -20.0,
+    "threshold_max": 5.0,
+    "threshold_steps": 251,
+    "dataset_harm_penalty": 2.0,
+    "balance_groups": "dataset_hop",
+    "search_cost": 0.002,
+    "seed": 45,
+    "model_out": "data/models/stop_value_policy_v7_evidence_survival_seed45_1000.pt",
+    "predictions_out": null,
+    "datasets": [
+      "hotpotqa",
+      "musique",
+      "2wiki"
+    ]
+  },
+  "row_fingerprint": "a1d047aac2b43f44c8c23f73da9904339604626790b869bc176eb94f3aff8e89"
+}

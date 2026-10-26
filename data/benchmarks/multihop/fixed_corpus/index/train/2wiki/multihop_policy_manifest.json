@@ -1,0 +1,23 @@
+{
+  "corpus_fingerprint": "43892658ac61b3244f013cc403eb4b14bcb579d57fbd154cc2a7dab0e0d7111d",
+  "dataset": "2wiki",
+  "split": "train",
+  "split_corpus_examples": 2000,
+  "documents": 10796,
+  "chunk_size": 900,
+  "chunk_overlap": 140,
+  "graph_format_version": 5,
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "reranker_model": "BAAI/bge-reranker-v2-m3",
+  "reranker_candidates": 20,
+  "router_seed_count": 8,
+  "graph_small_budget": 3,
+  "graph_large_budget": 6,
+  "graph_expansion_decay": 0.58,
+  "graph_semantic_neighbors": 24,
+  "graph_title_bridges": true,
+  "graph_max_title_bridges_per_chunk": 8,
+  "graph_rerank_prior_weight": 0.35,
+  "graph_source_diversity_bonus": 0.08,
+  "graph_min_expanded_results": 1
+}

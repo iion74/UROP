@@ -1,0 +1,23 @@
+{
+  "format_version": 1,
+  "experiment": "dual_value_adaptive_thinking_pilot",
+  "dataset": "2wiki",
+  "sample_seed": 42,
+  "requested_rows": 100,
+  "selection_ids_sha256": "f1ae7b3f122faed322c2b3456d0f226444cc8953db7f45a23ed1cc7f02fd3606",
+  "context_character_budget": 6000,
+  "reader": {
+    "host": "http://127.0.0.1:11434",
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "max_tokens": 512,
+    "timeout_seconds": 300,
+    "seed": 42,
+    "temperature": 0.0,
+    "keep_alive": "30m",
+    "prompt_version": "multihop_evidence_chain_v3_json",
+    "thinking": true
+  },
+  "status": "ready",
+  "completed_rows": 100
+}

@@ -1,0 +1,33 @@
+{
+  "format_version": 2,
+  "dataset": "musique",
+  "split": "validation",
+  "corpus_fingerprint": "72c60c26da7a1d136190c176747ddd22b9b7c34bdbb6506b76bf3e02f20e2cd5",
+  "corpus_seed": 42,
+  "query_seed": 42,
+  "query_sampling_version": "stable_hash_v1",
+  "top_k": 5,
+  "context_character_budget": 6000,
+  "actions": [
+    "vector",
+    "graph_1hop_small",
+    "graph_1hop_large",
+    "graph_2hop_small",
+    "graph_2hop_large"
+  ],
+  "reader": {
+    "host": "http://127.0.0.1:11434",
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "max_tokens": 64,
+    "timeout_seconds": 300,
+    "seed": 42,
+    "temperature": 0.0,
+    "keep_alive": "30m",
+    "prompt_version": "multihop_short_answer_v2_json"
+  },
+  "status": "ready",
+  "cached_rows": 1000,
+  "last_requested_rows": 1000,
+  "last_requested_completed": 1000
+}

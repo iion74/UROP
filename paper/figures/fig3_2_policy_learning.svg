@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="247.748031pt" height="294.973228pt" viewBox="0 0 247.748031 294.973228" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-30T17:06:05.815870</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 294.973228 
+L 247.748031 294.973228 
+L 247.748031 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 123.874016 41.867508 
+Q 123.874016 49.28468 123.874016 55.583819 
+" clip-path="url(#p8d868e0267)" style="fill: none; stroke: #4b5563; stroke-linecap: round"/>
+    <path d="M 125.674016 51.983819 
+L 123.874016 55.583819 
+L 122.074016 51.983819 
+z
+" clip-path="url(#p8d868e0267)" style="fill: #4b5563; stroke: #4b5563; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 99.712012 80.708508 
+Q 81.87112 92.775004 64.956333 104.215139 
+" clip-path="url(#p8d868e0267)" style="fill: none; stroke: #4b5563; stroke-linecap: round"/>
+    <path d="M 68.946757 103.689295 
+L 64.956333 104.215139 
+L 66.929912 100.707293 
+z
+" clip-path="url(#p8d868e0267)" style="fill: #4b5563; stroke: #4b5563; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 148.036019 80.708508 
+Q 165.876912 92.775004 182.791699 104.215139 
+" clip-path="url(#p8d868e0267)" style="fill: none; stroke: #4b5563; stroke-linecap: round"/>
+    <path d="M 180.818119 100.707293 
+L 182.791699 104.215139 
+L 178.801274 103.689295 
+z
+" clip-path="url(#p8d868e0267)" style="fill: #4b5563; stroke: #4b5563; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 191.544945 150.69341 
+Q 191.544945 142.574315 191.544945 135.573253 
+" clip-path="url(#p8d868e0267)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #c43d3d; stroke-linecap: round"/>
+    <path d="M 189.744945 139.173253 
+L 191.544945 135.573253 
+L 193.344945 139.173253 
+z
+" clip-path="url(#p8d868e0267)" style="fill: #c43d3d; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #c43d3d; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 63.808119 134.257597 
+Q 80.705653 156.606597 96.928903 178.063777 
+" clip-path="url(#p8d868e0267)" style="fill: none; stroke: #4b5563; stroke-linecap: round"/>
+    <path d="M 96.193555 174.106598 
+L 96.928903 178.063777 
+L 93.321951 176.277748 
+z
+" clip-path="url(#p8d868e0267)" style="fill: #4b5563; stroke: #4b5563; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 183.939913 134.257597 
+Q 167.042379 156.606597 150.819128 178.063777 
+" clip-path="url(#p8d868e0267)" style="fill: none; stroke: #4b5563; stroke-linecap: round"/>
+    <path d="M 154.42608 176.277748 
+L 150.819128 178.063777 
+L 151.554476 174.106598 
+z
+" clip-path="url(#p8d868e0267)" style="fill: #4b5563; stroke: #4b5563; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 123.874016 213.020259 
+Q 123.874016 221.139355 123.874016 228.140416 
+" clip-path="url(#p8d868e0267)" style="fill: none; stroke: #4b5563; stroke-linecap: round"/>
+    <path d="M 125.674016 224.540416 
+L 123.874016 228.140416 
+L 122.074016 224.540416 
+z
+" clip-path="url(#p8d868e0267)" style="fill: #4b5563; stroke: #4b5563; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 123.874016 255.106586 
+Q 123.874016 259.01394 123.874016 261.80326 
+" clip-path="url(#p8d868e0267)" style="fill: none; stroke: #4b5563; stroke-linecap: round"/>
+    <path d="M 125.674016 258.20326 
+L 123.874016 261.80326 
+L 122.074016 258.20326 
+z
+" clip-path="url(#p8d868e0267)" style="fill: #4b5563; stroke: #4b5563; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 50.136038 43.113373 
+L 197.611994 43.113373 
+Q 200.41217 43.113373 200.41217 39.746494 
+L 200.41217 19.545222 
+Q 200.41217 16.178343 197.611994 16.178343 
+L 50.136038 16.178343 
+Q 47.335861 16.178343 47.335861 19.545222 
+L 47.335861 39.746494 
+Q 47.335861 43.113373 50.136038 43.113373 
+z
+" clip-path="url(#p8d868e0267)" style="fill: #dceefe; stroke: #2979b8; stroke-width: 1.05; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 50.136038 82.393625 
+L 197.611994 82.393625 
+Q 200.41217 82.393625 200.41217 79.026746 
+L 200.41217 58.825474 
+Q 200.41217 55.458595 197.611994 55.458595 
+L 50.136038 55.458595 
+Q 47.335861 55.458595 47.335861 58.825474 
+L 47.335861 79.026746 
+Q 47.335861 82.393625 50.136038 82.393625 
+z
+" clip-path="url(#p8d868e0267)" style="fill: #eff1f3; stroke: #6c757d; stroke-width: 1.05; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 15.133833 135.702539 
+L 111.273222 135.702539 
+Q 114.073398 135.702539 114.073398 132.33566 
+L 114.073398 106.522923 
+Q 114.073398 103.156044 111.273222 103.156044 
+L 15.133833 103.156044 
+Q 12.333657 103.156044 12.333657 106.522923 
+L 12.333657 132.33566 
+Q 12.333657 135.702539 15.133833 135.702539 
+z
+" clip-path="url(#p8d868e0267)" style="fill: #dceefe; stroke: #2979b8; stroke-width: 1.05; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 136.474809 135.702539 
+L 232.614198 135.702539 
+Q 235.414375 135.702539 235.414375 132.33566 
+L 235.414375 106.522923 
+Q 235.414375 103.156044 232.614198 103.156044 
+L 136.474809 103.156044 
+Q 133.674633 103.156044 133.674633 106.522923 
+L 133.674633 132.33566 
+Q 133.674633 135.702539 136.474809 135.702539 
+z
+" clip-path="url(#p8d868e0267)" style="fill: #dceefe; stroke: #2979b8; stroke-width: 1.05; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 157.476132 174.982791 
+L 225.613757 174.982791 
+Q 228.413934 174.982791 228.413934 171.615912 
+L 228.413934 152.817506 
+Q 228.413934 149.450627 225.613757 149.450627 
+L 157.476132 149.450627 
+Q 154.675956 149.450627 154.675956 152.817506 
+L 154.675956 171.615912 
+Q 154.675956 174.982791 157.476132 174.982791 
+z
+" clip-path="url(#p8d868e0267)" style="fill: #fde5e5; stroke-dasharray: 3.885,1.68; stroke-dashoffset: 0; stroke: #c43d3d; stroke-width: 1.05; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 45.469077 214.263043 
+L 202.278954 214.263043 
+Q 205.079131 214.263043 205.079131 210.896164 
+L 205.079131 180.874828 
+Q 205.079131 177.50795 202.278954 177.50795 
+L 45.469077 177.50795 
+Q 42.668901 177.50795 42.668901 180.874828 
+L 42.668901 210.896164 
+Q 42.668901 214.263043 45.469077 214.263043 
+z
+" clip-path="url(#p8d868e0267)" style="fill: #ddf3e8; stroke: #198754; stroke-width: 1.05; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 43.135597 256.349027 
+L 204.612435 256.349027 
+Q 207.412611 256.349027 207.412611 252.982148 
+L 207.412611 231.378009 
+Q 207.412611 228.011131 204.612435 228.011131 
+L 43.135597 228.011131 
+Q 40.33542 228.011131 40.33542 231.378009 
+L 40.33542 252.982148 
+Q 40.33542 256.349027 43.135597 256.349027 
+z
+" clip-path="url(#p8d868e0267)" style="fill: #eff1f3; stroke: #6c757d; stroke-width: 1.05; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 61.803439 284.40635 
+L 185.944592 284.40635 
+Q 188.744769 284.40635 188.744769 281.039471 
+L 188.744769 265.046797 
+Q 188.744769 261.679918 185.944592 261.679918 
+L 61.803439 261.679918 
+Q 59.003263 261.679918 59.003263 265.046797 
+L 59.003263 281.039471 
+Q 59.003263 284.40635 61.803439 284.40635 
+z
+" clip-path="url(#p8d868e0267)" style="fill: #ddf3e8; stroke: #198754; stroke-width: 1.05; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 6.8px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(108.846016 28.078671)">Train 질문</text>
+    <text style="font-size: 6.8px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(85.705297 35.959765)">데이터셋별 시드당 2,000개</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 6.8px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(102.437016 67.324923)">검색·답변 궤적</text>
+    <text style="font-size: 6.8px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(97.921391 75.620923)">질문별 1~4회 검색</text>
+   </g>
+   <g id="text_3">
+    <!-- 상태 입력 $\mathbf{s}_{i,t}$ -->
+    <g style="fill: #20252b" transform="translate(44.756528 117.350291)">
+     <text>
+      <tspan x="0" y="-0.546875" style="font-size: 6.6px; font-family: 'Noto Sans CJK JP'; fill: #20252b">상</tspan>
+      <tspan x="6.066208" y="-0.546875" style="font-size: 6.6px; font-family: 'Noto Sans CJK JP'; fill: #20252b">태</tspan>
+      <tspan x="12.132416" y="-0.546875" style="font-size: 6.6px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="13.609406" y="-0.546875" style="font-size: 6.6px; font-family: 'Noto Sans CJK JP'; fill: #20252b">입</tspan>
+      <tspan x="19.675613" y="-0.546875" style="font-size: 6.6px; font-family: 'Noto Sans CJK JP'; fill: #20252b">력</tspan>
+      <tspan x="25.741821" y="-0.546875" style="font-size: 6.6px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="27.218811" y="-0.546875" style="font-weight: 700; font-size: 6.6px; font-family: 'DejaVu Sans'; fill: #20252b">s</tspan>
+      <tspan x="31.206673" y="0.443122" style="font-style: oblique; font-size: 4.62px; font-family: 'DejaVu Sans'; fill: #20252b">i</tspan>
+      <tspan x="34.855451" y="0.443122" style="font-style: oblique; font-size: 4.62px; font-family: 'DejaVu Sans'; fill: #20252b">t</tspan>
+      <tspan x="32.489041" y="0.443122" style="font-size: 4.62px; font-family: 'DejaVu Sans'; fill: #20252b">,</tspan>
+     </text>
+    </g>
+    <text style="font-size: 6.6px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(31.202809 125.924104)">관측 가능한 105개 특징</text>
+   </g>
+   <g id="text_4">
+    <!-- 학습 목표 $g_{i,t}$ -->
+    <g style="fill: #20252b" transform="translate(165.998504 117.383291)">
+     <text>
+      <tspan x="0" y="-0.515625" style="font-size: 6.6px; font-family: 'Noto Sans CJK JP'; fill: #20252b">학</tspan>
+      <tspan x="6.066208" y="-0.515625" style="font-size: 6.6px; font-family: 'Noto Sans CJK JP'; fill: #20252b">습</tspan>
+      <tspan x="12.132416" y="-0.515625" style="font-size: 6.6px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="13.609406" y="-0.515625" style="font-size: 6.6px; font-family: 'Noto Sans CJK JP'; fill: #20252b">목</tspan>
+      <tspan x="19.675613" y="-0.515625" style="font-size: 6.6px; font-family: 'Noto Sans CJK JP'; fill: #20252b">표</tspan>
+      <tspan x="25.741821" y="-0.515625" style="font-size: 6.6px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="27.218811" y="-0.515625" style="font-style: oblique; font-size: 6.6px; font-family: 'DejaVu Sans'; fill: #20252b">g</tspan>
+      <tspan x="31.404297" y="0.474372" style="font-style: oblique; font-size: 4.62px; font-family: 'DejaVu Sans'; fill: #20252b">i</tspan>
+      <tspan x="35.053075" y="0.474372" style="font-style: oblique; font-size: 4.62px; font-family: 'DejaVu Sans'; fill: #20252b">t</tspan>
+      <tspan x="32.686665" y="0.474372" style="font-size: 4.62px; font-family: 'DejaVu Sans'; fill: #20252b">,</tspan>
+     </text>
+    </g>
+    <text style="font-size: 6.6px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(160.457082 125.936994)">향후 최대 F1 이득</text>
+   </g>
+   <g id="text_5">
+    <!-- 정답 $a_i^*$ -->
+    <g style="fill: #20252b" transform="translate(181.235945 160.356209)">
+     <text>
+      <tspan x="0" y="-0.170312" style="font-size: 6.1px; font-family: 'Noto Sans CJK JP'; fill: #20252b">정</tspan>
+      <tspan x="5.606247" y="-0.170312" style="font-size: 6.1px; font-family: 'Noto Sans CJK JP'; fill: #20252b">답</tspan>
+      <tspan x="11.212494" y="-0.170312" style="font-size: 6.1px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="12.577499" y="-0.170312" style="font-style: oblique; font-size: 6.1px; font-family: 'DejaVu Sans'; fill: #20252b">a</tspan>
+      <tspan x="17.425032" y="-2.839063" style="font-size: 4.27px; font-family: 'DejaVu Sans'; fill: #20252b">*</tspan>
+      <tspan x="16.311707" y="1.923437" style="font-style: oblique; font-size: 4.27px; font-family: 'DejaVu Sans'; fill: #20252b">i</tspan>
+     </text>
+    </g>
+    <text style="font-size: 6.1px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(164.924164 168.219013)">레이블 생성에만 사용</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 6.8px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(74.206391 193.593684)">HistGradientBoostingRegressor</text>
+    <text style="font-size: 6.8px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(68.313766 202.206309)">결정트리 예측을 순차 결합 (최대 180회)</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(79.262141 240.696626)">질문 단위 3-fold OOF 임곗값 보정</text>
+    <!-- 검색 이득 $-$ 추가 검색 비용 최대화 -->
+    <g style="fill: #20252b" transform="translate(79.301516 248.354079)">
+     <text>
+      <tspan x="0" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b">검</tspan>
+      <tspan x="5.793121" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b">색</tspan>
+      <tspan x="11.586243" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="12.99675" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b">이</tspan>
+      <tspan x="18.789871" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b">득</tspan>
+      <tspan x="24.582993" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="31.269592" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="32.680099" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b">추</tspan>
+      <tspan x="38.473221" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b">가</tspan>
+      <tspan x="44.266342" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="45.676849" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b">검</tspan>
+      <tspan x="51.469971" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b">색</tspan>
+      <tspan x="57.263092" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="58.673599" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b">비</tspan>
+      <tspan x="64.466721" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b">용</tspan>
+      <tspan x="70.259842" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="71.670349" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b">최</tspan>
+      <tspan x="77.46347" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b">대</tspan>
+      <tspan x="83.256592" y="-0.796875" style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; fill: #20252b">화</tspan>
+      <tspan x="25.9935" y="-0.796875" style="font-size: 6.3px; font-family: 'DejaVu Sans'; fill: #20252b">−</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_8">
+    <!-- 최종 정책 $f_\theta$와 단계별 임곗값 $\tau_1,\tau_2,\tau_3$ -->
+    <g style="fill: #20252b" transform="translate(73.282016 275.151134)">
+     <text>
+      <tspan x="0" y="-0.8125" style="font-weight: 700; font-size: 6.2px; font-family: 'Noto Sans CJK JP'; fill: #20252b">최</tspan>
+      <tspan x="5.692444" y="-0.8125" style="font-weight: 700; font-size: 6.2px; font-family: 'Noto Sans CJK JP'; fill: #20252b">종</tspan>
+      <tspan x="11.384888" y="-0.8125" style="font-weight: 700; font-size: 6.2px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="12.789444" y="-0.8125" style="font-weight: 700; font-size: 6.2px; font-family: 'Noto Sans CJK JP'; fill: #20252b">정</tspan>
+      <tspan x="18.481888" y="-0.8125" style="font-weight: 700; font-size: 6.2px; font-family: 'Noto Sans CJK JP'; fill: #20252b">책</tspan>
+      <tspan x="24.174332" y="-0.8125" style="font-weight: 700; font-size: 6.2px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="30.576663" y="-0.8125" style="font-weight: 700; font-size: 6.2px; font-family: 'Noto Sans CJK JP'; fill: #20252b">와</tspan>
+      <tspan x="36.269107" y="-0.8125" style="font-weight: 700; font-size: 6.2px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="37.673663" y="-0.8125" style="font-weight: 700; font-size: 6.2px; font-family: 'Noto Sans CJK JP'; fill: #20252b">단</tspan>
+      <tspan x="43.366107" y="-0.8125" style="font-weight: 700; font-size: 6.2px; font-family: 'Noto Sans CJK JP'; fill: #20252b">계</tspan>
+      <tspan x="49.058551" y="-0.8125" style="font-weight: 700; font-size: 6.2px; font-family: 'Noto Sans CJK JP'; fill: #20252b">별</tspan>
+      <tspan x="54.750995" y="-0.8125" style="font-weight: 700; font-size: 6.2px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="56.155551" y="-0.8125" style="font-weight: 700; font-size: 6.2px; font-family: 'Noto Sans CJK JP'; fill: #20252b">임</tspan>
+      <tspan x="61.847995" y="-0.8125" style="font-weight: 700; font-size: 6.2px; font-family: 'Noto Sans CJK JP'; fill: #20252b">곗</tspan>
+      <tspan x="67.540439" y="-0.8125" style="font-weight: 700; font-size: 6.2px; font-family: 'Noto Sans CJK JP'; fill: #20252b">값</tspan>
+      <tspan x="73.232883" y="-0.8125" style="font-weight: 700; font-size: 6.2px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="25.578888" y="-0.8125" style="font-style: oblique; font-size: 6.2px; font-family: 'DejaVu Sans'; fill: #20252b">f</tspan>
+      <tspan x="74.637439" y="-0.8125" style="font-style: oblique; font-size: 6.2px; font-family: 'DejaVu Sans'; fill: #20252b">τ</tspan>
+      <tspan x="84.460135" y="-0.8125" style="font-style: oblique; font-size: 6.2px; font-family: 'DejaVu Sans'; fill: #20252b">τ</tspan>
+      <tspan x="94.282831" y="-0.8125" style="font-style: oblique; font-size: 6.2px; font-family: 'DejaVu Sans'; fill: #20252b">τ</tspan>
+      <tspan x="27.757202" y="0.117497" style="font-style: oblique; font-size: 4.34px; font-family: 'DejaVu Sans'; fill: #20252b">θ</tspan>
+      <tspan x="78.362628" y="0.117497" style="font-size: 4.34px; font-family: 'DejaVu Sans'; fill: #20252b">1</tspan>
+      <tspan x="88.185324" y="0.117497" style="font-size: 4.34px; font-family: 'DejaVu Sans'; fill: #20252b">2</tspan>
+      <tspan x="98.00802" y="0.117497" style="font-size: 4.34px; font-family: 'DejaVu Sans'; fill: #20252b">3</tspan>
+      <tspan x="81.287833" y="-0.8125" style="font-size: 6.2px; font-family: 'DejaVu Sans'; fill: #20252b">,</tspan>
+      <tspan x="91.110529" y="-0.8125" style="font-size: 6.2px; font-family: 'DejaVu Sans'; fill: #20252b">,</tspan>
+     </text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p8d868e0267">
+   <rect x="7.2" y="7.2" width="233.348031" height="280.573228"/>
+  </clipPath>
+ </defs>
+</svg>

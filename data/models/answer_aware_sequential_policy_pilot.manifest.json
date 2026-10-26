@@ -1,0 +1,103 @@
+{
+  "format_version": 1,
+  "model": "data/models/answer_aware_sequential_policy_pilot.joblib",
+  "model_type": "extra_trees",
+  "datasets": [
+    "hotpotqa",
+    "musique",
+    "2wiki"
+  ],
+  "split": "train",
+  "rows": 900,
+  "dataset_counts": {
+    "2wiki": 300,
+    "hotpotqa": 300,
+    "musique": 300
+  },
+  "seed": 42,
+  "folds": 5,
+  "calibration_ratio": 0.2,
+  "trees": 400,
+  "min_samples_leaf": 10,
+  "max_features": 1.0,
+  "ridge_alpha": null,
+  "dataset_harm_penalty": 2.0,
+  "thresholds": {
+    "one_shot": 0.15,
+    "sequential_s0": 0.15,
+    "sequential_s1": 0.15
+  },
+  "nested_audit": {
+    "hotpotqa": {
+      "n": 300,
+      "direct_f1": 0.7349105339105338,
+      "one_shot_f1": 0.7378470418470419,
+      "sequential_f1": 0.7404660894660894,
+      "oracle_f1": 0.7868946608946609,
+      "one_shot_gain": 0.002936507936508015,
+      "sequential_gain": 0.005555555555555536,
+      "sequential_vs_one_shot": 0.002619047619047521,
+      "sequential_regret": 0.046428571428571486,
+      "capture_ratio": 0.10687022900763313
+    },
+    "musique": {
+      "n": 300,
+      "direct_f1": 0.2461785714285714,
+      "one_shot_f1": 0.24913095238095234,
+      "sequential_f1": 0.235797619047619,
+      "oracle_f1": 0.3072367724867725,
+      "one_shot_gain": 0.0029523809523809286,
+      "sequential_gain": -0.010380952380952407,
+      "sequential_vs_one_shot": -0.013333333333333336,
+      "sequential_regret": 0.0714391534391535,
+      "capture_ratio": -0.17001733102253067
+    },
+    "2wiki": {
+      "n": 300,
+      "direct_f1": 0.4721941391941391,
+      "one_shot_f1": 0.4855274725274724,
+      "sequential_f1": 0.5321941391941392,
+      "oracle_f1": 0.6123687423687424,
+      "one_shot_gain": 0.013333333333333308,
+      "sequential_gain": 0.06000000000000005,
+      "sequential_vs_one_shot": 0.046666666666666745,
+      "sequential_regret": 0.08017460317460323,
+      "capture_ratio": 0.42803759483637194
+    },
+    "Macro": {
+      "n": 900,
+      "direct_f1": 0.48442774817774814,
+      "one_shot_f1": 0.49083515558515556,
+      "sequential_f1": 0.5028192825692824,
+      "oracle_f1": 0.5688333919167253,
+      "one_shot_gain": 0.006407407407407417,
+      "sequential_gain": 0.018391534391534292,
+      "sequential_vs_one_shot": 0.011984126984126875,
+      "sequential_regret": 0.0660141093474429,
+      "capture_ratio": 0.21789460487274706
+    }
+  },
+  "fold_macro_gains": [
+    {
+      "one_shot": 0.011392371156112635,
+      "sequential": 0.0031267698336164274
+    },
+    {
+      "one_shot": 0.017501146748526764,
+      "sequential": 0.027430224762711175
+    },
+    {
+      "one_shot": 0.005555555555555536,
+      "sequential": 0.04093067426400754
+    },
+    {
+      "one_shot": 0.0029761904761904656,
+      "sequential": 0.010807165471344526
+    },
+    {
+      "one_shot": -0.0037250227726417506,
+      "sequential": 0.0055138864662673814
+    }
+  ],
+  "row_fingerprint": "4de46855818b5060bbc461c35f3eb66f92e31457b278f396d512a6e0e4c9b1c3"
+}

@@ -1,0 +1,38 @@
+{
+  "format_version": 1,
+  "experiment": "frozen_llm_self_judgment_stop_policy",
+  "policy": "qwen3_8b_zero_shot_evidence_sufficiency_v1",
+  "dataset": "musique",
+  "split": "validation",
+  "maximum_rows": 2000,
+  "actions": [
+    "vector",
+    "planned_continue_1",
+    "planned_continue_2",
+    "planned_continue_3"
+  ],
+  "answer_signature": "ea25e9509013f8e70bba5d3844655d3b570383d818e653ff65c3e0c87ad1dfa0",
+  "trajectory_signature": "9c36a38d1e12b72dc79ade65e198128e907827eb1afaba287844790b7eb522d3",
+  "chunk_signature": "5c4e21dcc4cbc9e131970738aae40c707d712c2f5df3a422727599ff3e6195df",
+  "context_character_budget": 6000,
+  "context_allocation": "sequential",
+  "context_source_order": "trajectory",
+  "context_compression": "none",
+  "focused_sentences_per_source": 2,
+  "judge": {
+    "host": "http://127.0.0.1:11434",
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "max_tokens": 120,
+    "timeout_seconds": 300,
+    "seed": 42,
+    "temperature": 0.0,
+    "keep_alive": "30m",
+    "thinking": false,
+    "prompt_version": "multihop_evidence_sufficiency_v1_json"
+  },
+  "gold_inputs_exposed_to_policy": [],
+  "status": "ready",
+  "completed_rows": 2000,
+  "requested_rows": 2000
+}

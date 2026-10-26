@@ -113,11 +113,11 @@ def main() -> None:
                  "## 원본 자료", ""])
     for source in sources:
         path = ROOT / source["path"]
-        text.append(f"- [{path.name}]({path}): SHA-256 `{source['sha256']}`")
+        text.append(f"- [{path.name}](../../{source['path']}): SHA-256 `{source['sha256']}`")
     text.extend(["", "계산 코드:", "",
-                 f"- [대응 부트스트랩 함수]({ROOT}/experiments/evaluate_answer_gain_search_policy.py:127)",
-                 f"- [비교군별 F1 차이와 신뢰구간 저장]({ROOT}/experiments/evaluate_sequential_answer_gain_policy.py:286)",
-                 f"- [5개 시드 순차 실행 및 반복 횟수 설정]({ROOT}/experiments/run_sequential_answer_gain_multiseed.py:95)", ""])
+                 "- [대응 부트스트랩 함수](../../experiments/evaluate_answer_gain_search_policy.py#L127)",
+                 "- [비교군별 F1 차이와 신뢰구간 저장](../../experiments/evaluate_sequential_answer_gain_policy.py#L286)",
+                 "- [5개 시드 순차 실행 및 반복 횟수 설정](../../experiments/run_sequential_answer_gain_multiseed.py#L95)", ""])
     (OUTPUT / "seed_confidence_intervals.md").write_text("\n".join(text), encoding="utf-8")
     (OUTPUT / "seed_confidence_intervals.sources.json").write_text(
         json.dumps({"export_only": True, "source_reports": sources,

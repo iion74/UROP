@@ -1,0 +1,534 @@
+{
+  "format_version": 1,
+  "scope": "complete_official_question_local_validation",
+  "split": "validation",
+  "prefix_root": "data/benchmarks/multihop/context_reader_aware/full_validation",
+  "full_predictions": "data/benchmarks/multihop/context_reader_aware/analysis/dual_value_full_system.predictions.jsonl",
+  "seed": 42,
+  "bootstrap_samples": 10000,
+  "random_draws": 5000,
+  "latency_note": "FIXED2/3 latency is estimated from cached prefix planner and final-reader timing, not an end-to-end replay.",
+  "random_note": "Random and router are compared before REASON/judge; each random draw has exactly the same SEARCH count as the router on that dataset.",
+  "conditional_random_note": "The second randomization holds the actual REASON queue and judged answers fixed and randomizes SEARCH only among remaining questions at the exact same search budget. It isolates search targeting, not the whole policy.",
+  "datasets": {
+    "hotpotqa": {
+      "count": 7405,
+      "methods": {
+        "direct": {
+          "em": 0.5659689399054693,
+          "f1": 0.7031977191829464,
+          "average_searches": 0.0
+        },
+        "fixed2": {
+          "em": 0.5763673193787981,
+          "f1": 0.7169088819826839,
+          "average_searches": 2.0,
+          "source_recall": 0.9896691424713032,
+          "estimated_latency_seconds": 2.1610338803392675,
+          "reader_generated_tokens": 50.78325455773126
+        },
+        "fixed3": {
+          "em": 0.5773126266036462,
+          "f1": 0.7177659445685352,
+          "average_searches": 3.0,
+          "source_recall": 0.9931802835921675,
+          "estimated_latency_seconds": 2.7589914271147995,
+          "reader_generated_tokens": 51.019041188386225
+        },
+        "router_pre_repair": {
+          "em": 0.5774476704929102,
+          "f1": 0.7177503027934765,
+          "average_searches": 2.647400405131668
+        },
+        "full_system": {
+          "em": 0.5802835921674544,
+          "f1": 0.7218349261225229,
+          "average_searches": 2.647400405131668,
+          "estimated_latency_seconds": 2.885782449453227,
+          "reader_generated_tokens": 62.32748143146522,
+          "reader_calls": 1.4205266711681297
+        }
+      },
+      "comparisons": {
+        "final_vs_fixed2": {
+          "em": {
+            "observed_change_points": 0.3916272788656313,
+            "ci95_low": -0.09453072248480757,
+            "ci95_high": 0.8777852802160702,
+            "probability_positive": 0.9442,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "f1": {
+            "observed_change_points": 0.4926044139838953,
+            "ci95_low": 0.08097508001094425,
+            "ci95_high": 0.9068370307100492,
+            "probability_positive": 0.9906,
+            "probability_noninferior_margin_1_point": 1.0
+          }
+        },
+        "final_vs_fixed3": {
+          "em": {
+            "observed_change_points": 0.2970965563808238,
+            "ci95_low": -0.05401755570560432,
+            "ci95_high": 0.6482106684672518,
+            "probability_positive": 0.9512,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "f1": {
+            "observed_change_points": 0.4068981553987711,
+            "ci95_low": 0.1143697668790015,
+            "ci95_high": 0.707645893492102,
+            "probability_positive": 0.9971,
+            "probability_noninferior_margin_1_point": 1.0
+          }
+        },
+        "fixed3_vs_fixed2": {
+          "em": {
+            "observed_change_points": 0.09453072248480757,
+            "ci95_low": -0.37812288993923027,
+            "ci95_high": 0.5671843349088453,
+            "probability_positive": 0.6361,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "f1": {
+            "observed_change_points": 0.08570625858512425,
+            "ci95_low": -0.3513767239786245,
+            "ci95_high": 0.5209521526563246,
+            "probability_positive": 0.6524,
+            "probability_noninferior_margin_1_point": 1.0
+          }
+        }
+      },
+      "matched_budget_random_pre_repair": {
+        "search_count": 4794,
+        "average_searches": 2.647400405131668,
+        "random_draws": 5000,
+        "f1": {
+          "router": 0.7177503027934765,
+          "random_expected": 0.7174637446479872,
+          "router_minus_random_expected": {
+            "observed_change_points": 0.028655814548916685,
+            "ci95_low": -0.17910606948487878,
+            "ci95_high": 0.23914518545768113,
+            "probability_positive": 0.6034,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "random_draw_mean": 0.7174665484869904,
+          "random_draw_95pct_low": 0.715375738446026,
+          "random_draw_95pct_high": 0.7195588798452611,
+          "fraction_random_at_least_router": 0.3872
+        },
+        "em": {
+          "router": 0.5774476704929102,
+          "random_expected": 0.5769793116591386,
+          "router_minus_random_expected": {
+            "observed_change_points": 0.046835883377154976,
+            "ci95_low": -0.183597684102161,
+            "ci95_high": 0.2789225759006382,
+            "probability_positive": 0.6565,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "random_draw_mean": 0.5769859554355168,
+          "random_draw_95pct_low": 0.5747467927076301,
+          "random_draw_95pct_high": 0.5793382849426064,
+          "fraction_random_at_least_router": 0.3666
+        },
+        "source_recall": {
+          "router": 0.9929777177582715,
+          "random_expected": 0.9919422566554251,
+          "router_minus_random_expected": {
+            "observed_change_points": 0.10354611028462714,
+            "ci95_low": 0.06861433206845567,
+            "ci95_high": 0.1404684408996057,
+            "probability_positive": 1.0,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "random_draw_mean": 0.9919439702903444,
+          "random_draw_95pct_low": 0.9914922349763674,
+          "random_draw_95pct_high": 0.9923700202565834,
+          "fraction_random_at_least_router": 0.0
+        }
+      },
+      "matched_budget_random_search_given_reason": {
+        "reason_queue_count": 1557,
+        "search_count": 4794,
+        "average_searches": 2.647400405131668,
+        "random_draws": 5000,
+        "em": {
+          "full_system": 0.5802835921674544,
+          "random_search_expected": 0.5792032410533423,
+          "full_minus_random_expected": {
+            "observed_change_points": 0.10803511141120868,
+            "ci95_low": -0.04963059215175164,
+            "ci95_high": 0.26498437573606765,
+            "probability_positive": 0.9113,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "random_draw_95pct_low": 0.5775827143821742,
+          "random_draw_95pct_high": 0.5808237677245104,
+          "fraction_random_at_least_full": 0.1166
+        },
+        "f1": {
+          "full_system": 0.7218349261225229,
+          "random_search_expected": 0.7206832432917664,
+          "full_minus_random_expected": {
+            "observed_change_points": 0.11516828307566088,
+            "ci95_low": -0.017397448355609777,
+            "ci95_high": 0.2505042665095492,
+            "probability_positive": 0.9561,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "random_draw_95pct_low": 0.7191874820832539,
+          "random_draw_95pct_high": 0.7221553069164981,
+          "fraction_random_at_least_full": 0.0628
+        }
+      }
+    },
+    "musique": {
+      "count": 2417,
+      "methods": {
+        "direct": {
+          "em": 0.3028547786512205,
+          "f1": 0.3929602543764229,
+          "average_searches": 0.0
+        },
+        "fixed2": {
+          "em": 0.34671079851055026,
+          "f1": 0.44091379360245964,
+          "average_searches": 2.0,
+          "source_recall": 0.8583298855330298,
+          "estimated_latency_seconds": 2.429681313661573,
+          "reader_generated_tokens": 49.99627637567232
+        },
+        "fixed3": {
+          "em": 0.3491932147290029,
+          "f1": 0.4448753642716957,
+          "average_searches": 3.0,
+          "source_recall": 0.8824989656599089,
+          "estimated_latency_seconds": 3.102395070752188,
+          "reader_generated_tokens": 50.07654116673562
+        },
+        "router_pre_repair": {
+          "em": 0.3479520066197766,
+          "f1": 0.4440106977471202,
+          "average_searches": 2.947869259412495
+        },
+        "full_system": {
+          "em": 0.34960695076541165,
+          "f1": 0.44568050773302453,
+          "average_searches": 2.947869259412495,
+          "estimated_latency_seconds": 3.321058214868821,
+          "reader_generated_tokens": 53.08688456764584,
+          "reader_calls": 1.0868845676458418
+        }
+      },
+      "comparisons": {
+        "final_vs_fixed2": {
+          "em": {
+            "observed_change_points": 0.2896152254861398,
+            "ci95_low": -0.7860984691766653,
+            "ci95_high": 1.365328920148945,
+            "probability_positive": 0.681,
+            "probability_noninferior_margin_1_point": 0.9913
+          },
+          "f1": {
+            "observed_change_points": 0.4766714130564862,
+            "ci95_low": -0.5694365092899372,
+            "ci95_high": 1.5297897396008362,
+            "probability_positive": 0.8075,
+            "probability_noninferior_margin_1_point": 0.997
+          }
+        },
+        "final_vs_fixed3": {
+          "em": {
+            "observed_change_points": 0.04137360364087712,
+            "ci95_low": -0.2068680182043856,
+            "ci95_high": 0.33098882912701694,
+            "probability_positive": 0.5608,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "f1": {
+            "observed_change_points": 0.08051434613288151,
+            "ci95_low": -0.1365618475672261,
+            "ci95_high": 0.3152349190826641,
+            "probability_positive": 0.7604,
+            "probability_noninferior_margin_1_point": 1.0
+          }
+        },
+        "fixed3_vs_fixed2": {
+          "em": {
+            "observed_change_points": 0.24824162184526274,
+            "ci95_low": -0.8274720728175424,
+            "ci95_high": 1.3239553165080677,
+            "probability_positive": 0.6575,
+            "probability_noninferior_margin_1_point": 0.9899
+          },
+          "f1": {
+            "observed_change_points": 0.39615706692360464,
+            "ci95_low": -0.6543151049118132,
+            "ci95_high": 1.4403971072269914,
+            "probability_positive": 0.7723,
+            "probability_noninferior_margin_1_point": 0.9954
+          }
+        }
+      },
+      "matched_budget_random_pre_repair": {
+        "search_count": 2291,
+        "average_searches": 2.947869259412495,
+        "random_draws": 5000,
+        "f1": {
+          "router": 0.4440106977471202,
+          "random_expected": 0.4446688446588187,
+          "router_minus_random_expected": {
+            "observed_change_points": -0.06581469116984891,
+            "ci95_low": -0.24457969398693075,
+            "ci95_high": 0.10004375236132786,
+            "probability_positive": 0.2251,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "random_draw_mean": 0.44467656284834284,
+          "random_draw_95pct_low": 0.44237336051762327,
+          "random_draw_95pct_high": 0.4469992338857391,
+          "fraction_random_at_least_router": 0.7104
+        },
+        "em": {
+          "router": 0.3479520066197766,
+          "random_expected": 0.3490638045330885,
+          "router_minus_random_expected": {
+            "observed_change_points": -0.11117979133119439,
+            "ci95_low": -0.33138253739501033,
+            "ci95_high": 0.08921771707747274,
+            "probability_positive": 0.1499,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "random_draw_mean": 0.34907323127844436,
+          "random_draw_95pct_low": 0.34671079851055026,
+          "random_draw_95pct_high": 0.35126189491104676,
+          "fraction_random_at_least_router": 0.7766
+        },
+        "source_recall": {
+          "router": 0.8816714935870914,
+          "random_expected": 0.8812390136135761,
+          "router_minus_random_expected": {
+            "observed_change_points": 0.043247997351541514,
+            "ci95_low": -0.03374764566735188,
+            "ci95_high": 0.10431129382978684,
+            "probability_positive": 0.8817,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "random_draw_mean": 0.881243228520204,
+          "random_draw_95pct_low": 0.8803958074748309,
+          "random_draw_95pct_high": 0.8819817956143979,
+          "fraction_random_at_least_router": 0.1374
+        }
+      },
+      "matched_budget_random_search_given_reason": {
+        "reason_queue_count": 105,
+        "search_count": 2291,
+        "average_searches": 2.947869259412495,
+        "random_draws": 5000,
+        "em": {
+          "full_system": 0.34960695076541165,
+          "random_search_expected": 0.35000565486970175,
+          "full_minus_random_expected": {
+            "observed_change_points": -0.039870410429011335,
+            "ci95_low": -0.12750299564932938,
+            "ci95_high": 0.008267562665261779,
+            "probability_positive": 0.2104,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "random_draw_95pct_low": 0.3491932147290029,
+          "random_draw_95pct_high": 0.350848158874638,
+          "fraction_random_at_least_full": 0.9008
+        },
+        "f1": {
+          "full_system": 0.44568050773302453,
+          "random_search_expected": 0.4460623564667506,
+          "full_minus_random_expected": {
+            "observed_change_points": -0.038184873372604865,
+            "ci95_low": -0.1267347013927349,
+            "ci95_high": 0.010063485349683252,
+            "probability_positive": 0.263,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "random_draw_95pct_low": 0.44499295590407845,
+          "random_draw_95pct_high": 0.44705962785438713,
+          "fraction_random_at_least_full": 0.807
+        }
+      }
+    },
+    "2wiki": {
+      "count": 12576,
+      "methods": {
+        "direct": {
+          "em": 0.5266380407124682,
+          "f1": 0.5925578044544947,
+          "average_searches": 0.0
+        },
+        "fixed2": {
+          "em": 0.5710877862595419,
+          "f1": 0.6393457853698779,
+          "average_searches": 2.0,
+          "source_recall": 0.9919091921119593,
+          "estimated_latency_seconds": 1.9040840304488817,
+          "reader_generated_tokens": 60.989901399491096
+        },
+        "fixed3": {
+          "em": 0.5716444020356234,
+          "f1": 0.6401464263957943,
+          "average_searches": 3.0,
+          "source_recall": 0.9969783715012722,
+          "estimated_latency_seconds": 2.4011557196748052,
+          "reader_generated_tokens": 60.923584605597966
+        },
+        "router_pre_repair": {
+          "em": 0.5710082697201018,
+          "f1": 0.6398470034840362,
+          "average_searches": 2.60551844783715
+        },
+        "full_system": {
+          "em": 0.5754611959287532,
+          "f1": 0.6460640368458475,
+          "average_searches": 2.60551844783715,
+          "estimated_latency_seconds": 2.495380591717055,
+          "reader_generated_tokens": 75.58770674300254,
+          "reader_calls": 1.4139631043256997
+        }
+      },
+      "comparisons": {
+        "final_vs_fixed2": {
+          "em": {
+            "observed_change_points": 0.4373409669211196,
+            "ci95_low": -0.05566157760814249,
+            "ci95_high": 0.9223918575063612,
+            "probability_positive": 0.9574,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "f1": {
+            "observed_change_points": 0.6718251475969713,
+            "ci95_low": 0.20646795379030589,
+            "ci95_high": 1.1433117185730544,
+            "probability_positive": 0.9981,
+            "probability_noninferior_margin_1_point": 1.0
+          }
+        },
+        "final_vs_fixed3": {
+          "em": {
+            "observed_change_points": 0.38167938931297707,
+            "ci95_low": 0.007951653944020356,
+            "ci95_high": 0.7554071246819338,
+            "probability_positive": 0.9751,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "f1": {
+            "observed_change_points": 0.5917610450053199,
+            "ci95_low": 0.23428812228907644,
+            "ci95_high": 0.9465758169240991,
+            "probability_positive": 0.9986,
+            "probability_noninferior_margin_1_point": 1.0
+          }
+        },
+        "fixed3_vs_fixed2": {
+          "em": {
+            "observed_change_points": 0.05566157760814249,
+            "ci95_low": -0.4532442748091603,
+            "ci95_high": 0.556615776081425,
+            "probability_positive": 0.5714,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "f1": {
+            "observed_change_points": 0.08006410259165167,
+            "ci95_low": -0.3931698238524914,
+            "ci95_high": 0.5572331314992165,
+            "probability_positive": 0.6299,
+            "probability_noninferior_margin_1_point": 1.0
+          }
+        }
+      },
+      "matched_budget_random_pre_repair": {
+        "search_count": 7615,
+        "average_searches": 2.60551844783715,
+        "random_draws": 5000,
+        "f1": {
+          "router": 0.6398470034840362,
+          "random_expected": 0.6398305882811656,
+          "router_minus_random_expected": {
+            "observed_change_points": 0.0016415202870708155,
+            "ci95_low": -0.23371800144242655,
+            "ci95_high": 0.23489321771291266,
+            "probability_positive": 0.5083,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "random_draw_mean": 0.6398531268793857,
+          "random_draw_95pct_low": 0.637552777469077,
+          "random_draw_95pct_high": 0.6421382142398662,
+          "fraction_random_at_least_router": 0.5118
+        },
+        "em": {
+          "router": 0.5710082697201018,
+          "random_expected": 0.5714248273803164,
+          "router_minus_random_expected": {
+            "observed_change_points": -0.04165576602146982,
+            "ci95_low": -0.28669834985982423,
+            "ci95_high": 0.20149124999393003,
+            "probability_positive": 0.37,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "random_draw_mean": 0.5714496024173028,
+          "random_draw_95pct_low": 0.5690203562340966,
+          "random_draw_95pct_high": 0.5737913486005088,
+          "fraction_random_at_least_router": 0.6426
+        },
+        "source_recall": {
+          "router": 0.9963819974554707,
+          "random_expected": 0.9949786737475842,
+          "router_minus_random_expected": {
+            "observed_change_points": 0.1403323707886584,
+            "ci95_low": 0.10728372797462676,
+            "ci95_high": 0.17390975654281512,
+            "probability_positive": 1.0,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "random_draw_mean": 0.9949805423027991,
+          "random_draw_95pct_low": 0.994572996183206,
+          "random_draw_95pct_high": 0.9953681615776081,
+          "fraction_random_at_least_router": 0.0
+        }
+      },
+      "matched_budget_random_search_given_reason": {
+        "reason_queue_count": 2603,
+        "search_count": 7615,
+        "average_searches": 2.60551844783715,
+        "random_draws": 5000,
+        "em": {
+          "full_system": 0.5754611959287532,
+          "random_search_expected": 0.5745085442526884,
+          "full_minus_random_expected": {
+            "observed_change_points": 0.09526516760648153,
+            "ci95_low": -0.0607165946337554,
+            "ci95_high": 0.25229923034559715,
+            "probability_positive": 0.8852,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "random_draw_95pct_low": 0.572678117048346,
+          "random_draw_95pct_high": 0.5762563613231552,
+          "fraction_random_at_least_full": 0.1526
+        },
+        "f1": {
+          "full_system": 0.6460640368458475,
+          "random_search_expected": 0.6450175901807554,
+          "full_minus_random_expected": {
+            "observed_change_points": 0.1046446665092082,
+            "ci95_low": -0.043778884346081834,
+            "ci95_high": 0.24954463169292035,
+            "probability_positive": 0.9183,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "random_draw_95pct_low": 0.6433438155466981,
+          "random_draw_95pct_high": 0.6466440612453782,
+          "fraction_random_at_least_full": 0.1102
+        }
+      }
+    }
+  }
+}

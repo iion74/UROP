@@ -1,0 +1,91 @@
+{
+  "format_version": 1,
+  "policy_type": "answer_f1_stop_continue_v1",
+  "model": "data/models/stop_continue_policy_1000.joblib",
+  "nested_predictions": "data/models/stop_continue_policy_1000.nested_predictions.jsonl",
+  "datasets": [
+    "hotpotqa",
+    "musique",
+    "2wiki"
+  ],
+  "split": "train",
+  "rows": 3000,
+  "dataset_counts": {
+    "2wiki": 1000,
+    "hotpotqa": 1000,
+    "musique": 1000
+  },
+  "state_label_counts": {
+    "CONTINUE": 1197,
+    "STOP": 7803
+  },
+  "feature_names": [
+    "completed_step_fraction",
+    "reader_source_fraction",
+    "memory_size_fraction",
+    "previous_query_fraction",
+    "last_added_score",
+    "last_added_missing",
+    "no_new_fraction",
+    "query_unique_ratio",
+    "last_query_repeated"
+  ],
+  "target": "future_answer_f1_gain",
+  "seed": 42,
+  "folds": 5,
+  "threshold": 0.17500000000000002,
+  "nested_audit": {
+    "hotpotqa": {
+      "n": 1000,
+      "direct_em": 0.67,
+      "direct_f1": 0.7376432539682539,
+      "policy_em": 0.698,
+      "policy_f1": 0.7689000721500722,
+      "em_gain": 0.027999999999999914,
+      "f1_gain": 0.03125681818181825,
+      "oracle_f1": 0.8345314213564213,
+      "continue_rate": 0.946
+    },
+    "musique": {
+      "n": 1000,
+      "direct_em": 0.194,
+      "direct_f1": 0.26782910145410144,
+      "policy_em": 0.24,
+      "policy_f1": 0.3185175213675213,
+      "em_gain": 0.045999999999999985,
+      "f1_gain": 0.05068841991341988,
+      "oracle_f1": 0.4190185203685204,
+      "continue_rate": 0.998
+    },
+    "2wiki": {
+      "n": 1000,
+      "direct_em": 0.428,
+      "direct_f1": 0.45484980019980015,
+      "policy_em": 0.624,
+      "policy_f1": 0.6623521090021091,
+      "em_gain": 0.196,
+      "f1_gain": 0.2075023088023089,
+      "oracle_f1": 0.739502109002109,
+      "continue_rate": 0.876
+    },
+    "Macro": {
+      "n": 3000,
+      "direct_em": 0.4306666666666667,
+      "direct_f1": 0.48677405187405176,
+      "policy_em": 0.5206666666666666,
+      "policy_f1": 0.5832565675065675,
+      "em_gain": 0.08999999999999991,
+      "f1_gain": 0.09648251563251575,
+      "oracle_f1": 0.6643506835756835,
+      "continue_rate": 0.94
+    }
+  },
+  "fold_macro_gains": [
+    0.08582782917047543,
+    0.10311652920348569,
+    0.08907885195513665,
+    0.10577656315941625,
+    0.09948737717664119
+  ],
+  "row_fingerprint": "a1d047aac2b43f44c8c23f73da9904339604626790b869bc176eb94f3aff8e89"
+}

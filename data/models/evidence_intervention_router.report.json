@@ -1,0 +1,1014 @@
+{
+  "format_version": 1,
+  "method": "counterfactual_evidence_intervention_router",
+  "model": "data/models/evidence_intervention_router.joblib",
+  "development_rows": 1500,
+  "decisive_development_rows": 252,
+  "heldout_rows": 4500,
+  "chosen_oof_threshold": {
+    "threshold": 0.2,
+    "gains": {
+      "hotpotqa": 2.191587301587301,
+      "musique": 1.389495798319328,
+      "2wiki": 7.1545378151260515
+    },
+    "decisive_method_route_rates": {
+      "hotpotqa": 1.0,
+      "musique": 1.0,
+      "2wiki": 1.0
+    },
+    "minimum_dataset_gain": 1.389495798319328,
+    "sum_dataset_gains": 10.73562091503268
+  },
+  "threshold_sweep": [
+    {
+      "threshold": 0.2,
+      "gains": {
+        "hotpotqa": 2.191587301587301,
+        "musique": 1.389495798319328,
+        "2wiki": 7.1545378151260515
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 1.0,
+        "musique": 1.0,
+        "2wiki": 1.0
+      },
+      "minimum_dataset_gain": 1.389495798319328,
+      "sum_dataset_gains": 10.73562091503268
+    },
+    {
+      "threshold": 0.21000000000000002,
+      "gains": {
+        "hotpotqa": 1.9915873015873014,
+        "musique": 1.2180672268907562,
+        "2wiki": 7.1545378151260515
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.9859154929577465,
+        "musique": 0.9848484848484849,
+        "2wiki": 1.0
+      },
+      "minimum_dataset_gain": 1.2180672268907562,
+      "sum_dataset_gains": 10.36419234360411
+    },
+    {
+      "threshold": 0.22000000000000003,
+      "gains": {
+        "hotpotqa": 1.9915873015873014,
+        "musique": 1.2180672268907562,
+        "2wiki": 7.1545378151260515
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.9859154929577465,
+        "musique": 0.9848484848484849,
+        "2wiki": 1.0
+      },
+      "minimum_dataset_gain": 1.2180672268907562,
+      "sum_dataset_gains": 10.36419234360411
+    },
+    {
+      "threshold": 0.23,
+      "gains": {
+        "hotpotqa": 1.9201587301587304,
+        "musique": 1.2180672268907562,
+        "2wiki": 7.1545378151260515
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.9577464788732394,
+        "musique": 0.9848484848484849,
+        "2wiki": 1.0
+      },
+      "minimum_dataset_gain": 1.2180672268907562,
+      "sum_dataset_gains": 10.292763772175539
+    },
+    {
+      "threshold": 0.24000000000000002,
+      "gains": {
+        "hotpotqa": 1.9201587301587304,
+        "musique": 1.2180672268907562,
+        "2wiki": 7.1545378151260515
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.9577464788732394,
+        "musique": 0.9848484848484849,
+        "2wiki": 1.0
+      },
+      "minimum_dataset_gain": 1.2180672268907562,
+      "sum_dataset_gains": 10.292763772175539
+    },
+    {
+      "threshold": 0.25,
+      "gains": {
+        "hotpotqa": 1.6534920634920633,
+        "musique": 1.2180672268907562,
+        "2wiki": 7.1545378151260515
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.9295774647887324,
+        "musique": 0.9848484848484849,
+        "2wiki": 1.0
+      },
+      "minimum_dataset_gain": 1.2180672268907562,
+      "sum_dataset_gains": 10.026097105508871
+    },
+    {
+      "threshold": 0.26,
+      "gains": {
+        "hotpotqa": 1.7868253968253967,
+        "musique": 1.0180672268907562,
+        "2wiki": 7.1545378151260515
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.9154929577464789,
+        "musique": 0.9696969696969697,
+        "2wiki": 1.0
+      },
+      "minimum_dataset_gain": 1.0180672268907562,
+      "sum_dataset_gains": 9.959430438842205
+    },
+    {
+      "threshold": 0.27,
+      "gains": {
+        "hotpotqa": 1.7068253968253966,
+        "musique": 1.0180672268907562,
+        "2wiki": 7.1545378151260515
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.9014084507042254,
+        "musique": 0.9393939393939394,
+        "2wiki": 1.0
+      },
+      "minimum_dataset_gain": 1.0180672268907562,
+      "sum_dataset_gains": 9.879430438842205
+    },
+    {
+      "threshold": 0.28,
+      "gains": {
+        "hotpotqa": 1.7068253968253966,
+        "musique": 1.0180672268907562,
+        "2wiki": 6.954537815126051
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.9014084507042254,
+        "musique": 0.9393939393939394,
+        "2wiki": 0.991304347826087
+      },
+      "minimum_dataset_gain": 1.0180672268907562,
+      "sum_dataset_gains": 9.679430438842203
+    },
+    {
+      "threshold": 0.29000000000000004,
+      "gains": {
+        "hotpotqa": 1.7068253968253966,
+        "musique": 1.1514005602240895,
+        "2wiki": 6.954537815126051
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.9014084507042254,
+        "musique": 0.9242424242424242,
+        "2wiki": 0.991304347826087
+      },
+      "minimum_dataset_gain": 1.1514005602240895,
+      "sum_dataset_gains": 9.812763772175538
+    },
+    {
+      "threshold": 0.30000000000000004,
+      "gains": {
+        "hotpotqa": 1.5068253968253968,
+        "musique": 1.1514005602240895,
+        "2wiki": 6.954537815126051
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.8873239436619719,
+        "musique": 0.9242424242424242,
+        "2wiki": 0.9739130434782609
+      },
+      "minimum_dataset_gain": 1.1514005602240895,
+      "sum_dataset_gains": 9.612763772175537
+    },
+    {
+      "threshold": 0.31000000000000005,
+      "gains": {
+        "hotpotqa": 1.5068253968253968,
+        "musique": 1.1514005602240895,
+        "2wiki": 6.954537815126051
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.8873239436619719,
+        "musique": 0.9242424242424242,
+        "2wiki": 0.9739130434782609
+      },
+      "minimum_dataset_gain": 1.1514005602240895,
+      "sum_dataset_gains": 9.612763772175537
+    },
+    {
+      "threshold": 0.32000000000000006,
+      "gains": {
+        "hotpotqa": 1.306825396825397,
+        "musique": 1.1514005602240895,
+        "2wiki": 6.554537815126051
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.8732394366197183,
+        "musique": 0.9242424242424242,
+        "2wiki": 0.9565217391304348
+      },
+      "minimum_dataset_gain": 1.1514005602240895,
+      "sum_dataset_gains": 9.012763772175537
+    },
+    {
+      "threshold": 0.33000000000000007,
+      "gains": {
+        "hotpotqa": 1.306825396825397,
+        "musique": 0.9514005602240897,
+        "2wiki": 6.354537815126051
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.8732394366197183,
+        "musique": 0.8787878787878788,
+        "2wiki": 0.9478260869565217
+      },
+      "minimum_dataset_gain": 0.9514005602240897,
+      "sum_dataset_gains": 8.612763772175537
+    },
+    {
+      "threshold": 0.34,
+      "gains": {
+        "hotpotqa": 1.306825396825397,
+        "musique": 1.2656862745098036,
+        "2wiki": 6.354537815126051
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.8732394366197183,
+        "musique": 0.8484848484848485,
+        "2wiki": 0.9478260869565217
+      },
+      "minimum_dataset_gain": 1.2656862745098036,
+      "sum_dataset_gains": 8.927049486461252
+    },
+    {
+      "threshold": 0.35000000000000003,
+      "gains": {
+        "hotpotqa": 1.5734920634920633,
+        "musique": 0.9123529411764705,
+        "2wiki": 6.1545378151260515
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.8309859154929577,
+        "musique": 0.803030303030303,
+        "2wiki": 0.9391304347826087
+      },
+      "minimum_dataset_gain": 0.9123529411764705,
+      "sum_dataset_gains": 8.640382819794585
+    },
+    {
+      "threshold": 0.36000000000000004,
+      "gains": {
+        "hotpotqa": 1.5734920634920633,
+        "musique": 0.9123529411764705,
+        "2wiki": 6.554537815126051
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.8309859154929577,
+        "musique": 0.803030303030303,
+        "2wiki": 0.9043478260869565
+      },
+      "minimum_dataset_gain": 0.9123529411764705,
+      "sum_dataset_gains": 9.040382819794585
+    },
+    {
+      "threshold": 0.37000000000000005,
+      "gains": {
+        "hotpotqa": 1.6020634920634917,
+        "musique": 0.33616246498599445,
+        "2wiki": 6.1545378151260515
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.7746478873239436,
+        "musique": 0.7424242424242424,
+        "2wiki": 0.8869565217391304
+      },
+      "minimum_dataset_gain": 0.33616246498599445,
+      "sum_dataset_gains": 8.092763772175537
+    },
+    {
+      "threshold": 0.38000000000000006,
+      "gains": {
+        "hotpotqa": 1.402063492063492,
+        "musique": 0.4361624649859945,
+        "2wiki": 6.1545378151260515
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.7605633802816901,
+        "musique": 0.7272727272727273,
+        "2wiki": 0.8695652173913043
+      },
+      "minimum_dataset_gain": 0.4361624649859945,
+      "sum_dataset_gains": 7.992763772175538
+    },
+    {
+      "threshold": 0.39,
+      "gains": {
+        "hotpotqa": 1.452063492063492,
+        "musique": 0.23616246498599447,
+        "2wiki": 6.204537815126051
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.7464788732394366,
+        "musique": 0.7121212121212122,
+        "2wiki": 0.8608695652173913
+      },
+      "minimum_dataset_gain": 0.23616246498599447,
+      "sum_dataset_gains": 7.892763772175538
+    },
+    {
+      "threshold": 0.4,
+      "gains": {
+        "hotpotqa": 1.4234920634920634,
+        "musique": 0.5161624649859945,
+        "2wiki": 6.4045378151260515
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.7323943661971831,
+        "musique": 0.6818181818181818,
+        "2wiki": 0.8521739130434782
+      },
+      "minimum_dataset_gain": 0.5161624649859945,
+      "sum_dataset_gains": 8.34419234360411
+    },
+    {
+      "threshold": 0.41000000000000003,
+      "gains": {
+        "hotpotqa": 1.4234920634920634,
+        "musique": 0.39616246498599444,
+        "2wiki": 6.204537815126051
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.7323943661971831,
+        "musique": 0.6666666666666666,
+        "2wiki": 0.8434782608695652
+      },
+      "minimum_dataset_gain": 0.39616246498599444,
+      "sum_dataset_gains": 8.02419234360411
+    },
+    {
+      "threshold": 0.42000000000000004,
+      "gains": {
+        "hotpotqa": 1.0234920634920635,
+        "musique": 0.19616246498599446,
+        "2wiki": 6.004537815126051
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.704225352112676,
+        "musique": 0.6515151515151515,
+        "2wiki": 0.8347826086956521
+      },
+      "minimum_dataset_gain": 0.19616246498599446,
+      "sum_dataset_gains": 7.224192343604109
+    },
+    {
+      "threshold": 0.43000000000000005,
+      "gains": {
+        "hotpotqa": 1.0234920634920635,
+        "musique": 0.19616246498599446,
+        "2wiki": 5.804537815126051
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.6338028169014085,
+        "musique": 0.6515151515151515,
+        "2wiki": 0.8260869565217391
+      },
+      "minimum_dataset_gain": 0.19616246498599446,
+      "sum_dataset_gains": 7.024192343604109
+    },
+    {
+      "threshold": 0.44000000000000006,
+      "gains": {
+        "hotpotqa": 0.9092063492063491,
+        "musique": 0.19616246498599446,
+        "2wiki": 6.004537815126051
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.5915492957746479,
+        "musique": 0.6515151515151515,
+        "2wiki": 0.8173913043478261
+      },
+      "minimum_dataset_gain": 0.19616246498599446,
+      "sum_dataset_gains": 7.109906629318394
+    },
+    {
+      "threshold": 0.45000000000000007,
+      "gains": {
+        "hotpotqa": 0.7758730158730158,
+        "musique": 0.11616246498599445,
+        "2wiki": 6.014061624649861
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.5774647887323944,
+        "musique": 0.6363636363636364,
+        "2wiki": 0.782608695652174
+      },
+      "minimum_dataset_gain": 0.11616246498599445,
+      "sum_dataset_gains": 6.906097105508871
+    },
+    {
+      "threshold": 0.4600000000000001,
+      "gains": {
+        "hotpotqa": 0.6158730158730158,
+        "musique": 0.2028291316526611,
+        "2wiki": 6.21406162464986
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.5352112676056338,
+        "musique": 0.5909090909090909,
+        "2wiki": 0.7739130434782608
+      },
+      "minimum_dataset_gain": 0.2028291316526611,
+      "sum_dataset_gains": 7.032763772175537
+    },
+    {
+      "threshold": 0.4700000000000001,
+      "gains": {
+        "hotpotqa": 0.8158730158730158,
+        "musique": 0.2028291316526611,
+        "2wiki": 6.21406162464986
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.4788732394366197,
+        "musique": 0.5909090909090909,
+        "2wiki": 0.7739130434782608
+      },
+      "minimum_dataset_gain": 0.2028291316526611,
+      "sum_dataset_gains": 7.232763772175537
+    },
+    {
+      "threshold": 0.48000000000000004,
+      "gains": {
+        "hotpotqa": 0.8758730158730158,
+        "musique": 0.2028291316526611,
+        "2wiki": 6.614061624649859
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.4647887323943662,
+        "musique": 0.5909090909090909,
+        "2wiki": 0.7565217391304347
+      },
+      "minimum_dataset_gain": 0.2028291316526611,
+      "sum_dataset_gains": 7.692763772175536
+    },
+    {
+      "threshold": 0.49000000000000005,
+      "gains": {
+        "hotpotqa": 0.8758730158730158,
+        "musique": 0.30282913165266107,
+        "2wiki": 6.21406162464986
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.4225352112676056,
+        "musique": 0.5606060606060606,
+        "2wiki": 0.7391304347826086
+      },
+      "minimum_dataset_gain": 0.30282913165266107,
+      "sum_dataset_gains": 7.392763772175536
+    },
+    {
+      "threshold": 0.5,
+      "gains": {
+        "hotpotqa": 1.0092063492063492,
+        "musique": 0.30282913165266107,
+        "2wiki": 6.014061624649861
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.4084507042253521,
+        "musique": 0.5606060606060606,
+        "2wiki": 0.7304347826086957
+      },
+      "minimum_dataset_gain": 0.30282913165266107,
+      "sum_dataset_gains": 7.326097105508871
+    },
+    {
+      "threshold": 0.51,
+      "gains": {
+        "hotpotqa": 1.0092063492063492,
+        "musique": 0.30282913165266107,
+        "2wiki": 5.818506069094305
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.4084507042253521,
+        "musique": 0.5606060606060606,
+        "2wiki": 0.7130434782608696
+      },
+      "minimum_dataset_gain": 0.30282913165266107,
+      "sum_dataset_gains": 7.130541549953315
+    },
+    {
+      "threshold": 0.52,
+      "gains": {
+        "hotpotqa": 1.0933333333333333,
+        "musique": 0.10282913165266111,
+        "2wiki": 6.207394957983193
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.3380281690140845,
+        "musique": 0.5454545454545454,
+        "2wiki": 0.6869565217391305
+      },
+      "minimum_dataset_gain": 0.10282913165266111,
+      "sum_dataset_gains": 7.403557422969188
+    },
+    {
+      "threshold": 0.53,
+      "gains": {
+        "hotpotqa": 1.2133333333333332,
+        "musique": 0.22282913165266105,
+        "2wiki": 5.7273949579831935
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.30985915492957744,
+        "musique": 0.5303030303030303,
+        "2wiki": 0.6608695652173913
+      },
+      "minimum_dataset_gain": 0.22282913165266105,
+      "sum_dataset_gains": 7.163557422969188
+    },
+    {
+      "threshold": 0.54,
+      "gains": {
+        "hotpotqa": 0.9199999999999999,
+        "musique": -0.0971708683473389,
+        "2wiki": 5.387394957983194
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.2676056338028169,
+        "musique": 0.5,
+        "2wiki": 0.6347826086956522
+      },
+      "minimum_dataset_gain": -0.0971708683473389,
+      "sum_dataset_gains": 6.2102240896358545
+    },
+    {
+      "threshold": 0.55,
+      "gains": {
+        "hotpotqa": 1.0533333333333332,
+        "musique": -0.2971708683473389,
+        "2wiki": 5.167394957983193
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.23943661971830985,
+        "musique": 0.48484848484848486,
+        "2wiki": 0.6
+      },
+      "minimum_dataset_gain": -0.2971708683473389,
+      "sum_dataset_gains": 5.923557422969187
+    },
+    {
+      "threshold": 0.56,
+      "gains": {
+        "hotpotqa": 0.9733333333333333,
+        "musique": -0.2971708683473389,
+        "2wiki": 4.967394957983194
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.22535211267605634,
+        "musique": 0.48484848484848486,
+        "2wiki": 0.5739130434782609
+      },
+      "minimum_dataset_gain": -0.2971708683473389,
+      "sum_dataset_gains": 5.643557422969188
+    },
+    {
+      "threshold": 0.5700000000000001,
+      "gains": {
+        "hotpotqa": 1.0666666666666664,
+        "musique": -0.2971708683473389,
+        "2wiki": 4.869617180205415
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.19718309859154928,
+        "musique": 0.48484848484848486,
+        "2wiki": 0.5391304347826087
+      },
+      "minimum_dataset_gain": -0.2971708683473389,
+      "sum_dataset_gains": 5.639112978524742
+    },
+    {
+      "threshold": 0.5800000000000001,
+      "gains": {
+        "hotpotqa": 0.9666666666666667,
+        "musique": -0.3971708683473389,
+        "2wiki": 4.676760037348273
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.18309859154929578,
+        "musique": 0.4696969696969697,
+        "2wiki": 0.5130434782608696
+      },
+      "minimum_dataset_gain": -0.3971708683473389,
+      "sum_dataset_gains": 5.246255835667601
+    },
+    {
+      "threshold": 0.5900000000000001,
+      "gains": {
+        "hotpotqa": 0.9666666666666667,
+        "musique": -0.0971708683473389,
+        "2wiki": 4.248188608776845
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.18309859154929578,
+        "musique": 0.4393939393939394,
+        "2wiki": 0.48695652173913045
+      },
+      "minimum_dataset_gain": -0.0971708683473389,
+      "sum_dataset_gains": 5.1176844070961724
+    },
+    {
+      "threshold": 0.6000000000000001,
+      "gains": {
+        "hotpotqa": 1.1666666666666665,
+        "musique": 0.04282913165266109,
+        "2wiki": 4.248188608776845
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.16901408450704225,
+        "musique": 0.3939393939393939,
+        "2wiki": 0.46956521739130436
+      },
+      "minimum_dataset_gain": 0.04282913165266109,
+      "sum_dataset_gains": 5.457684407096172
+    },
+    {
+      "threshold": 0.6100000000000001,
+      "gains": {
+        "hotpotqa": 1.1666666666666665,
+        "musique": -0.20717086834733892,
+        "2wiki": 3.4815219421101773
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.16901408450704225,
+        "musique": 0.36363636363636365,
+        "2wiki": 0.40869565217391307
+      },
+      "minimum_dataset_gain": -0.20717086834733892,
+      "sum_dataset_gains": 4.441017740429505
+    },
+    {
+      "threshold": 0.6200000000000001,
+      "gains": {
+        "hotpotqa": 0.8333333333333334,
+        "musique": 0.1676190476190476,
+        "2wiki": 3.4815219421101773
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.11267605633802817,
+        "musique": 0.2878787878787879,
+        "2wiki": 0.391304347826087
+      },
+      "minimum_dataset_gain": 0.1676190476190476,
+      "sum_dataset_gains": 4.482474323062558
+    },
+    {
+      "threshold": 0.6300000000000001,
+      "gains": {
+        "hotpotqa": 0.8333333333333334,
+        "musique": -0.03238095238095238,
+        "2wiki": 3.3015219421101776
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.11267605633802817,
+        "musique": 0.24242424242424243,
+        "2wiki": 0.3565217391304348
+      },
+      "minimum_dataset_gain": -0.03238095238095238,
+      "sum_dataset_gains": 4.102474323062559
+    },
+    {
+      "threshold": 0.6400000000000001,
+      "gains": {
+        "hotpotqa": 0.8333333333333334,
+        "musique": -0.2038095238095238,
+        "2wiki": 2.7777124183006534
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.11267605633802817,
+        "musique": 0.19696969696969696,
+        "2wiki": 0.3217391304347826
+      },
+      "minimum_dataset_gain": -0.2038095238095238,
+      "sum_dataset_gains": 3.407236227824463
+    },
+    {
+      "threshold": 0.6500000000000001,
+      "gains": {
+        "hotpotqa": 0.5,
+        "musique": -0.2038095238095238,
+        "2wiki": 2.6777124183006538
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.08450704225352113,
+        "musique": 0.16666666666666666,
+        "2wiki": 0.30434782608695654
+      },
+      "minimum_dataset_gain": -0.2038095238095238,
+      "sum_dataset_gains": 2.97390289449113
+    },
+    {
+      "threshold": 0.6600000000000001,
+      "gains": {
+        "hotpotqa": 0.4466666666666667,
+        "musique": 0.0361904761904762,
+        "2wiki": 2.6840616246498596
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.056338028169014086,
+        "musique": 0.13636363636363635,
+        "2wiki": 0.28695652173913044
+      },
+      "minimum_dataset_gain": 0.0361904761904762,
+      "sum_dataset_gains": 3.1669187675070027
+    },
+    {
+      "threshold": 0.6700000000000002,
+      "gains": {
+        "hotpotqa": 0.32666666666666666,
+        "musique": -0.1638095238095238,
+        "2wiki": 2.2173949579831933
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.04225352112676056,
+        "musique": 0.12121212121212122,
+        "2wiki": 0.24347826086956523
+      },
+      "minimum_dataset_gain": -0.1638095238095238,
+      "sum_dataset_gains": 2.380252100840336
+    },
+    {
+      "threshold": 0.6800000000000002,
+      "gains": {
+        "hotpotqa": 0.3,
+        "musique": -0.1638095238095238,
+        "2wiki": 2.1373949579831932
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.028169014084507043,
+        "musique": 0.12121212121212122,
+        "2wiki": 0.21739130434782608
+      },
+      "minimum_dataset_gain": -0.1638095238095238,
+      "sum_dataset_gains": 2.273585434173669
+    },
+    {
+      "threshold": 0.6900000000000002,
+      "gains": {
+        "hotpotqa": 0.3,
+        "musique": -0.1638095238095238,
+        "2wiki": 1.5373949579831934
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.028169014084507043,
+        "musique": 0.12121212121212122,
+        "2wiki": 0.19130434782608696
+      },
+      "minimum_dataset_gain": -0.1638095238095238,
+      "sum_dataset_gains": 1.6735854341736696
+    },
+    {
+      "threshold": 0.7000000000000002,
+      "gains": {
+        "hotpotqa": 0.3,
+        "musique": 0.0361904761904762,
+        "2wiki": 1.4373949579831933
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.028169014084507043,
+        "musique": 0.10606060606060606,
+        "2wiki": 0.1826086956521739
+      },
+      "minimum_dataset_gain": 0.0361904761904762,
+      "sum_dataset_gains": 1.7735854341736694
+    },
+    {
+      "threshold": 0.7100000000000002,
+      "gains": {
+        "hotpotqa": 0.3,
+        "musique": -0.1638095238095238,
+        "2wiki": 1.2373949579831933
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.028169014084507043,
+        "musique": 0.09090909090909091,
+        "2wiki": 0.14782608695652175
+      },
+      "minimum_dataset_gain": -0.1638095238095238,
+      "sum_dataset_gains": 1.3735854341736695
+    },
+    {
+      "threshold": 0.7200000000000002,
+      "gains": {
+        "hotpotqa": 0.3,
+        "musique": -0.10666666666666665,
+        "2wiki": 1.0802521008403363
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.028169014084507043,
+        "musique": 0.07575757575757576,
+        "2wiki": 0.13043478260869565
+      },
+      "minimum_dataset_gain": -0.10666666666666665,
+      "sum_dataset_gains": 1.2735854341736697
+    },
+    {
+      "threshold": 0.7300000000000002,
+      "gains": {
+        "hotpotqa": 0.3,
+        "musique": 0.1466666666666667,
+        "2wiki": 0.8642857142857142
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.028169014084507043,
+        "musique": 0.045454545454545456,
+        "2wiki": 0.10434782608695652
+      },
+      "minimum_dataset_gain": 0.1466666666666667,
+      "sum_dataset_gains": 1.3109523809523809
+    },
+    {
+      "threshold": 0.7400000000000002,
+      "gains": {
+        "hotpotqa": 0.3,
+        "musique": 0.1466666666666667,
+        "2wiki": 0.9642857142857142
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.028169014084507043,
+        "musique": 0.045454545454545456,
+        "2wiki": 0.09565217391304348
+      },
+      "minimum_dataset_gain": 0.1466666666666667,
+      "sum_dataset_gains": 1.410952380952381
+    },
+    {
+      "threshold": 0.7500000000000002,
+      "gains": {
+        "hotpotqa": 0.3,
+        "musique": 0.1466666666666667,
+        "2wiki": 0.8642857142857142
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.028169014084507043,
+        "musique": 0.045454545454545456,
+        "2wiki": 0.06956521739130435
+      },
+      "minimum_dataset_gain": 0.1466666666666667,
+      "sum_dataset_gains": 1.3109523809523809
+    },
+    {
+      "threshold": 0.76,
+      "gains": {
+        "hotpotqa": 0.3,
+        "musique": 0.1466666666666667,
+        "2wiki": 0.5976190476190476
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.028169014084507043,
+        "musique": 0.045454545454545456,
+        "2wiki": 0.05217391304347826
+      },
+      "minimum_dataset_gain": 0.1466666666666667,
+      "sum_dataset_gains": 1.0442857142857143
+    },
+    {
+      "threshold": 0.77,
+      "gains": {
+        "hotpotqa": 0.3,
+        "musique": 0.1466666666666667,
+        "2wiki": 0.5142857142857143
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.028169014084507043,
+        "musique": 0.045454545454545456,
+        "2wiki": 0.034782608695652174
+      },
+      "minimum_dataset_gain": 0.1466666666666667,
+      "sum_dataset_gains": 0.960952380952381
+    },
+    {
+      "threshold": 0.78,
+      "gains": {
+        "hotpotqa": 0.3,
+        "musique": 0.1466666666666667,
+        "2wiki": 0.44761904761904764
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.028169014084507043,
+        "musique": 0.045454545454545456,
+        "2wiki": 0.02608695652173913
+      },
+      "minimum_dataset_gain": 0.1466666666666667,
+      "sum_dataset_gains": 0.8942857142857144
+    },
+    {
+      "threshold": 0.79,
+      "gains": {
+        "hotpotqa": 0.2,
+        "musique": 0.08,
+        "2wiki": 0.31428571428571433
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.014084507042253521,
+        "musique": 0.030303030303030304,
+        "2wiki": 0.017391304347826087
+      },
+      "minimum_dataset_gain": 0.08,
+      "sum_dataset_gains": 0.5942857142857143
+    },
+    {
+      "threshold": 0.8,
+      "gains": {
+        "hotpotqa": 0.2,
+        "musique": 0.08,
+        "2wiki": 0.11428571428571431
+      },
+      "decisive_method_route_rates": {
+        "hotpotqa": 0.014084507042253521,
+        "musique": 0.030303030303030304,
+        "2wiki": 0.008695652173913044
+      },
+      "minimum_dataset_gain": 0.08,
+      "sum_dataset_gains": 0.39428571428571435
+    }
+  ],
+  "heldout": {
+    "hotpotqa": {
+      "count": 1500,
+      "method_route_rate": 99.66666666666667,
+      "direct_em": 53.0,
+      "method_em": 52.53333333333333,
+      "routed_em": 52.53333333333333,
+      "direct_f1": 66.01750545750545,
+      "method_f1": 66.26302623302624,
+      "routed_f1": 66.26302623302624,
+      "paired_bootstrap_vs_direct": {
+        "em": {
+          "gain": -0.46666666666666673,
+          "ci95_low": -1.9333333333333333,
+          "ci95_high": 1.0,
+          "probability_positive": 25.124999999999996
+        },
+        "f1": {
+          "gain": 0.24552077552077545,
+          "ci95_low": -1.1540952195952197,
+          "ci95_high": 1.6693482905982893,
+          "probability_positive": 63.175000000000004
+        }
+      }
+    },
+    "musique": {
+      "count": 1500,
+      "method_route_rate": 96.86666666666667,
+      "direct_em": 23.400000000000002,
+      "method_em": 24.2,
+      "routed_em": 24.133333333333333,
+      "direct_f1": 31.82348575172104,
+      "method_f1": 32.203748745807566,
+      "routed_f1": 32.114859856918684,
+      "paired_bootstrap_vs_direct": {
+        "em": {
+          "gain": 0.7333333333333333,
+          "ci95_low": -0.6,
+          "ci95_high": 2.1333333333333333,
+          "probability_positive": 84.28
+        },
+        "f1": {
+          "gain": 0.29137410519763446,
+          "ci95_low": -1.0897461095549328,
+          "ci95_high": 1.6530980781201359,
+          "probability_positive": 66.415
+        }
+      }
+    },
+    "2wiki": {
+      "count": 1500,
+      "method_route_rate": 99.93333333333332,
+      "direct_em": 45.6,
+      "method_em": 49.06666666666666,
+      "routed_em": 49.06666666666666,
+      "direct_f1": 52.06065619565619,
+      "method_f1": 55.11359788359789,
+      "routed_f1": 55.11359788359789,
+      "paired_bootstrap_vs_direct": {
+        "em": {
+          "gain": 3.4666666666666663,
+          "ci95_low": 1.5333333333333332,
+          "ci95_high": 5.4,
+          "probability_positive": 99.95
+        },
+        "f1": {
+          "gain": 3.0529416879416877,
+          "ci95_low": 1.2168452380952381,
+          "ci95_high": 4.899680976430975,
+          "probability_positive": 99.95
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# Installed package snapshot at publication export; not the original experiment lockfile.
+# Python 3.12.3
+streamlit==1.60.0
+sentence-transformers==3.4.1
+faiss-cpu==1.14.3
+numpy==2.5.1
+PyMuPDF==1.28.0
+pandas==2.3.3
+requests==2.34.2
+python-dotenv==1.2.2
+rank-bm25==0.2.2
+scikit-learn==1.9.0
+joblib==1.5.3
+matplotlib==3.11.2
+datasets==4.8.5
+gdown==5.2.2
+torch==2.13.0
+pytest==9.1.1

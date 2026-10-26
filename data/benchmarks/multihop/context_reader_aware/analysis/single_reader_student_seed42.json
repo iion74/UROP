@@ -1,0 +1,380 @@
+{
+  "format_version": 1,
+  "method": "single_reader_selective_student",
+  "training_sample_seeds": [
+    "42"
+  ],
+  "bootstrap_samples": 20000,
+  "cost_note": "Reader token accounting excludes planner rewrite tokens because legacy prefix rows did not store them. Latency uses exact cumulative rewrite time plus a proportional allocation of retrieval/overhead residual; step3 exactly equals recorded total planner latency. Reader-free methods call the reader exactly once.",
+  "datasets": {
+    "hotpotqa": {
+      "count": 7405,
+      "fixed3": {
+        "em": 0.5773126266036462,
+        "f1": 0.7177659445685352,
+        "average_additional_searches": 3.0,
+        "estimated_online_latency_seconds": 2.7589914271147995,
+        "average_reader_generated_tokens": 51.019041188386225
+      },
+      "student_across_training_seeds": {
+        "seed_count": 1,
+        "em_mean": 0.5781228899392302,
+        "em_std": 0.0,
+        "f1_mean": 0.7187751957219783,
+        "f1_std": 0.0,
+        "average_additional_searches_mean": 2.5814989871708307,
+        "estimated_online_latency_seconds_mean": 2.897378096727892,
+        "average_reader_generated_tokens_mean": 79.06765698852126,
+        "per_seed": [
+          {
+            "training_sample_seed": "42",
+            "em": 0.5781228899392302,
+            "f1": 0.7187751957219783,
+            "em_change_vs_fixed3_points": 0.08102633355840648,
+            "f1_change_vs_fixed3_points": 0.10092511534429828,
+            "average_additional_searches": 2.5814989871708307,
+            "search_reduction_percent_vs_fixed3": 13.95003376097231,
+            "estimated_online_latency_seconds": 2.897378096727892,
+            "latency_reduction_percent_vs_fixed3": -5.015842682694008,
+            "average_reader_generated_tokens": 79.06765698852126,
+            "reader_token_reduction_percent_vs_fixed3": -54.97675994452032,
+            "average_reader_calls": 1.5814989871708305
+          }
+        ]
+      },
+      "comparison_vs_fixed3": {
+        "em": {
+          "observed_change_points": 0.08102633355840648,
+          "ci95_low": -0.2025658338960162,
+          "ci95_high": 0.36461850101282917,
+          "probability_positive": 0.6963,
+          "probability_noninferior_margin_1_point": 1.0
+        },
+        "f1": {
+          "observed_change_points": 0.10092511534429828,
+          "ci95_low": -0.15694441027715075,
+          "ci95_high": 0.3660788874560401,
+          "probability_positive": 0.7725,
+          "probability_noninferior_margin_1_point": 1.0
+        }
+      },
+      "deployment_ensembles": {
+        "unanimous_stop": {
+          "em": 0.5781228899392302,
+          "f1": 0.7187751957219783,
+          "em_change_vs_fixed3": {
+            "observed_change_points": 0.08102633355840648,
+            "ci95_low": -0.2025658338960162,
+            "ci95_high": 0.36461850101282917,
+            "probability_positive": 0.6926,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "f1_change_vs_fixed3": {
+            "observed_change_points": 0.10092511534429828,
+            "ci95_low": -0.15853665109181342,
+            "ci95_high": 0.36680435126654465,
+            "probability_positive": 0.77325,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "average_additional_searches": 2.5814989871708307,
+          "search_reduction_percent_vs_fixed3": 13.95003376097231,
+          "estimated_online_latency_seconds": 2.897378096727892,
+          "latency_reduction_percent_vs_fixed3": -5.015842682694008,
+          "average_reader_generated_tokens": 79.06765698852126
+        },
+        "majority_vote": {
+          "em": 0.5781228899392302,
+          "f1": 0.7187751957219783,
+          "em_change_vs_fixed3": {
+            "observed_change_points": 0.08102633355840648,
+            "ci95_low": -0.21607022282241728,
+            "ci95_high": 0.36461850101282917,
+            "probability_positive": 0.69165,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "f1_change_vs_fixed3": {
+            "observed_change_points": 0.10092511534429828,
+            "ci95_low": -0.16108502634655503,
+            "ci95_high": 0.36273202912878943,
+            "probability_positive": 0.77215,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "average_additional_searches": 2.5814989871708307,
+          "search_reduction_percent_vs_fixed3": 13.95003376097231,
+          "estimated_online_latency_seconds": 2.897378096727892,
+          "latency_reduction_percent_vs_fixed3": -5.015842682694008,
+          "average_reader_generated_tokens": 79.06765698852126
+        },
+        "any_stop": {
+          "em": 0.5781228899392302,
+          "f1": 0.7187751957219783,
+          "em_change_vs_fixed3": {
+            "observed_change_points": 0.08102633355840648,
+            "ci95_low": -0.2025658338960162,
+            "ci95_high": 0.36461850101282917,
+            "probability_positive": 0.6993,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "f1_change_vs_fixed3": {
+            "observed_change_points": 0.10092511534429828,
+            "ci95_low": -0.16113095316425013,
+            "ci95_high": 0.3667508135509938,
+            "probability_positive": 0.7737,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "average_additional_searches": 2.5814989871708307,
+          "search_reduction_percent_vs_fixed3": 13.95003376097231,
+          "estimated_online_latency_seconds": 2.897378096727892,
+          "latency_reduction_percent_vs_fixed3": -5.015842682694008,
+          "average_reader_generated_tokens": 79.06765698852126
+        }
+      }
+    },
+    "musique": {
+      "count": 2417,
+      "fixed3": {
+        "em": 0.3491932147290029,
+        "f1": 0.4448753642716957,
+        "average_additional_searches": 3.0,
+        "estimated_online_latency_seconds": 3.101921813828384,
+        "average_reader_generated_tokens": 50.07654116673562
+      },
+      "student_across_training_seeds": {
+        "seed_count": 1,
+        "em_mean": 0.34671079851055026,
+        "em_std": 0.0,
+        "f1_mean": 0.442311598517386,
+        "f1_std": 0.0,
+        "average_additional_searches_mean": 2.813818783616053,
+        "estimated_online_latency_seconds_mean": 3.5269852729852107,
+        "average_reader_generated_tokens_mean": 89.36367397600331,
+        "per_seed": [
+          {
+            "training_sample_seed": "42",
+            "em": 0.34671079851055026,
+            "f1": 0.442311598517386,
+            "em_change_vs_fixed3_points": -0.24824162184526274,
+            "f1_change_vs_fixed3_points": -0.2563765754309762,
+            "average_additional_searches": 2.813818783616053,
+            "search_reduction_percent_vs_fixed3": 6.206040546131572,
+            "estimated_online_latency_seconds": 3.5269852729852107,
+            "latency_reduction_percent_vs_fixed3": -13.703229309710235,
+            "average_reader_generated_tokens": 89.36367397600331,
+            "reader_token_reduction_percent_vs_fixed3": -78.45416615028711,
+            "average_reader_calls": 1.8138187836160529
+          }
+        ]
+      },
+      "comparison_vs_fixed3": {
+        "em": {
+          "observed_change_points": -0.24824162184526274,
+          "ci95_low": -0.7447248655357882,
+          "ci95_high": 0.2068680182043856,
+          "probability_positive": 0.1328,
+          "probability_noninferior_margin_1_point": 0.999
+        },
+        "f1": {
+          "observed_change_points": -0.2563765754309762,
+          "ci95_low": -0.7253764343444212,
+          "ci95_high": 0.20133944022851266,
+          "probability_positive": 0.1376,
+          "probability_noninferior_margin_1_point": 0.999
+        }
+      },
+      "deployment_ensembles": {
+        "unanimous_stop": {
+          "em": 0.34671079851055026,
+          "f1": 0.442311598517386,
+          "em_change_vs_fixed3": {
+            "observed_change_points": -0.24824162184526274,
+            "ci95_low": -0.703351261894911,
+            "ci95_high": 0.2068680182043856,
+            "probability_positive": 0.13225,
+            "probability_noninferior_margin_1_point": 0.9992
+          },
+          "f1_change_vs_fixed3": {
+            "observed_change_points": -0.2563765754309762,
+            "ci95_low": -0.7271813746687033,
+            "ci95_high": 0.20135882458690685,
+            "probability_positive": 0.14255,
+            "probability_noninferior_margin_1_point": 0.99895
+          },
+          "average_additional_searches": 2.813818783616053,
+          "search_reduction_percent_vs_fixed3": 6.206040546131572,
+          "estimated_online_latency_seconds": 3.5269852729852107,
+          "latency_reduction_percent_vs_fixed3": -13.703229309710235,
+          "average_reader_generated_tokens": 89.36367397600331
+        },
+        "majority_vote": {
+          "em": 0.34671079851055026,
+          "f1": 0.442311598517386,
+          "em_change_vs_fixed3": {
+            "observed_change_points": -0.24824162184526274,
+            "ci95_low": -0.703351261894911,
+            "ci95_high": 0.2068680182043856,
+            "probability_positive": 0.1309,
+            "probability_noninferior_margin_1_point": 0.99905
+          },
+          "f1_change_vs_fixed3": {
+            "observed_change_points": -0.2563765754309762,
+            "ci95_low": -0.7161385628397928,
+            "ci95_high": 0.20987654923133212,
+            "probability_positive": 0.142,
+            "probability_noninferior_margin_1_point": 0.9993
+          },
+          "average_additional_searches": 2.813818783616053,
+          "search_reduction_percent_vs_fixed3": 6.206040546131572,
+          "estimated_online_latency_seconds": 3.5269852729852107,
+          "latency_reduction_percent_vs_fixed3": -13.703229309710235,
+          "average_reader_generated_tokens": 89.36367397600331
+        },
+        "any_stop": {
+          "em": 0.34671079851055026,
+          "f1": 0.442311598517386,
+          "em_change_vs_fixed3": {
+            "observed_change_points": -0.24824162184526274,
+            "ci95_low": -0.703351261894911,
+            "ci95_high": 0.2068680182043856,
+            "probability_positive": 0.1343,
+            "probability_noninferior_margin_1_point": 0.99875
+          },
+          "f1_change_vs_fixed3": {
+            "observed_change_points": -0.2563765754309762,
+            "ci95_low": -0.7215168488876023,
+            "ci95_high": 0.20626294223677322,
+            "probability_positive": 0.1388,
+            "probability_noninferior_margin_1_point": 0.99935
+          },
+          "average_additional_searches": 2.813818783616053,
+          "search_reduction_percent_vs_fixed3": 6.206040546131572,
+          "estimated_online_latency_seconds": 3.5269852729852107,
+          "latency_reduction_percent_vs_fixed3": -13.703229309710235,
+          "average_reader_generated_tokens": 89.36367397600331
+        }
+      }
+    },
+    "2wiki": {
+      "count": 12576,
+      "fixed3": {
+        "em": 0.5716444020356234,
+        "f1": 0.6401464263957943,
+        "average_additional_searches": 3.0,
+        "estimated_online_latency_seconds": 2.401063772504658,
+        "average_reader_generated_tokens": 60.923584605597966
+      },
+      "student_across_training_seeds": {
+        "seed_count": 1,
+        "em_mean": 0.5714058524173028,
+        "em_std": 0.0,
+        "f1_mean": 0.6402029218423183,
+        "f1_std": 0.0,
+        "average_additional_searches_mean": 2.7088899491094147,
+        "estimated_online_latency_seconds_mean": 2.7462389229067714,
+        "average_reader_generated_tokens_mean": 104.858381043257,
+        "per_seed": [
+          {
+            "training_sample_seed": "42",
+            "em": 0.5714058524173028,
+            "f1": 0.6402029218423183,
+            "em_change_vs_fixed3_points": -0.023854961832061067,
+            "f1_change_vs_fixed3_points": 0.005649544652407251,
+            "average_additional_searches": 2.7088899491094147,
+            "search_reduction_percent_vs_fixed3": 9.703668363019508,
+            "estimated_online_latency_seconds": 2.7462389229067714,
+            "latency_reduction_percent_vs_fixed3": -14.375925968931904,
+            "average_reader_generated_tokens": 104.858381043257,
+            "reader_token_reduction_percent_vs_fixed3": -72.11459522954938,
+            "average_reader_calls": 1.7088899491094147
+          }
+        ]
+      },
+      "comparison_vs_fixed3": {
+        "em": {
+          "observed_change_points": -0.023854961832061067,
+          "ci95_low": -0.2544529262086514,
+          "ci95_high": 0.20674300254452924,
+          "probability_positive": 0.40465,
+          "probability_noninferior_margin_1_point": 1.0
+        },
+        "f1": {
+          "observed_change_points": 0.005649544652407251,
+          "ci95_low": -0.20865933272004358,
+          "ci95_high": 0.21672970155198185,
+          "probability_positive": 0.52785,
+          "probability_noninferior_margin_1_point": 1.0
+        }
+      },
+      "deployment_ensembles": {
+        "unanimous_stop": {
+          "em": 0.5714058524173028,
+          "f1": 0.6402029218423183,
+          "em_change_vs_fixed3": {
+            "observed_change_points": -0.023854961832061067,
+            "ci95_low": -0.2544529262086514,
+            "ci95_high": 0.21469465648854963,
+            "probability_positive": 0.3989,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "f1_change_vs_fixed3": {
+            "observed_change_points": 0.005649544652407251,
+            "ci95_low": -0.21056766512396285,
+            "ci95_high": 0.22252062052574897,
+            "probability_positive": 0.52505,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "average_additional_searches": 2.7088899491094147,
+          "search_reduction_percent_vs_fixed3": 9.703668363019508,
+          "estimated_online_latency_seconds": 2.7462389229067714,
+          "latency_reduction_percent_vs_fixed3": -14.375925968931904,
+          "average_reader_generated_tokens": 104.858381043257
+        },
+        "majority_vote": {
+          "em": 0.5714058524173028,
+          "f1": 0.6402029218423183,
+          "em_change_vs_fixed3": {
+            "observed_change_points": -0.023854961832061067,
+            "ci95_low": -0.2544529262086514,
+            "ci95_high": 0.21469465648854963,
+            "probability_positive": 0.40675,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "f1_change_vs_fixed3": {
+            "observed_change_points": 0.005649544652407251,
+            "ci95_low": -0.21036232628253146,
+            "ci95_high": 0.22138137001269154,
+            "probability_positive": 0.52475,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "average_additional_searches": 2.7088899491094147,
+          "search_reduction_percent_vs_fixed3": 9.703668363019508,
+          "estimated_online_latency_seconds": 2.7462389229067714,
+          "latency_reduction_percent_vs_fixed3": -14.375925968931904,
+          "average_reader_generated_tokens": 104.858381043257
+        },
+        "any_stop": {
+          "em": 0.5714058524173028,
+          "f1": 0.6402029218423183,
+          "em_change_vs_fixed3": {
+            "observed_change_points": -0.023854961832061067,
+            "ci95_low": -0.2544529262086514,
+            "ci95_high": 0.20674300254452924,
+            "probability_positive": 0.40435,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "f1_change_vs_fixed3": {
+            "observed_change_points": 0.005649544652407251,
+            "ci95_low": -0.21154379209901633,
+            "ci95_high": 0.21877792876123014,
+            "probability_positive": 0.52245,
+            "probability_noninferior_margin_1_point": 1.0
+          },
+          "average_additional_searches": 2.7088899491094147,
+          "search_reduction_percent_vs_fixed3": 9.703668363019508,
+          "estimated_online_latency_seconds": 2.7462389229067714,
+          "latency_reduction_percent_vs_fixed3": -14.375925968931904,
+          "average_reader_generated_tokens": 104.858381043257
+        }
+      }
+    }
+  }
+}

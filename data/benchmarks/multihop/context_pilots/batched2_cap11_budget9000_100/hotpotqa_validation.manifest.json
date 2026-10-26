@@ -1,0 +1,35 @@
+{
+  "format_version": 2,
+  "experiment": "stop_prefix_answer_oracle_v2_context_allocation",
+  "dataset": "hotpotqa",
+  "split": "validation",
+  "trajectory_signature": "8fe49dc588f7287c1171bbc2e46f904bee54dc6f82a367e992038429dc4f620c",
+  "corpus_fingerprint": "f6fb9de76b24fd8f7966f1023efcac065a5e45e242df9698ac0408247b5e0dc5",
+  "corpus_examples_per_dataset": 2000,
+  "corpus_seed": 42,
+  "actions": [
+    "planned_continue_2",
+    "planned_continue_3"
+  ],
+  "max_evidence_hops": 4,
+  "context_character_budget": 9000,
+  "context_allocation": "balanced",
+  "context_source_order": "trajectory",
+  "context_compression": "none",
+  "focused_sentences_per_source": 2,
+  "reader": {
+    "host": "http://127.0.0.1:11434",
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "max_tokens": 64,
+    "timeout_seconds": 300,
+    "seed": 42,
+    "temperature": 0.0,
+    "keep_alive": "30m",
+    "prompt_version": "multihop_short_answer_v2_json",
+    "thinking": false
+  },
+  "status": "ready",
+  "completed_rows": 100,
+  "requested_rows": 100
+}

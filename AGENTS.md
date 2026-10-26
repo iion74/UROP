@@ -3,9 +3,13 @@
 ## Preserve local research data
 
 - Never delete or overwrite unrelated user changes.
-- Do not publish `.env`, credentials, datasets, trained models, generated results,
-  paper drafts, or manuscript review notes. Respect `.gitignore`; never use
-  `git add -f` without explicit approval for the exact files.
+- Never publish `.env`, credentials, private study logs, virtual environments,
+  caches, or third-party source documents without verified redistribution rights.
+- On 2026-10-26 the user authorized publication of project code, manuscripts,
+  figures, review notes, experiment reports and learned policy models. Respect
+  the reviewed `.gitignore` publication scope; do not force-add ignored files.
+- Keep large model bundles and numerical replay data in GitHub Releases, not
+  regular Git. Do not change repository visibility or invent a software license.
 - Do not launch experiments, model servers, or GPU workloads merely to sync Git.
 
 ## GitHub synchronization

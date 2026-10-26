@@ -1,0 +1,11 @@
+# Preserve binary research artifacts and legitimate generated-file formatting.
+*.py text eol=lf
+*.sh text eol=lf
+*.md whitespace=-blank-at-eol
+*.csv whitespace=cr-at-eol
+*.svg -whitespace
+*.pdf -text
+*.hwp -text
+*.hwpx -text
+*.png -text
+*.joblib -text

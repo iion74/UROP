@@ -1,0 +1,62 @@
+{
+  "format_version": 1,
+  "experiment": "dual_value_adaptive_thinking_pilot",
+  "sample_seed": 42,
+  "rows_per_dataset": 0,
+  "reader": {
+    "host": "http://127.0.0.1:11434",
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "max_tokens": 512,
+    "timeout_seconds": 300,
+    "seed": 42,
+    "temperature": 0.0,
+    "keep_alive": "30m",
+    "prompt_version": "multihop_evidence_chain_v3_json",
+    "thinking": true
+  },
+  "datasets": {
+    "hotpotqa": {
+      "count": 7405,
+      "baseline_em": 0.5763673193787981,
+      "baseline_f1": 0.7169088819826839,
+      "repair_em": 0.5716407832545577,
+      "repair_f1": 0.7153970343196338,
+      "em_change_points": -0.47265361242404547,
+      "f1_change_points": -0.15118476630501254,
+      "wrong_to_exact": 394,
+      "exact_to_wrong": 429,
+      "average_latency_seconds": 0.7851472818516468,
+      "average_prompt_tokens": 1063.9507089804185,
+      "average_generated_tokens": 48.52815665091155
+    },
+    "musique": {
+      "count": 2417,
+      "baseline_em": 0.34671079851055026,
+      "baseline_f1": 0.44091379360245964,
+      "repair_em": 0.3442283822920976,
+      "repair_f1": 0.4450608245431928,
+      "em_change_points": -0.24824162184526322,
+      "f1_change_points": 0.4147030940733154,
+      "wrong_to_exact": 152,
+      "exact_to_wrong": 158,
+      "average_latency_seconds": 0.8269836220072294,
+      "average_prompt_tokens": 1097.5345469590402,
+      "average_generated_tokens": 57.286719073231275
+    },
+    "2wiki": {
+      "count": 12576,
+      "baseline_em": 0.5710877862595419,
+      "baseline_f1": 0.6393457853698777,
+      "repair_em": 0.5654421119592875,
+      "repair_f1": 0.6425970229156944,
+      "em_change_points": -0.5645674300254422,
+      "f1_change_points": 0.32512375458166876,
+      "wrong_to_exact": 983,
+      "exact_to_wrong": 1054,
+      "average_latency_seconds": 0.7943499978784262,
+      "average_prompt_tokens": 898.2907124681934,
+      "average_generated_tokens": 59.86394720101781
+    }
+  }
+}

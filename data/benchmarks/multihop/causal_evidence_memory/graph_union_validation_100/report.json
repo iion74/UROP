@@ -1,0 +1,69 @@
+{
+  "hotpotqa": {
+    "count": 100,
+    "queries": 3.22,
+    "memory_documents": 38.32,
+    "selected_documents": 6.88,
+    "selected_width_distribution": {
+      "2": 1,
+      "4": 4,
+      "5": 16,
+      "6": 19,
+      "7": 6,
+      "8": 52,
+      "9": 2
+    },
+    "original_candidate_all_support_recall": 91.0,
+    "original_selected_all_support_recall": 90.0,
+    "memory_candidate_all_support_recall": 96.0,
+    "memory_selected_all_support_recall": 50.0,
+    "memory_selected_source_recall": 67.0,
+    "memory_selected_support_precision": 19.20753968253968
+  },
+  "musique": {
+    "count": 100,
+    "queries": 3.09,
+    "memory_documents": 41.24,
+    "selected_documents": 7.71,
+    "selected_width_distribution": {
+      "4": 13,
+      "5": 22,
+      "6": 13,
+      "7": 4,
+      "8": 37,
+      "12": 1,
+      "15": 4,
+      "18": 3,
+      "24": 1,
+      "27": 1,
+      "30": 1
+    },
+    "original_candidate_all_support_recall": 72.0,
+    "original_selected_all_support_recall": 67.0,
+    "memory_candidate_all_support_recall": 82.0,
+    "memory_selected_all_support_recall": 26.0,
+    "memory_selected_source_recall": 48.0,
+    "memory_selected_support_precision": 13.922089947089948
+  },
+  "2wiki": {
+    "count": 100,
+    "queries": 3.44,
+    "memory_documents": 40.6,
+    "selected_documents": 6.52,
+    "selected_width_distribution": {
+      "3": 1,
+      "4": 6,
+      "5": 15,
+      "6": 35,
+      "7": 6,
+      "8": 35,
+      "9": 2
+    },
+    "original_candidate_all_support_recall": 81.0,
+    "original_selected_all_support_recall": 80.0,
+    "memory_candidate_all_support_recall": 92.0,
+    "memory_selected_all_support_recall": 76.0,
+    "memory_selected_source_recall": 89.5,
+    "memory_selected_support_precision": 34.054761904761904
+  }
+}

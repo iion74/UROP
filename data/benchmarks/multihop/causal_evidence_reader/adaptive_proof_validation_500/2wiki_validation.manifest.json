@@ -1,0 +1,25 @@
+{
+  "format_version": 1,
+  "experiment": "adaptive_proof_completion_reader",
+  "dataset": "2wiki",
+  "split": "validation",
+  "requested_rows": 500,
+  "policy_predictions": "data/models/adaptive_proof_completion_policy.report.predictions.jsonl",
+  "direct_answer_root": "data/benchmarks/multihop/stop_answer_oracle_v7_evidence_survival_validation_2000",
+  "fixed_proof_root": "data/benchmarks/multihop/causal_evidence_reader/factorized_graph_repair_validation_2000",
+  "context_character_budget": 6000,
+  "reader": {
+    "host": "http://127.0.0.1:11434",
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "max_tokens": 64,
+    "timeout_seconds": 300,
+    "seed": 42,
+    "temperature": 0.0,
+    "keep_alive": "30m",
+    "prompt_version": "multihop_short_answer_v2_json",
+    "thinking": false
+  },
+  "status": "ready",
+  "completed_rows": 500
+}

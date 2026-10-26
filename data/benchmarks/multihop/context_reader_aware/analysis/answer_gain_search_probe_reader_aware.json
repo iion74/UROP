@@ -1,0 +1,491 @@
+{
+  "method": "direct_answer_f1_gain_for_third_search",
+  "feature_mode": "single_reader",
+  "label": "f1_after_third_search_minus_f1_after_second_search",
+  "training_questions": 6000,
+  "training_question_ids_disjoint_from_evaluations": true,
+  "features": 105,
+  "model_selection": "3-fold training-only OOF rank gain at 70% search budget",
+  "chosen_model": "hgb",
+  "oof": {
+    "hgb": {
+      "oof_mse": 0.051072637672215614,
+      "rank70_gain_over_random_points": 0.3456299162541329,
+      "pure_f1": {
+        "threshold": 0.0178412568480603,
+        "search_rate": 0.31,
+        "oof_policy_gain_points": 1.045571836555879,
+        "oof_utility_points": 1.045571836555879
+      },
+      "cost_0_1_f1_point_per_search": {
+        "threshold": 0.0178412568480603,
+        "search_rate": 0.31,
+        "oof_policy_gain_points": 1.045571836555879,
+        "oof_utility_points": 1.0145718365558793
+      }
+    },
+    "extra_trees": {
+      "oof_mse": 0.051212020016167335,
+      "rank70_gain_over_random_points": 0.29540348418946555,
+      "pure_f1": {
+        "threshold": 0.020789109683602914,
+        "search_rate": 0.23,
+        "oof_policy_gain_points": 0.8114852831310903,
+        "oof_utility_points": 0.8114852831310903
+      },
+      "cost_0_1_f1_point_per_search": {
+        "threshold": 0.03359726144308933,
+        "search_rate": 0.15,
+        "oof_policy_gain_points": 0.8109668109668109,
+        "oof_utility_points": 0.7959668109668111
+      }
+    }
+  },
+  "model_file": "data/models/answer_gain_search_probe_reader_aware.joblib",
+  "evaluation": {
+    "full_validation": {
+      "hotpotqa": {
+        "count": 7405,
+        "fixed2_em": 57.636731937879816,
+        "fixed2_f1": 71.69088819826838,
+        "fixed3_em": 57.73126266036462,
+        "fixed3_f1": 71.77659445685352,
+        "fixed3_estimated_latency_seconds": 2.7589914271147995,
+        "fixed3_reader_generated_tokens": 51.019041188386225,
+        "rank_at_existing_router_search_budget": {
+          "search_count": 4794,
+          "average_additional_searches": 2.647400405131668,
+          "average_reader_calls": 1.6474004051316677,
+          "estimated_latency_seconds": 2.9872562644262937,
+          "reader_generated_tokens": 83.01931127616476,
+          "em": 57.79878460499662,
+          "f1": 71.86498231956745,
+          "f1_change_vs_fixed3_points": 0.08838786271391799,
+          "f1_change_vs_fixed3_ci95": [
+            -0.1654302727121938,
+            0.34444390099673544
+          ],
+          "matched_random_expected_f1": 71.7463744647987,
+          "f1_change_vs_matched_random_points": 0.11860785476871334,
+          "f1_change_vs_matched_random_ci95": [
+            -0.08693765095007684,
+            0.3260703122824511
+          ],
+          "fraction_random_at_least_policy": 0.133
+        },
+        "pure_f1": {
+          "search_count": 1888,
+          "average_additional_searches": 2.2549628629304523,
+          "average_reader_calls": 1.2549628629304523,
+          "estimated_latency_seconds": 2.482553538347762,
+          "reader_generated_tokens": 62.89993247805537,
+          "em": 57.93382849426063,
+          "f1": 72.00039618064928,
+          "f1_change_vs_fixed3_points": 0.2238017237957641,
+          "f1_change_vs_fixed3_ci95": [
+            -0.13038866736954138,
+            0.5816019463711216
+          ],
+          "matched_random_expected_f1": 71.71274011132832,
+          "f1_change_vs_matched_random_points": 0.2876560693209673,
+          "f1_change_vs_matched_random_ci95": [
+            0.0712937210926636,
+            0.49395407261863794
+          ],
+          "fraction_random_at_least_policy": 0.002
+        },
+        "cost_0_1_f1_point": {
+          "search_count": 1888,
+          "average_additional_searches": 2.2549628629304523,
+          "average_reader_calls": 1.2549628629304523,
+          "estimated_latency_seconds": 2.482553538347762,
+          "reader_generated_tokens": 62.89993247805537,
+          "em": 57.93382849426063,
+          "f1": 72.00039618064928,
+          "f1_change_vs_fixed3_points": 0.2238017237957641,
+          "f1_change_vs_fixed3_ci95": [
+            -0.1399110135984606,
+            0.5961708716211568
+          ],
+          "matched_random_expected_f1": 71.71274011132832,
+          "f1_change_vs_matched_random_points": 0.2876560693209673,
+          "f1_change_vs_matched_random_ci95": [
+            0.08193332095468524,
+            0.49478430835728493
+          ],
+          "fraction_random_at_least_policy": 0.002
+        }
+      },
+      "musique": {
+        "count": 2417,
+        "fixed2_em": 34.671079851055026,
+        "fixed2_f1": 44.091379360245966,
+        "fixed3_em": 34.919321472900286,
+        "fixed3_f1": 44.48753642716957,
+        "fixed3_estimated_latency_seconds": 3.102395070752188,
+        "fixed3_reader_generated_tokens": 50.07654116673562,
+        "rank_at_existing_router_search_budget": {
+          "search_count": 2291,
+          "average_additional_searches": 2.947869259412495,
+          "average_reader_calls": 1.947869259412495,
+          "estimated_latency_seconds": 3.7167319583552683,
+          "reader_generated_tokens": 97.16259826230865,
+          "em": 34.919321472900286,
+          "f1": 44.48962301800255,
+          "f1_change_vs_fixed3_points": 0.0020865908329706453,
+          "f1_change_vs_fixed3_ci95": [
+            -0.23551722377746376,
+            0.22426664839780247
+          ],
+          "matched_random_expected_f1": 44.46688446588187,
+          "f1_change_vs_matched_random_points": 0.022738552120672044,
+          "f1_change_vs_matched_random_ci95": [
+            -0.18928253876059015,
+            0.2363308570008695
+          ],
+          "fraction_random_at_least_policy": 0.41
+        },
+        "pure_f1": {
+          "search_count": 874,
+          "average_additional_searches": 2.361605295821266,
+          "average_reader_calls": 1.361605295821266,
+          "estimated_latency_seconds": 2.915586277068892,
+          "reader_generated_tokens": 66.96152254861398,
+          "em": 35.29168390566819,
+          "f1": 44.95731765256665,
+          "f1_change_vs_fixed3_points": 0.46978122539708367,
+          "f1_change_vs_fixed3_ci95": [
+            -0.388855208828316,
+            1.310299060601757
+          ],
+          "matched_random_expected_f1": 44.23463185362256,
+          "f1_change_vs_matched_random_points": 0.7226857989440932,
+          "f1_change_vs_matched_random_ci95": [
+            0.23231044686721322,
+            1.2017699364833068
+          ],
+          "fraction_random_at_least_policy": 0.003
+        },
+        "cost_0_1_f1_point": {
+          "search_count": 874,
+          "average_additional_searches": 2.361605295821266,
+          "average_reader_calls": 1.361605295821266,
+          "estimated_latency_seconds": 2.915586277068892,
+          "reader_generated_tokens": 66.96152254861398,
+          "em": 35.29168390566819,
+          "f1": 44.95731765256665,
+          "f1_change_vs_fixed3_points": 0.46978122539708367,
+          "f1_change_vs_fixed3_ci95": [
+            -0.35130204242527496,
+            1.2644130080913647
+          ],
+          "matched_random_expected_f1": 44.23463185362256,
+          "f1_change_vs_matched_random_points": 0.7226857989440932,
+          "f1_change_vs_matched_random_ci95": [
+            0.24629114271002747,
+            1.2228380878193608
+          ],
+          "fraction_random_at_least_policy": 0.003
+        }
+      },
+      "2wiki": {
+        "count": 12576,
+        "fixed2_em": 57.108778625954194,
+        "fixed2_f1": 63.934578536987786,
+        "fixed3_em": 57.164440203562336,
+        "fixed3_f1": 64.01464263957944,
+        "fixed3_estimated_latency_seconds": 2.4011557196748052,
+        "fixed3_reader_generated_tokens": 60.923584605597966,
+        "rank_at_existing_router_search_budget": {
+          "search_count": 7615,
+          "average_additional_searches": 2.60551844783715,
+          "average_reader_calls": 1.60551844783715,
+          "estimated_latency_seconds": 2.6084500198025258,
+          "reader_generated_tokens": 96.88247455470739,
+          "em": 57.45069974554708,
+          "f1": 64.33524791605304,
+          "f1_change_vs_fixed3_points": 0.3206052764735971,
+          "f1_change_vs_fixed3_ci95": [
+            0.008601373313920992,
+            0.6189697519313452
+          ],
+          "matched_random_expected_f1": 63.983058828116555,
+          "f1_change_vs_matched_random_points": 0.35218908793647746,
+          "f1_change_vs_matched_random_ci95": [
+            0.11427529701967844,
+            0.5884576747899074
+          ],
+          "fraction_random_at_least_policy": 0.0
+        },
+        "pure_f1": {
+          "search_count": 3747,
+          "average_additional_searches": 2.297948473282443,
+          "average_reader_calls": 1.2979484732824427,
+          "estimated_latency_seconds": 2.257601274504381,
+          "reader_generated_tokens": 79.29142811704834,
+          "em": 57.55407124681934,
+          "f1": 64.41865314437715,
+          "f1_change_vs_fixed3_points": 0.4040105047977185,
+          "f1_change_vs_fixed3_ci95": [
+            0.03491391774132713,
+            0.7989326642266764
+          ],
+          "matched_random_expected_f1": 63.9584335141197,
+          "f1_change_vs_matched_random_points": 0.4602196302574587,
+          "f1_change_vs_matched_random_ci95": [
+            0.23780332584417266,
+            0.684117455958104
+          ],
+          "fraction_random_at_least_policy": 0.0
+        },
+        "cost_0_1_f1_point": {
+          "search_count": 3747,
+          "average_additional_searches": 2.297948473282443,
+          "average_reader_calls": 1.2979484732824427,
+          "estimated_latency_seconds": 2.257601274504381,
+          "reader_generated_tokens": 79.29142811704834,
+          "em": 57.55407124681934,
+          "f1": 64.41865314437715,
+          "f1_change_vs_fixed3_points": 0.4040105047977185,
+          "f1_change_vs_fixed3_ci95": [
+            0.05386951629795132,
+            0.76734449000074
+          ],
+          "matched_random_expected_f1": 63.9584335141197,
+          "f1_change_vs_matched_random_points": 0.4602196302574587,
+          "f1_change_vs_matched_random_ci95": [
+            0.23553619830463907,
+            0.6840945580740141
+          ],
+          "fraction_random_at_least_policy": 0.0
+        }
+      }
+    },
+    "disjoint_holdout_500": {
+      "hotpotqa": {
+        "count": 500,
+        "fixed2_em": 73.8,
+        "fixed2_f1": 81.76690975690977,
+        "fixed3_em": 73.4,
+        "fixed3_f1": 80.99373515373516,
+        "fixed3_estimated_latency_seconds": 2.605704484942253,
+        "fixed3_reader_generated_tokens": 53.21,
+        "rank_at_existing_router_search_budget": {
+          "search_count": 325,
+          "average_additional_searches": 2.65,
+          "average_reader_calls": 1.65,
+          "estimated_latency_seconds": 2.8164288556853427,
+          "reader_generated_tokens": 85.122,
+          "em": 73.4,
+          "f1": 81.1313542013542,
+          "f1_change_vs_fixed3_points": 0.1376190476190476,
+          "f1_change_vs_fixed3_ci95": [
+            -0.8339404761904761,
+            1.1097619047619036
+          ],
+          "matched_random_expected_f1": 81.26434626484628,
+          "f1_change_vs_matched_random_points": -0.13299206349206352,
+          "f1_change_vs_matched_random_ci95": [
+            -0.8860361111111111,
+            0.6042126984126978
+          ],
+          "fraction_random_at_least_policy": 0.6473333333333333
+        },
+        "pure_f1": {
+          "search_count": 144,
+          "average_additional_searches": 2.288,
+          "average_reader_calls": 1.288,
+          "estimated_latency_seconds": 2.379300048976516,
+          "reader_generated_tokens": 66.042,
+          "em": 74.2,
+          "f1": 82.07802086802087,
+          "f1_change_vs_fixed3_points": 1.0842857142857143,
+          "f1_change_vs_fixed3_ci95": [
+            -0.2033333333333333,
+            2.5467380952380947
+          ],
+          "matched_random_expected_f1": 81.54423547119548,
+          "f1_change_vs_matched_random_points": 0.5337853968253967,
+          "f1_change_vs_matched_random_ci95": [
+            0.009891492063492055,
+            1.1216377142857132
+          ],
+          "fraction_random_at_least_policy": 0.059333333333333335
+        },
+        "cost_0_1_f1_point": {
+          "search_count": 144,
+          "average_additional_searches": 2.288,
+          "average_reader_calls": 1.288,
+          "estimated_latency_seconds": 2.379300048976516,
+          "reader_generated_tokens": 66.042,
+          "em": 74.2,
+          "f1": 82.07802086802087,
+          "f1_change_vs_fixed3_points": 1.0842857142857143,
+          "f1_change_vs_fixed3_ci95": [
+            -0.3043928571428572,
+            2.499047619047619
+          ],
+          "matched_random_expected_f1": 81.54423547119548,
+          "f1_change_vs_matched_random_points": 0.5337853968253967,
+          "f1_change_vs_matched_random_ci95": [
+            0.04123371428571428,
+            1.1032704126984125
+          ],
+          "fraction_random_at_least_policy": 0.059333333333333335
+        }
+      },
+      "musique": {
+        "count": 500,
+        "fixed2_em": 38.800000000000004,
+        "fixed2_f1": 47.27150343808239,
+        "fixed3_em": 39.800000000000004,
+        "fixed3_f1": 48.314100840679785,
+        "fixed3_estimated_latency_seconds": 2.704896630080475,
+        "fixed3_reader_generated_tokens": 46.548,
+        "rank_at_existing_router_search_budget": {
+          "search_count": 465,
+          "average_additional_searches": 2.93,
+          "average_reader_calls": 1.9300000000000002,
+          "estimated_latency_seconds": 3.2027465330342335,
+          "reader_generated_tokens": 89.73,
+          "em": 40.0,
+          "f1": 48.528040234619176,
+          "f1_change_vs_fixed3_points": 0.21393939393939396,
+          "f1_change_vs_fixed3_ci95": [
+            -0.0921212121212121,
+            0.733939393939394
+          ],
+          "matched_random_expected_f1": 48.241119022497976,
+          "f1_change_vs_matched_random_points": 0.28692121212121213,
+          "f1_change_vs_matched_random_ci95": [
+            -0.059320378787878776,
+            0.77251606060606
+          ],
+          "fraction_random_at_least_policy": 0.156
+        },
+        "pure_f1": {
+          "search_count": 170,
+          "average_additional_searches": 2.34,
+          "average_reader_calls": 1.34,
+          "estimated_latency_seconds": 2.504351246211135,
+          "reader_generated_tokens": 60.862,
+          "em": 38.4,
+          "f1": 46.99483677141572,
+          "f1_change_vs_fixed3_points": -1.319264069264069,
+          "f1_change_vs_fixed3_ci95": [
+            -3.2294621212121215,
+            0.6868787878787866
+          ],
+          "matched_random_expected_f1": 47.62598655496551,
+          "f1_change_vs_matched_random_points": -0.6311497835497835,
+          "f1_change_vs_matched_random_ci95": [
+            -1.6880251082251083,
+            0.49457917748917735
+          ],
+          "fraction_random_at_least_policy": 0.8603333333333333
+        },
+        "cost_0_1_f1_point": {
+          "search_count": 170,
+          "average_additional_searches": 2.34,
+          "average_reader_calls": 1.34,
+          "estimated_latency_seconds": 2.504351246211135,
+          "reader_generated_tokens": 60.862,
+          "em": 38.4,
+          "f1": 46.99483677141572,
+          "f1_change_vs_fixed3_points": -1.319264069264069,
+          "f1_change_vs_fixed3_ci95": [
+            -3.3675779220779227,
+            0.5730725108225098
+          ],
+          "matched_random_expected_f1": 47.62598655496551,
+          "f1_change_vs_matched_random_points": -0.6311497835497835,
+          "f1_change_vs_matched_random_ci95": [
+            -1.7200574025974025,
+            0.43249777056277017
+          ],
+          "fraction_random_at_least_policy": 0.8656666666666667
+        }
+      },
+      "2wiki": {
+        "count": 500,
+        "fixed2_em": 77.2,
+        "fixed2_f1": 80.01734487734488,
+        "fixed3_em": 77.60000000000001,
+        "fixed3_f1": 80.42178932178932,
+        "fixed3_estimated_latency_seconds": 2.2346359567291803,
+        "fixed3_reader_generated_tokens": 56.344,
+        "rank_at_existing_router_search_budget": {
+          "search_count": 270,
+          "average_additional_searches": 2.54,
+          "average_reader_calls": 1.54,
+          "estimated_latency_seconds": 2.3425593696100013,
+          "reader_generated_tokens": 86.336,
+          "em": 76.8,
+          "f1": 79.56178932178932,
+          "f1_change_vs_fixed3_points": -0.86,
+          "f1_change_vs_fixed3_ci95": [
+            -2.3,
+            0.4
+          ],
+          "matched_random_expected_f1": 80.23574487734487,
+          "f1_change_vs_matched_random_points": -0.6739555555555556,
+          "f1_change_vs_matched_random_ci95": [
+            -1.5877266666666667,
+            0.2597711111111102
+          ],
+          "fraction_random_at_least_policy": 0.9363333333333334
+        },
+        "pure_f1": {
+          "search_count": 105,
+          "average_additional_searches": 2.21,
+          "average_reader_calls": 1.21,
+          "estimated_latency_seconds": 1.9962074353642916,
+          "reader_generated_tokens": 68.996,
+          "em": 77.60000000000001,
+          "f1": 80.36178932178932,
+          "f1_change_vs_fixed3_points": -0.060000000000000005,
+          "f1_change_vs_fixed3_ci95": [
+            -1.6005,
+            1.58
+          ],
+          "matched_random_expected_f1": 80.10227821067821,
+          "f1_change_vs_matched_random_points": 0.259511111111111,
+          "f1_change_vs_matched_random_ci95": [
+            -0.4249555555555556,
+            0.9861433333333331
+          ],
+          "fraction_random_at_least_policy": 0.279
+        },
+        "cost_0_1_f1_point": {
+          "search_count": 105,
+          "average_additional_searches": 2.21,
+          "average_reader_calls": 1.21,
+          "estimated_latency_seconds": 1.9962074353642916,
+          "reader_generated_tokens": 68.996,
+          "em": 77.60000000000001,
+          "f1": 80.36178932178932,
+          "f1_change_vs_fixed3_points": -0.060000000000000005,
+          "f1_change_vs_fixed3_ci95": [
+            -1.6,
+            1.6
+          ],
+          "matched_random_expected_f1": 80.10227821067821,
+          "f1_change_vs_matched_random_points": 0.259511111111111,
+          "f1_change_vs_matched_random_ci95": [
+            -0.3938333333333333,
+            0.9984399999999998
+          ],
+          "fraction_random_at_least_policy": 0.2653333333333333
+        }
+      }
+    }
+  },
+  "notes": [
+    "No Qwen inference was run; answers and retrieval prefixes are cached.",
+    "Matched-budget top-K ranking is a batch diagnostic, not an online stopping policy.",
+    "All results here compare step-2 and step-3 answer trajectories; REASON is not evaluated.",
+    "Official validation was used for earlier system development; the ID-disjoint holdout is only 500 per dataset.",
+    "single_reader mode requires reading the step-2 answer before deciding SEARCH, adding a reader call on SEARCH paths.",
+    "Latency is estimated from cached component timings, not measured end-to-end."
+  ]
+}

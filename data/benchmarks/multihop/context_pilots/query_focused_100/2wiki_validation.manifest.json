@@ -1,0 +1,37 @@
+{
+  "format_version": 2,
+  "experiment": "stop_prefix_answer_oracle_v2_context_allocation",
+  "dataset": "2wiki",
+  "split": "validation",
+  "trajectory_signature": "7ec56986a0fb8b4cdabac050cee5f9bf9bb75e5a098bc455ed12fd63236bdaa1",
+  "corpus_fingerprint": "c524ed14bdc189f1fb0c6850c7add162ed16bb2f0651539b9d2dc88a9ac0d1a8",
+  "corpus_examples_per_dataset": 2000,
+  "corpus_seed": 42,
+  "actions": [
+    "vector",
+    "planned_continue_1",
+    "planned_continue_2",
+    "planned_continue_3"
+  ],
+  "max_evidence_hops": 4,
+  "context_character_budget": 6000,
+  "context_allocation": "sequential",
+  "context_source_order": "trajectory",
+  "context_compression": "query_focused",
+  "focused_sentences_per_source": 2,
+  "reader": {
+    "host": "http://127.0.0.1:11434",
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "max_tokens": 64,
+    "timeout_seconds": 300,
+    "seed": 42,
+    "temperature": 0.0,
+    "keep_alive": "30m",
+    "prompt_version": "multihop_short_answer_v2_json",
+    "thinking": false
+  },
+  "status": "ready",
+  "completed_rows": 100,
+  "requested_rows": 100
+}

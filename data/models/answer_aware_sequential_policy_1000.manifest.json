@@ -1,0 +1,118 @@
+{
+  "format_version": 2,
+  "model": "data/models/answer_aware_sequential_policy_1000.joblib",
+  "nested_predictions": "data/models/answer_aware_sequential_policy_1000.nested_predictions.jsonl",
+  "model_type": "extra_trees",
+  "datasets": [
+    "hotpotqa",
+    "musique",
+    "2wiki"
+  ],
+  "split": "train",
+  "rows": 3000,
+  "dataset_counts": {
+    "2wiki": 1000,
+    "hotpotqa": 1000,
+    "musique": 1000
+  },
+  "seed": 42,
+  "folds": 5,
+  "calibration_ratio": 0.2,
+  "final_threshold_calibration": "5-fold-oof",
+  "trees": 400,
+  "min_samples_leaf": 10,
+  "max_features": 1.0,
+  "ridge_alpha": null,
+  "dataset_harm_penalty": 2.0,
+  "enable_return_direct": false,
+  "post_first_step_actions": [
+    "expand_2hop_small",
+    "expand_2hop_large"
+  ],
+  "thresholds": {
+    "one_shot": 0.039999999999999994,
+    "sequential_s0": -0.04,
+    "sequential_s1": 0.05
+  },
+  "nested_audit": {
+    "hotpotqa": {
+      "n": 1000,
+      "direct_f1": 0.728856524031524,
+      "one_shot_f1": 0.729006524031524,
+      "sequential_f1": 0.7293517621267621,
+      "oracle_f1": 0.7724708097458098,
+      "one_shot_gain": 0.00014999999999998348,
+      "sequential_gain": 0.0004952380952381041,
+      "sequential_vs_one_shot": 0.00034523809523812066,
+      "sequential_no_2hop_f1": 0.7271184287934287,
+      "second_hop_contribution": 0.0022333333333334204,
+      "sequential_regret": 0.04311904761904772,
+      "capture_ratio": 0.01135495141390999
+    },
+    "musique": {
+      "n": 1000,
+      "direct_f1": 0.25766474358974356,
+      "one_shot_f1": 0.26221553724053726,
+      "sequential_f1": 0.24892670940170938,
+      "oracle_f1": 0.32205051892551895,
+      "one_shot_gain": 0.004550793650793694,
+      "sequential_gain": -0.008738034188034177,
+      "sequential_vs_one_shot": -0.013288827838827871,
+      "sequential_no_2hop_f1": 0.2569933760683761,
+      "second_hop_contribution": -0.008066666666666694,
+      "sequential_regret": 0.07312380952380956,
+      "capture_ratio": -0.13571373711762955
+    },
+    "2wiki": {
+      "n": 1000,
+      "direct_f1": 0.47247468642468643,
+      "one_shot_f1": 0.505741353091353,
+      "sequential_f1": 0.5207246864246864,
+      "oracle_f1": 0.6093488622488622,
+      "one_shot_gain": 0.03326666666666661,
+      "sequential_gain": 0.04824999999999996,
+      "sequential_vs_one_shot": 0.014983333333333348,
+      "sequential_no_2hop_f1": 0.512991353091353,
+      "second_hop_contribution": 0.00773333333333337,
+      "sequential_regret": 0.08862417582417581,
+      "capture_ratio": 0.3525135381416315
+    },
+    "Macro": {
+      "n": 3000,
+      "direct_f1": 0.4863319846819847,
+      "one_shot_f1": 0.49898780478780475,
+      "sequential_f1": 0.49966771931771925,
+      "oracle_f1": 0.5679567303067303,
+      "one_shot_gain": 0.01265582010582006,
+      "sequential_gain": 0.013335734635734564,
+      "sequential_vs_one_shot": 0.0006799145299145049,
+      "sequential_no_2hop_f1": 0.49903438598438593,
+      "second_hop_contribution": 0.0006333333333333191,
+      "sequential_regret": 0.06828901098901108,
+      "capture_ratio": 0.163378575132633
+    }
+  },
+  "fold_macro_gains": [
+    {
+      "one_shot": 0.0002209479179511864,
+      "sequential": 0.017817763277365783
+    },
+    {
+      "one_shot": 0.020358846635193162,
+      "sequential": 0.0022956265998583802
+    },
+    {
+      "one_shot": 0.02356838355208124,
+      "sequential": 0.02398973659980863
+    },
+    {
+      "one_shot": -0.00023197227420357347,
+      "sequential": 0.0038516514942611435
+    },
+    {
+      "one_shot": 0.01702642631820883,
+      "sequential": 0.01641800037245167
+    }
+  ],
+  "row_fingerprint": "6fe77fc309aa3490ed38efc8895fc7341298cf0f940017b7aa09db6bfef9144b"
+}

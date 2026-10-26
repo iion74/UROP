@@ -1,0 +1,388 @@
+{
+  "scope": "500 ID-disjoint train questions per dataset; cached counterfactual evaluation",
+  "method": "frozen direct-F1-gain SEARCH head plus unchanged answer-error REASON heads",
+  "notes": [
+    "The new SEARCH heads were trained on a different 2000-question-per-dataset pool.",
+    "REASON still predicts current EM error, not the true benefit of reasoning.",
+    "Reader-aware SEARCH requires an additional step-2 reader call before the step-3 answer.",
+    "Latencies are estimates from cached timings, not live end-to-end measurements.",
+    "This probe followed inspection of earlier holdout results and is exploratory."
+  ],
+  "datasets": {
+    "hotpotqa": {
+      "count": 500,
+      "fixed2_f1": 81.76690975690977,
+      "fixed3_f1": 80.99373515373516,
+      "old_full_f1": 80.7492907092907,
+      "old_full_em": 73.2,
+      "old_full_estimated_latency_seconds": 2.641939213091449,
+      "old_full_reader_generated_tokens": 63.712,
+      "old_full_average_reader_calls": 1.424,
+      "old_full_average_additional_searches": 2.65,
+      "variants": {
+        "reader_free": {
+          "routes": {
+            "SEARCH": 460,
+            "REASON": 36,
+            "STOP": 4
+          },
+          "average_additional_searches": 2.92,
+          "average_reader_calls": 1.144,
+          "em": 73.6,
+          "f1": 81.19373515373516,
+          "estimated_latency_seconds": 2.648672512500178,
+          "reader_generated_tokens": 57.01,
+          "vs_fixed3_f1": {
+            "change_points": 0.2,
+            "ci95": [
+              -0.4,
+              0.8
+            ]
+          },
+          "vs_old_full_f1": {
+            "change_points": 0.44444444444444436,
+            "ci95": [
+              -0.5333333333333334,
+              1.4666666666666666
+            ]
+          },
+          "matched_random_expected_f1": 81.0507311000111,
+          "vs_matched_random_f1": {
+            "change_points": 0.14300405372405375,
+            "ci95": [
+              -0.4527729719169719,
+              0.856847291819292
+            ],
+            "fraction_random_at_least_policy": 0.3212
+          },
+          "search_targeting_with_old_reason_queue_and_search_count": {
+            "search_count": 325,
+            "reason_count": 106,
+            "f1": 80.99214785214785,
+            "vs_old_full_f1": {
+              "change_points": 0.24285714285714283,
+              "ci95": [
+                -0.5,
+                1.042857142857143
+              ]
+            },
+            "vs_matched_random_f1": {
+              "change_points": 0.062309644670050714,
+              "ci95": [
+                -0.560120286439449,
+                0.758180928208847
+              ],
+              "fraction_random_at_least_policy": 0.388
+            }
+          }
+        },
+        "reader_aware": {
+          "routes": {
+            "SEARCH": 144,
+            "REASON": 242,
+            "STOP": 114
+          },
+          "average_additional_searches": 2.288,
+          "average_reader_calls": 2.2560000000000002,
+          "em": 76.0,
+          "f1": 83.03325896325896,
+          "estimated_latency_seconds": 2.9898210029365924,
+          "reader_generated_tokens": 92.796,
+          "vs_fixed3_f1": {
+            "change_points": 2.0395238095238093,
+            "ci95": [
+              0.5899880952380953,
+              3.561916666666667
+            ]
+          },
+          "vs_old_full_f1": {
+            "change_points": 2.2839682539682538,
+            "ci95": [
+              1.0088373015873016,
+              3.7090039682539686
+            ]
+          },
+          "matched_random_expected_f1": 81.51157876789877,
+          "vs_matched_random_f1": {
+            "change_points": 1.521680195360196,
+            "ci95": [
+              0.720646576312577,
+              2.326335877899879
+            ],
+            "fraction_random_at_least_policy": 0.0004
+          },
+          "search_targeting_with_old_reason_queue_and_search_count": {
+            "search_count": 325,
+            "reason_count": 106,
+            "f1": 80.57262404262404,
+            "vs_old_full_f1": {
+              "change_points": -0.17666666666666667,
+              "ci95": [
+                -0.8099999999999999,
+                0.4333333333333333
+              ]
+            },
+            "vs_matched_random_f1": {
+              "change_points": -0.35721416485375873,
+              "ci95": [
+                -0.9010266195310612,
+                0.19406136693255996
+              ],
+              "fraction_random_at_least_policy": 0.9252
+            }
+          }
+        }
+      }
+    },
+    "musique": {
+      "count": 500,
+      "fixed2_f1": 47.27150343808239,
+      "fixed3_f1": 48.314100840679785,
+      "old_full_f1": 48.58076750734646,
+      "old_full_em": 40.2,
+      "old_full_estimated_latency_seconds": 2.7253096446434113,
+      "old_full_reader_generated_tokens": 49.516,
+      "old_full_average_reader_calls": 1.108,
+      "old_full_average_additional_searches": 2.93,
+      "variants": {
+        "reader_free": {
+          "routes": {
+            "SEARCH": 426,
+            "REASON": 73,
+            "STOP": 1
+          },
+          "average_additional_searches": 2.852,
+          "average_reader_calls": 1.292,
+          "em": 39.800000000000004,
+          "f1": 48.40264340922236,
+          "estimated_latency_seconds": 2.808869809834112,
+          "reader_generated_tokens": 54.396,
+          "vs_fixed3_f1": {
+            "change_points": 0.08854256854256852,
+            "ci95": [
+              -1.0838636363636365,
+              1.1740014430014432
+            ]
+          },
+          "vs_old_full_f1": {
+            "change_points": -0.17812409812409816,
+            "ci95": [
+              -1.3756132756132757,
+              1.011221500721501
+            ]
+          },
+          "matched_random_expected_f1": 48.543298185557134,
+          "vs_matched_random_f1": {
+            "change_points": -0.14065477633477616,
+            "ci95": [
+              -1.1392560490620491,
+              0.8606171082251085
+            ],
+            "fraction_random_at_least_policy": 0.6272
+          },
+          "search_targeting_with_old_reason_queue_and_search_count": {
+            "search_count": 465,
+            "reason_count": 27,
+            "f1": 48.58076750734646,
+            "vs_old_full_f1": {
+              "change_points": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "vs_matched_random_f1": {
+              "change_points": 0.01763378270777844,
+              "ci95": [
+                -0.02070182953058213,
+                0.05529480244913637
+              ],
+              "fraction_random_at_least_policy": 0.6932
+            }
+          }
+        },
+        "reader_aware": {
+          "routes": {
+            "SEARCH": 170,
+            "REASON": 306,
+            "STOP": 24
+          },
+          "average_additional_searches": 2.34,
+          "average_reader_calls": 2.564,
+          "em": 40.2,
+          "f1": 48.681561158140106,
+          "estimated_latency_seconds": 3.3358819586828847,
+          "reader_generated_tokens": 98.83,
+          "vs_fixed3_f1": {
+            "change_points": 0.36746031746031743,
+            "ci95": [
+              -1.9108773448773448,
+              2.614137445887446
+            ]
+          },
+          "vs_old_full_f1": {
+            "change_points": 0.10079365079365078,
+            "ci95": [
+              -2.02097113997114,
+              2.2820173160173183
+            ]
+          },
+          "matched_random_expected_f1": 49.23354187964082,
+          "vs_matched_random_f1": {
+            "change_points": -0.5519807215007212,
+            "ci95": [
+              -1.8197444848484847,
+              0.6881087099567107
+            ],
+            "fraction_random_at_least_policy": 0.8
+          },
+          "search_targeting_with_old_reason_queue_and_search_count": {
+            "search_count": 465,
+            "reason_count": 27,
+            "f1": 48.58076750734646,
+            "vs_old_full_f1": {
+              "change_points": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "vs_matched_random_f1": {
+              "change_points": 0.01763378270777844,
+              "ci95": [
+                -0.02070182953058213,
+                0.05529480244913637
+              ],
+              "fraction_random_at_least_policy": 0.6932
+            }
+          }
+        }
+      }
+    },
+    "2wiki": {
+      "count": 500,
+      "fixed2_f1": 80.01734487734488,
+      "fixed3_f1": 80.42178932178932,
+      "old_full_f1": 80.86178932178932,
+      "old_full_em": 78.4,
+      "old_full_estimated_latency_seconds": 2.2376998573223825,
+      "old_full_reader_generated_tokens": 68.438,
+      "old_full_average_reader_calls": 1.4,
+      "old_full_average_additional_searches": 2.54,
+      "variants": {
+        "reader_free": {
+          "routes": {
+            "SEARCH": 461,
+            "REASON": 22,
+            "STOP": 17
+          },
+          "average_additional_searches": 2.922,
+          "average_reader_calls": 1.088,
+          "em": 77.2,
+          "f1": 80.02178932178933,
+          "estimated_latency_seconds": 2.2500627440350756,
+          "reader_generated_tokens": 59.002,
+          "vs_fixed3_f1": {
+            "change_points": -0.4,
+            "ci95": [
+              -1.0,
+              0.0
+            ]
+          },
+          "vs_old_full_f1": {
+            "change_points": -0.8400000000000001,
+            "ci95": [
+              -2.4205,
+              0.74
+            ]
+          },
+          "matched_random_expected_f1": 80.47758614718614,
+          "vs_matched_random_f1": {
+            "change_points": -0.45579682539682537,
+            "ci95": [
+              -1.0750268730158727,
+              -0.022161952380952338
+            ],
+            "fraction_random_at_least_policy": 0.9614
+          },
+          "search_targeting_with_old_reason_queue_and_search_count": {
+            "search_count": 270,
+            "reason_count": 100,
+            "f1": 80.91734487734487,
+            "vs_old_full_f1": {
+              "change_points": 0.05555555555555553,
+              "ci95": [
+                -0.9444444444444444,
+                1.0
+              ]
+            },
+            "vs_matched_random_f1": {
+              "change_points": -0.043,
+              "ci95": [
+                -0.75805,
+                0.674
+              ],
+              "fraction_random_at_least_policy": 0.557
+            }
+          }
+        },
+        "reader_aware": {
+          "routes": {
+            "SEARCH": 105,
+            "REASON": 182,
+            "STOP": 213
+          },
+          "average_additional_searches": 2.21,
+          "average_reader_calls": 1.938,
+          "em": 79.60000000000001,
+          "f1": 82.12401154401154,
+          "estimated_latency_seconds": 2.419626330660229,
+          "reader_generated_tokens": 89.798,
+          "vs_fixed3_f1": {
+            "change_points": 1.7022222222222223,
+            "ci95": [
+              -0.022642857142857162,
+              3.498134920634921
+            ]
+          },
+          "vs_old_full_f1": {
+            "change_points": 1.2622222222222224,
+            "ci95": [
+              -0.4756587301587301,
+              3.082857142857143
+            ]
+          },
+          "matched_random_expected_f1": 80.8248470995671,
+          "vs_matched_random_f1": {
+            "change_points": 1.2991644444444443,
+            "ci95": [
+              0.2710575714285713,
+              2.4199315396825405
+            ],
+            "fraction_random_at_least_policy": 0.0118
+          },
+          "search_targeting_with_old_reason_queue_and_search_count": {
+            "search_count": 270,
+            "reason_count": 100,
+            "f1": 80.40178932178932,
+            "vs_old_full_f1": {
+              "change_points": -0.45999999999999996,
+              "ci95": [
+                -1.5599999999999998,
+                0.6
+              ]
+            },
+            "vs_matched_random_f1": {
+              "change_points": -0.5585555555555556,
+              "ci95": [
+                -1.3592583333333332,
+                0.18194444444444444
+              ],
+              "fraction_random_at_least_policy": 0.9402
+            }
+          }
+        }
+      }
+    }
+  }
+}

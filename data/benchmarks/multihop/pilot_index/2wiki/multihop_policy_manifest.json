@@ -1,0 +1,19 @@
+{
+  "corpus_fingerprint": "8f31e541936a088af6c1c5e2ebc02d34f003da2d80f0d08bd8353ab307d8c9cb",
+  "dataset": "2wiki",
+  "examples": 100,
+  "documents": 654,
+  "chunk_size": 900,
+  "chunk_overlap": 140,
+  "graph_format_version": 4,
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "reranker_model": "BAAI/bge-reranker-v2-m3",
+  "reranker_candidates": 20,
+  "router_seed_count": 8,
+  "graph_small_budget": 3,
+  "graph_large_budget": 6,
+  "graph_expansion_decay": 0.58,
+  "graph_semantic_neighbors": 24,
+  "graph_title_bridges": true,
+  "graph_max_title_bridges_per_chunk": 8
+}

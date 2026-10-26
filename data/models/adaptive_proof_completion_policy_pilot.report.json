@@ -1,0 +1,2059 @@
+{
+  "format_version": 1,
+  "method": "adaptive_proof_completeness_policy",
+  "model": "data/models/adaptive_proof_completion_policy_pilot.joblib",
+  "predictions": "data/models/adaptive_proof_completion_policy_pilot.report.predictions.jsonl",
+  "training_audit": {
+    "hotpotqa": {
+      "trajectories": 100,
+      "states": 400,
+      "complete_by_step": {
+        "0": 85,
+        "1": 90,
+        "2": 93,
+        "3": 94
+      },
+      "repair_by_step": {
+        "0": 5,
+        "1": 5,
+        "2": 2,
+        "3": 3
+      }
+    },
+    "musique": {
+      "trajectories": 100,
+      "states": 400,
+      "complete_by_step": {
+        "0": 45,
+        "1": 63,
+        "2": 68,
+        "3": 83
+      },
+      "repair_by_step": {
+        "0": 1,
+        "1": 0,
+        "2": 2,
+        "3": 11
+      }
+    },
+    "2wiki": {
+      "trajectories": 100,
+      "states": 400,
+      "complete_by_step": {
+        "0": 49,
+        "1": 63,
+        "2": 82,
+        "3": 92
+      },
+      "repair_by_step": {
+        "0": 26,
+        "1": 20,
+        "2": 13,
+        "3": 9
+      }
+    }
+  },
+  "fit": {
+    "states": 960,
+    "complete_states": 733,
+    "complete_rate": 0.7635416666666667
+  },
+  "chosen_threshold": {
+    "threshold": 0.1,
+    "datasets": {
+      "hotpotqa": {
+        "count": 20,
+        "average_additional_searches": 0.3,
+        "source_recall": 0.9,
+        "all_support_recall": 0.85,
+        "support_precision": 0.4442857142857143,
+        "fixed_source_recall": 0.9,
+        "fixed_all_support_recall": 0.85,
+        "step_distribution": {
+          "0": 16,
+          "1": 2,
+          "2": 2
+        }
+      },
+      "musique": {
+        "count": 20,
+        "average_additional_searches": 0.7,
+        "source_recall": 0.8,
+        "all_support_recall": 0.6,
+        "support_precision": 0.4072023809523809,
+        "fixed_source_recall": 0.9,
+        "fixed_all_support_recall": 0.8,
+        "step_distribution": {
+          "0": 11,
+          "1": 6,
+          "2": 1,
+          "3": 2
+        }
+      },
+      "2wiki": {
+        "count": 20,
+        "average_additional_searches": 0.7,
+        "source_recall": 0.8875,
+        "all_support_recall": 0.65,
+        "support_precision": 0.5183333333333333,
+        "fixed_source_recall": 0.95,
+        "fixed_all_support_recall": 0.85,
+        "step_distribution": {
+          "0": 12,
+          "1": 3,
+          "2": 4,
+          "3": 1
+        }
+      }
+    },
+    "minimum_all_support_change_points": -20.000000000000007,
+    "maximum_average_searches": 0.7,
+    "sum_average_searches": 1.7
+  },
+  "threshold_sweep": [
+    {
+      "threshold": 0.1,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.3,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.4442857142857143,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 16,
+            "1": 2,
+            "2": 2
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 0.7,
+          "source_recall": 0.8,
+          "all_support_recall": 0.6,
+          "support_precision": 0.4072023809523809,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 11,
+            "1": 6,
+            "2": 1,
+            "3": 2
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 0.7,
+          "source_recall": 0.8875,
+          "all_support_recall": 0.65,
+          "support_precision": 0.5183333333333333,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 12,
+            "1": 3,
+            "2": 4,
+            "3": 1
+          }
+        }
+      },
+      "minimum_all_support_change_points": -20.000000000000007,
+      "maximum_average_searches": 0.7,
+      "sum_average_searches": 1.7
+    },
+    {
+      "threshold": 0.125,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.35,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.44666666666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 16,
+            "1": 2,
+            "2": 1,
+            "3": 1
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 0.7,
+          "source_recall": 0.8,
+          "all_support_recall": 0.6,
+          "support_precision": 0.4072023809523809,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 11,
+            "1": 6,
+            "2": 1,
+            "3": 2
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 0.75,
+          "source_recall": 0.8875,
+          "all_support_recall": 0.65,
+          "support_precision": 0.5183333333333333,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 12,
+            "1": 3,
+            "2": 3,
+            "3": 2
+          }
+        }
+      },
+      "minimum_all_support_change_points": -20.000000000000007,
+      "maximum_average_searches": 0.75,
+      "sum_average_searches": 1.7999999999999998
+    },
+    {
+      "threshold": 0.15,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.4,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.44666666666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 16,
+            "1": 1,
+            "2": 2,
+            "3": 1
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 0.7,
+          "source_recall": 0.8,
+          "all_support_recall": 0.6,
+          "support_precision": 0.4072023809523809,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 11,
+            "1": 6,
+            "2": 1,
+            "3": 2
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 0.8,
+          "source_recall": 0.9,
+          "all_support_recall": 0.7,
+          "support_precision": 0.5216666666666666,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 11,
+            "1": 4,
+            "2": 3,
+            "3": 2
+          }
+        }
+      },
+      "minimum_all_support_change_points": -20.000000000000007,
+      "maximum_average_searches": 0.8,
+      "sum_average_searches": 1.9
+    },
+    {
+      "threshold": 0.175,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.4,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.44666666666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 16,
+            "1": 1,
+            "2": 2,
+            "3": 1
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 0.9,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.3948214285714286,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 10,
+            "1": 6,
+            "3": 4
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 0.8,
+          "source_recall": 0.9,
+          "all_support_recall": 0.7,
+          "support_precision": 0.5216666666666666,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 11,
+            "1": 4,
+            "2": 3,
+            "3": 2
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 0.9,
+      "sum_average_searches": 2.1
+    },
+    {
+      "threshold": 0.2,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.4,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.44666666666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 16,
+            "1": 1,
+            "2": 2,
+            "3": 1
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 0.9,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.3948214285714286,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 10,
+            "1": 6,
+            "3": 4
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 0.85,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.5252380952380952,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 10,
+            "1": 5,
+            "2": 3,
+            "3": 2
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 0.9,
+      "sum_average_searches": 2.15
+    },
+    {
+      "threshold": 0.22499999999999998,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.4,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.44666666666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 16,
+            "1": 1,
+            "2": 2,
+            "3": 1
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 0.9,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.3948214285714286,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 10,
+            "1": 6,
+            "3": 4
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 0.9,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.524345238095238,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 10,
+            "1": 5,
+            "2": 2,
+            "3": 3
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 0.9,
+      "sum_average_searches": 2.2
+    },
+    {
+      "threshold": 0.25,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.4,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.44666666666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 16,
+            "1": 1,
+            "2": 2,
+            "3": 1
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 0.9,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.3948214285714286,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 10,
+            "1": 6,
+            "3": 4
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 0.9,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.524345238095238,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 10,
+            "1": 5,
+            "2": 2,
+            "3": 3
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 0.9,
+      "sum_average_searches": 2.2
+    },
+    {
+      "threshold": 0.275,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.4,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.44666666666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 16,
+            "1": 1,
+            "2": 2,
+            "3": 1
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 0.9,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.3948214285714286,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 10,
+            "1": 6,
+            "3": 4
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.0,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.519345238095238,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 9,
+            "1": 5,
+            "2": 3,
+            "3": 3
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.0,
+      "sum_average_searches": 2.3
+    },
+    {
+      "threshold": 0.3,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.45,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.44666666666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 16,
+            "1": 1,
+            "2": 1,
+            "3": 2
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 0.9,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.3948214285714286,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 10,
+            "1": 6,
+            "3": 4
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.0,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.519345238095238,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 9,
+            "1": 5,
+            "2": 3,
+            "3": 3
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.0,
+      "sum_average_searches": 2.35
+    },
+    {
+      "threshold": 0.32499999999999996,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.45,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.44666666666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 16,
+            "1": 1,
+            "2": 1,
+            "3": 2
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 0.9,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.3948214285714286,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 10,
+            "1": 6,
+            "3": 4
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.1,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.5207738095238095,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 8,
+            "1": 5,
+            "2": 4,
+            "3": 3
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.1,
+      "sum_average_searches": 2.45
+    },
+    {
+      "threshold": 0.35,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.45,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.44666666666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 16,
+            "1": 1,
+            "2": 1,
+            "3": 2
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 0.95,
+          "source_recall": 0.8,
+          "all_support_recall": 0.6,
+          "support_precision": 0.3948214285714286,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 10,
+            "1": 5,
+            "2": 1,
+            "3": 4
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.1,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.5207738095238095,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 8,
+            "1": 5,
+            "2": 4,
+            "3": 3
+          }
+        }
+      },
+      "minimum_all_support_change_points": -20.000000000000007,
+      "maximum_average_searches": 1.1,
+      "sum_average_searches": 2.5
+    },
+    {
+      "threshold": 0.375,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.45,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.44666666666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 16,
+            "1": 1,
+            "2": 1,
+            "3": 2
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 0.95,
+          "source_recall": 0.8,
+          "all_support_recall": 0.6,
+          "support_precision": 0.3948214285714286,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 10,
+            "1": 5,
+            "2": 1,
+            "3": 4
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.1,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.5207738095238095,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 8,
+            "1": 5,
+            "2": 4,
+            "3": 3
+          }
+        }
+      },
+      "minimum_all_support_change_points": -20.000000000000007,
+      "maximum_average_searches": 1.1,
+      "sum_average_searches": 2.5
+    },
+    {
+      "threshold": 0.4,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.45,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.44666666666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 16,
+            "1": 1,
+            "2": 1,
+            "3": 2
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 0.95,
+          "source_recall": 0.8,
+          "all_support_recall": 0.6,
+          "support_precision": 0.3948214285714286,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 10,
+            "1": 5,
+            "2": 1,
+            "3": 4
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.15,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.5207738095238095,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 7,
+            "1": 6,
+            "2": 4,
+            "3": 3
+          }
+        }
+      },
+      "minimum_all_support_change_points": -20.000000000000007,
+      "maximum_average_searches": 1.15,
+      "sum_average_searches": 2.55
+    },
+    {
+      "threshold": 0.42499999999999993,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.5,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.44333333333333336,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 15,
+            "1": 2,
+            "2": 1,
+            "3": 2
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 0.95,
+          "source_recall": 0.8,
+          "all_support_recall": 0.6,
+          "support_precision": 0.3948214285714286,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 10,
+            "1": 5,
+            "2": 1,
+            "3": 4
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.25,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.5180952380952382,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 7,
+            "1": 5,
+            "2": 4,
+            "3": 4
+          }
+        }
+      },
+      "minimum_all_support_change_points": -20.000000000000007,
+      "maximum_average_searches": 1.25,
+      "sum_average_searches": 2.7
+    },
+    {
+      "threshold": 0.44999999999999996,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.55,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.44333333333333336,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 14,
+            "1": 3,
+            "2": 1,
+            "3": 2
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 0.95,
+          "source_recall": 0.8,
+          "all_support_recall": 0.6,
+          "support_precision": 0.3948214285714286,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 10,
+            "1": 5,
+            "2": 1,
+            "3": 4
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.25,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.5180952380952382,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 7,
+            "1": 5,
+            "2": 4,
+            "3": 4
+          }
+        }
+      },
+      "minimum_all_support_change_points": -20.000000000000007,
+      "maximum_average_searches": 1.25,
+      "sum_average_searches": 2.75
+    },
+    {
+      "threshold": 0.475,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.6,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.4458333333333333,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 13,
+            "1": 4,
+            "2": 1,
+            "3": 2
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.05,
+          "source_recall": 0.8,
+          "all_support_recall": 0.6,
+          "support_precision": 0.3881547619047619,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 9,
+            "1": 5,
+            "2": 2,
+            "3": 4
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.25,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.5180952380952382,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 7,
+            "1": 5,
+            "2": 4,
+            "3": 4
+          }
+        }
+      },
+      "minimum_all_support_change_points": -20.000000000000007,
+      "maximum_average_searches": 1.25,
+      "sum_average_searches": 2.9
+    },
+    {
+      "threshold": 0.5,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.6,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.4458333333333333,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 13,
+            "1": 4,
+            "2": 1,
+            "3": 2
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.05,
+          "source_recall": 0.8,
+          "all_support_recall": 0.6,
+          "support_precision": 0.3881547619047619,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 9,
+            "1": 5,
+            "2": 2,
+            "3": 4
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.3,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.513095238095238,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 6,
+            "1": 6,
+            "2": 4,
+            "3": 4
+          }
+        }
+      },
+      "minimum_all_support_change_points": -20.000000000000007,
+      "maximum_average_searches": 1.3,
+      "sum_average_searches": 2.95
+    },
+    {
+      "threshold": 0.525,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.6,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.4458333333333333,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 13,
+            "1": 4,
+            "2": 1,
+            "3": 2
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.05,
+          "source_recall": 0.8,
+          "all_support_recall": 0.6,
+          "support_precision": 0.3881547619047619,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 9,
+            "1": 5,
+            "2": 2,
+            "3": 4
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.3,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.513095238095238,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 6,
+            "1": 6,
+            "2": 4,
+            "3": 4
+          }
+        }
+      },
+      "minimum_all_support_change_points": -20.000000000000007,
+      "maximum_average_searches": 1.3,
+      "sum_average_searches": 2.95
+    },
+    {
+      "threshold": 0.5499999999999999,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.6,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.4458333333333333,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 13,
+            "1": 4,
+            "2": 1,
+            "3": 2
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.1,
+          "source_recall": 0.8,
+          "all_support_recall": 0.6,
+          "support_precision": 0.40148809523809526,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 8,
+            "1": 6,
+            "2": 2,
+            "3": 4
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.3,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.513095238095238,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 6,
+            "1": 6,
+            "2": 4,
+            "3": 4
+          }
+        }
+      },
+      "minimum_all_support_change_points": -20.000000000000007,
+      "maximum_average_searches": 1.3,
+      "sum_average_searches": 3.0
+    },
+    {
+      "threshold": 0.575,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.65,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.4458333333333333,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 12,
+            "1": 5,
+            "2": 1,
+            "3": 2
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.3,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.4281547619047619,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 6,
+            "1": 7,
+            "2": 2,
+            "3": 5
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.3,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.513095238095238,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 6,
+            "1": 6,
+            "2": 4,
+            "3": 4
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.3,
+      "sum_average_searches": 3.25
+    },
+    {
+      "threshold": 0.6,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.8,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.43970238095238096,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 12,
+            "1": 3,
+            "2": 2,
+            "3": 3
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.3,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.4281547619047619,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 6,
+            "1": 7,
+            "2": 2,
+            "3": 5
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.3,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.513095238095238,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 6,
+            "1": 6,
+            "2": 4,
+            "3": 4
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.3,
+      "sum_average_searches": 3.4000000000000004
+    },
+    {
+      "threshold": 0.6249999999999999,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.85,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.43970238095238096,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 12,
+            "1": 2,
+            "2": 3,
+            "3": 3
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.3,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.4281547619047619,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 6,
+            "1": 7,
+            "2": 2,
+            "3": 5
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.35,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.513095238095238,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 6,
+            "1": 5,
+            "2": 5,
+            "3": 4
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.35,
+      "sum_average_searches": 3.5
+    },
+    {
+      "threshold": 0.6499999999999999,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.85,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.43970238095238096,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 12,
+            "1": 2,
+            "2": 3,
+            "3": 3
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.3,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.4281547619047619,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 6,
+            "1": 7,
+            "2": 2,
+            "3": 5
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.35,
+          "source_recall": 0.9125,
+          "all_support_recall": 0.75,
+          "support_precision": 0.513095238095238,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 6,
+            "1": 5,
+            "2": 5,
+            "3": 4
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.35,
+      "sum_average_searches": 3.5
+    },
+    {
+      "threshold": 0.6749999999999999,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.85,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.43970238095238096,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 12,
+            "1": 2,
+            "2": 3,
+            "3": 3
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.3,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.4281547619047619,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 6,
+            "1": 7,
+            "2": 2,
+            "3": 5
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.55,
+          "source_recall": 0.925,
+          "all_support_recall": 0.8,
+          "support_precision": 0.5091666666666667,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 6,
+            "1": 4,
+            "2": 3,
+            "3": 7
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.55,
+      "sum_average_searches": 3.7
+    },
+    {
+      "threshold": 0.7,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.85,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.43970238095238096,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 12,
+            "1": 2,
+            "2": 3,
+            "3": 3
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.3,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.4281547619047619,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 6,
+            "1": 7,
+            "2": 2,
+            "3": 5
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.55,
+          "source_recall": 0.925,
+          "all_support_recall": 0.8,
+          "support_precision": 0.5091666666666667,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 6,
+            "1": 4,
+            "2": 3,
+            "3": 7
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.55,
+      "sum_average_searches": 3.7
+    },
+    {
+      "threshold": 0.725,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.95,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.4379166666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 12,
+            "1": 2,
+            "2": 1,
+            "3": 5
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.35,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.4239880952380952,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 5,
+            "1": 8,
+            "2": 2,
+            "3": 5
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.55,
+          "source_recall": 0.925,
+          "all_support_recall": 0.8,
+          "support_precision": 0.5091666666666667,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 6,
+            "1": 4,
+            "2": 3,
+            "3": 7
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.55,
+      "sum_average_searches": 3.85
+    },
+    {
+      "threshold": 0.7499999999999999,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.95,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.4379166666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 12,
+            "1": 2,
+            "2": 1,
+            "3": 5
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.35,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.4239880952380952,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 5,
+            "1": 8,
+            "2": 2,
+            "3": 5
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.55,
+          "source_recall": 0.925,
+          "all_support_recall": 0.8,
+          "support_precision": 0.5091666666666667,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 6,
+            "1": 4,
+            "2": 3,
+            "3": 7
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.55,
+      "sum_average_searches": 3.85
+    },
+    {
+      "threshold": 0.7749999999999999,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.95,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.4379166666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 12,
+            "1": 2,
+            "2": 1,
+            "3": 5
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.4,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.4198214285714286,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 5,
+            "1": 7,
+            "2": 3,
+            "3": 5
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.55,
+          "source_recall": 0.925,
+          "all_support_recall": 0.8,
+          "support_precision": 0.5091666666666667,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 6,
+            "1": 4,
+            "2": 3,
+            "3": 7
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.55,
+      "sum_average_searches": 3.9
+    },
+    {
+      "threshold": 0.7999999999999999,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.95,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.4379166666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 12,
+            "1": 2,
+            "2": 1,
+            "3": 5
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.4,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.4198214285714286,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 5,
+            "1": 7,
+            "2": 3,
+            "3": 5
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.7,
+          "source_recall": 0.925,
+          "all_support_recall": 0.8,
+          "support_precision": 0.5034523809523809,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 5,
+            "1": 3,
+            "2": 5,
+            "3": 7
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.7,
+      "sum_average_searches": 4.05
+    },
+    {
+      "threshold": 0.825,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 0.95,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.4379166666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 12,
+            "1": 2,
+            "2": 1,
+            "3": 5
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.5,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.4231547619047619,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 5,
+            "1": 6,
+            "2": 3,
+            "3": 6
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.75,
+          "source_recall": 0.925,
+          "all_support_recall": 0.8,
+          "support_precision": 0.5034523809523809,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 5,
+            "1": 3,
+            "2": 4,
+            "3": 8
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.75,
+      "sum_average_searches": 4.2
+    },
+    {
+      "threshold": 0.8499999999999999,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 1.0,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.4379166666666666,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 11,
+            "1": 3,
+            "2": 1,
+            "3": 5
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.6,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.4198214285714285,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 5,
+            "1": 5,
+            "2": 3,
+            "3": 7
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.75,
+          "source_recall": 0.925,
+          "all_support_recall": 0.8,
+          "support_precision": 0.5034523809523809,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 5,
+            "1": 3,
+            "2": 4,
+            "3": 8
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.75,
+      "sum_average_searches": 4.35
+    },
+    {
+      "threshold": 0.8749999999999999,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 1.1,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.44291666666666674,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 11,
+            "1": 2,
+            "2": 1,
+            "3": 6
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.65,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.4198214285714285,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 5,
+            "1": 4,
+            "2": 4,
+            "3": 7
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.75,
+          "source_recall": 0.925,
+          "all_support_recall": 0.8,
+          "support_precision": 0.5034523809523809,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 5,
+            "1": 3,
+            "2": 4,
+            "3": 8
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.75,
+      "sum_average_searches": 4.5
+    },
+    {
+      "threshold": 0.8999999999999999,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 1.2,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.4395833333333333,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 10,
+            "1": 2,
+            "2": 2,
+            "3": 6
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.85,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.4123214285714285,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 4,
+            "1": 4,
+            "2": 3,
+            "3": 9
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.8,
+          "source_recall": 0.925,
+          "all_support_recall": 0.8,
+          "support_precision": 0.5016666666666666,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 5,
+            "1": 3,
+            "2": 3,
+            "3": 9
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.85,
+      "sum_average_searches": 4.85
+    },
+    {
+      "threshold": 0.9249999999999999,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 1.2,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.4395833333333333,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 10,
+            "1": 2,
+            "2": 2,
+            "3": 6
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.9,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.40994047619047613,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 4,
+            "1": 4,
+            "2": 2,
+            "3": 10
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 1.9,
+          "source_recall": 0.95,
+          "all_support_recall": 0.85,
+          "support_precision": 0.5149999999999999,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 4,
+            "1": 3,
+            "2": 4,
+            "3": 9
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 1.9,
+      "sum_average_searches": 5.0
+    },
+    {
+      "threshold": 0.95,
+      "datasets": {
+        "hotpotqa": {
+          "count": 20,
+          "average_additional_searches": 1.25,
+          "source_recall": 0.9,
+          "all_support_recall": 0.85,
+          "support_precision": 0.4395833333333333,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 10,
+            "1": 2,
+            "2": 1,
+            "3": 7
+          }
+        },
+        "musique": {
+          "count": 20,
+          "average_additional_searches": 1.95,
+          "source_recall": 0.825,
+          "all_support_recall": 0.65,
+          "support_precision": 0.40994047619047613,
+          "fixed_source_recall": 0.9,
+          "fixed_all_support_recall": 0.8,
+          "step_distribution": {
+            "0": 4,
+            "1": 4,
+            "2": 1,
+            "3": 11
+          }
+        },
+        "2wiki": {
+          "count": 20,
+          "average_additional_searches": 2.05,
+          "source_recall": 0.95,
+          "all_support_recall": 0.85,
+          "support_precision": 0.5116666666666666,
+          "fixed_source_recall": 0.95,
+          "fixed_all_support_recall": 0.85,
+          "step_distribution": {
+            "0": 3,
+            "1": 3,
+            "2": 4,
+            "3": 10
+          }
+        }
+      },
+      "minimum_all_support_change_points": -15.000000000000002,
+      "maximum_average_searches": 2.05,
+      "sum_average_searches": 5.25
+    }
+  ],
+  "validation_audit": {
+    "hotpotqa": {
+      "trajectories": 100,
+      "states": 400,
+      "complete_by_step": {
+        "0": 85,
+        "1": 88,
+        "2": 88,
+        "3": 91
+      },
+      "repair_by_step": {
+        "0": 6,
+        "1": 5,
+        "2": 5,
+        "3": 4
+      }
+    },
+    "musique": {
+      "trajectories": 100,
+      "states": 400,
+      "complete_by_step": {
+        "0": 48,
+        "1": 58,
+        "2": 65,
+        "3": 69
+      },
+      "repair_by_step": {
+        "0": 6,
+        "1": 6,
+        "2": 5,
+        "3": 2
+      }
+    },
+    "2wiki": {
+      "trajectories": 100,
+      "states": 400,
+      "complete_by_step": {
+        "0": 59,
+        "1": 69,
+        "2": 79,
+        "3": 87
+      },
+      "repair_by_step": {
+        "0": 28,
+        "1": 23,
+        "2": 13,
+        "3": 9
+      }
+    }
+  },
+  "validation": {
+    "hotpotqa": {
+      "count": 100,
+      "average_additional_searches": 0.14,
+      "source_recall": 0.925,
+      "all_support_recall": 0.85,
+      "support_precision": 0.46873809523809534,
+      "fixed_source_recall": 0.955,
+      "fixed_all_support_recall": 0.91,
+      "step_distribution": {
+        "0": 91,
+        "1": 5,
+        "2": 3,
+        "3": 1
+      }
+    },
+    "musique": {
+      "count": 100,
+      "average_additional_searches": 0.63,
+      "source_recall": 0.765,
+      "all_support_recall": 0.58,
+      "support_precision": 0.3207142857142857,
+      "fixed_source_recall": 0.83,
+      "fixed_all_support_recall": 0.69,
+      "step_distribution": {
+        "0": 64,
+        "1": 20,
+        "2": 5,
+        "3": 11
+      }
+    },
+    "2wiki": {
+      "count": 100,
+      "average_additional_searches": 0.28,
+      "source_recall": 0.855,
+      "all_support_recall": 0.65,
+      "support_precision": 0.44920238095238096,
+      "fixed_source_recall": 0.95,
+      "fixed_all_support_recall": 0.87,
+      "step_distribution": {
+        "0": 81,
+        "1": 13,
+        "2": 3,
+        "3": 3
+      }
+    }
+  }
+}

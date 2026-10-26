@@ -1,0 +1,465 @@
+{
+  "method": "sequential_best_future_f1_gain_hgb",
+  "model_file": "data/models/sequential_answer_gain_hgb.joblib",
+  "training_questions": 6000,
+  "training_states": 18000,
+  "feature_count": 105,
+  "label": "best_future_f1_minus_current_f1",
+  "search_cost_f1_fraction": 0.001,
+  "thresholds": [
+    0.030156600549213024,
+    0.011773818181079474,
+    -0.001190907077672734
+  ],
+  "late_only_threshold": -0.0013745439900505014,
+  "training_oof": {
+    "f1": 71.29051796179007,
+    "average_total_searches": 3.1763333333333335,
+    "utility_points": 71.07288462845676
+  },
+  "evaluations": {
+    "full_validation": {
+      "hotpotqa": {
+        "questions": 7405,
+        "fixed": {
+          "1": {
+            "f1": 70.31977191829463,
+            "em": 56.596893990546924
+          },
+          "2": {
+            "f1": 71.35817444923593,
+            "em": 57.528696826468604
+          },
+          "3": {
+            "f1": 71.69088819826838,
+            "em": 57.636731937879816
+          },
+          "4": {
+            "f1": 71.77659445685352,
+            "em": 57.73126266036462
+          }
+        },
+        "policy": {
+          "f1": 71.92432791807578,
+          "em": 57.83929777177582,
+          "average_total_searches": 3.3663740715732615,
+          "average_reader_calls": 3.3663740715732615,
+          "estimated_latency_seconds": 4.072319883047624,
+          "reader_generated_tokens": 166.6607697501688,
+          "search_distribution": {
+            "1": 755,
+            "2": 688,
+            "3": 1051,
+            "4": 4911
+          }
+        },
+        "fixed4_single_reader": {
+          "estimated_latency_seconds": 2.7589914271147995,
+          "reader_generated_tokens": 51.019041188386225
+        },
+        "same_model_late_only_ablation": {
+          "f1": 71.95547540364593,
+          "em": 57.75827143821742,
+          "average_total_searches": 3.723970290344362,
+          "average_reader_calls": 1.7239702903443619,
+          "estimated_latency_seconds": 3.085751012740481,
+          "reader_generated_tokens": 86.97285617825793
+        },
+        "f1_change_vs_same_model_late_only_points": -0.031147485570172943,
+        "f1_change_vs_same_model_late_only_ci95": [
+          -0.2458894114363392,
+          0.18675104998535105
+        ],
+        "matched_depth_random_expected_f1": 71.57701967499995,
+        "f1_change_vs_matched_depth_random_points": 0.34730824307583286,
+        "f1_change_vs_matched_depth_random_ci95": [
+          0.082237301238347,
+          0.6053772180475676
+        ],
+        "oracle_diagnostic_not_deployable": {
+          "best_prefix_f1": 76.99409827895082,
+          "best_prefix_search_distribution": {
+            "1": 6708,
+            "2": 425,
+            "3": 184,
+            "4": 88
+          }
+        },
+        "f1_change_vs_fixed4_points": 0.14773346122224446,
+        "f1_change_vs_fixed4_ci95": [
+          -0.16495579265539573,
+          0.4486284938978246
+        ]
+      },
+      "musique": {
+        "questions": 2417,
+        "fixed": {
+          "1": {
+            "f1": 39.29602543764229,
+            "em": 30.28547786512205
+          },
+          "2": {
+            "f1": 41.96383565106176,
+            "em": 32.767894083574674
+          },
+          "3": {
+            "f1": 44.091379360245966,
+            "em": 34.671079851055026
+          },
+          "4": {
+            "f1": 44.48753642716957,
+            "em": 34.919321472900286
+          }
+        },
+        "policy": {
+          "f1": 45.235664140786824,
+          "em": 35.41580471659081,
+          "average_total_searches": 3.594952420355813,
+          "average_reader_calls": 3.594952420355813,
+          "estimated_latency_seconds": 4.732947529079454,
+          "reader_generated_tokens": 178.9147703764998,
+          "search_distribution": {
+            "1": 52,
+            "2": 155,
+            "3": 513,
+            "4": 1697
+          }
+        },
+        "fixed4_single_reader": {
+          "estimated_latency_seconds": 3.102395070752188,
+          "reader_generated_tokens": 50.07654116673562
+        },
+        "same_model_late_only_ablation": {
+          "f1": 44.97979012332212,
+          "em": 35.16756309474555,
+          "average_total_searches": 3.728175424079437,
+          "average_reader_calls": 1.7281754240794374,
+          "estimated_latency_seconds": 3.4125294971235873,
+          "reader_generated_tokens": 85.45883326437733
+        },
+        "f1_change_vs_same_model_late_only_points": 0.2558740174647109,
+        "f1_change_vs_same_model_late_only_ci95": [
+          -0.11279753937156159,
+          0.6736644194418777
+        ],
+        "matched_depth_random_expected_f1": 44.129919229369015,
+        "f1_change_vs_matched_depth_random_points": 1.1057449114178153,
+        "f1_change_vs_matched_depth_random_ci95": [
+          0.5455873575650861,
+          1.6692420866076594
+        ],
+        "oracle_diagnostic_not_deployable": {
+          "best_prefix_f1": 53.274449769117304,
+          "best_prefix_search_distribution": {
+            "1": 1950,
+            "2": 261,
+            "3": 128,
+            "4": 78
+          }
+        },
+        "f1_change_vs_fixed4_points": 0.7481277136172608,
+        "f1_change_vs_fixed4_ci95": [
+          0.10785883541365543,
+          1.367646900788374
+        ]
+      },
+      "2wiki": {
+        "questions": 12576,
+        "fixed": {
+          "1": {
+            "f1": 59.25578044544947,
+            "em": 52.66380407124682
+          },
+          "2": {
+            "f1": 62.94676369214513,
+            "em": 56.22614503816794
+          },
+          "3": {
+            "f1": 63.934578536987786,
+            "em": 57.108778625954194
+          },
+          "4": {
+            "f1": 64.01464263957944,
+            "em": 57.164440203562336
+          }
+        },
+        "policy": {
+          "f1": 64.99136709197182,
+          "em": 58.206106870229014,
+          "average_total_searches": 3.060909669211196,
+          "average_reader_calls": 3.060909669211196,
+          "estimated_latency_seconds": 3.4086655733938644,
+          "reader_generated_tokens": 182.37929389312978,
+          "search_distribution": {
+            "1": 1732,
+            "2": 2129,
+            "3": 2356,
+            "4": 6359
+          }
+        },
+        "fixed4_single_reader": {
+          "estimated_latency_seconds": 2.4011557196748052,
+          "reader_generated_tokens": 60.923584605597966
+        },
+        "same_model_late_only_ablation": {
+          "f1": 64.88290534944518,
+          "em": 58.07888040712468,
+          "average_total_searches": 3.576415394402036,
+          "average_reader_calls": 1.5764153944020356,
+          "estimated_latency_seconds": 2.581648199487907,
+          "reader_generated_tokens": 95.26152989821882
+        },
+        "f1_change_vs_same_model_late_only_points": 0.108461742526628,
+        "f1_change_vs_same_model_late_only_ci95": [
+          -0.18498430750935518,
+          0.411384380700936
+        ],
+        "matched_depth_random_expected_f1": 63.16345827054105,
+        "f1_change_vs_matched_depth_random_points": 1.82790882143077,
+        "f1_change_vs_matched_depth_random_ci95": [
+          1.5108826043611767,
+          2.1672110863822156
+        ],
+        "oracle_diagnostic_not_deployable": {
+          "best_prefix_f1": 73.8364738615656,
+          "best_prefix_search_distribution": {
+            "1": 10384,
+            "2": 1352,
+            "3": 576,
+            "4": 264
+          }
+        },
+        "f1_change_vs_fixed4_points": 0.9767244523923915,
+        "f1_change_vs_fixed4_ci95": [
+          0.5863630026320866,
+          1.3965066576588523
+        ]
+      }
+    },
+    "disjoint_holdout_500": {
+      "hotpotqa": {
+        "questions": 500,
+        "fixed": {
+          "1": {
+            "f1": 80.47316516816517,
+            "em": 73.4
+          },
+          "2": {
+            "f1": 80.23587801087801,
+            "em": 72.8
+          },
+          "3": {
+            "f1": 81.76690975690977,
+            "em": 73.8
+          },
+          "4": {
+            "f1": 80.99373515373516,
+            "em": 73.4
+          }
+        },
+        "policy": {
+          "f1": 81.15667166167165,
+          "em": 73.6,
+          "average_total_searches": 3.292,
+          "average_reader_calls": 3.292,
+          "estimated_latency_seconds": 3.746414166270678,
+          "reader_generated_tokens": 169.14,
+          "search_distribution": {
+            "1": 67,
+            "2": 43,
+            "3": 67,
+            "4": 323
+          }
+        },
+        "fixed4_single_reader": {
+          "estimated_latency_seconds": 2.605704484942253,
+          "reader_generated_tokens": 53.21
+        },
+        "same_model_late_only_ablation": {
+          "f1": 81.06881451881452,
+          "em": 73.4,
+          "average_total_searches": 3.732,
+          "average_reader_calls": 1.732,
+          "estimated_latency_seconds": 2.926558762515623,
+          "reader_generated_tokens": 91.178
+        },
+        "f1_change_vs_same_model_late_only_points": 0.08785714285714287,
+        "f1_change_vs_same_model_late_only_ci95": [
+          -0.5881607142857143,
+          0.8421428571428571
+        ],
+        "matched_depth_random_expected_f1": 80.96240845820846,
+        "f1_change_vs_matched_depth_random_points": 0.19426320346320328,
+        "f1_change_vs_matched_depth_random_ci95": [
+          -0.6167821623376626,
+          0.9881471320346319
+        ],
+        "oracle_diagnostic_not_deployable": {
+          "best_prefix_f1": 86.35921134421135,
+          "best_prefix_search_distribution": {
+            "1": 463,
+            "2": 19,
+            "3": 14,
+            "4": 4
+          }
+        },
+        "f1_change_vs_fixed4_points": 0.16293650793650793,
+        "f1_change_vs_fixed4_ci95": [
+          -0.613375,
+          1.0152619047619047
+        ]
+      },
+      "musique": {
+        "questions": 500,
+        "fixed": {
+          "1": {
+            "f1": 42.09678710178711,
+            "em": 34.2
+          },
+          "2": {
+            "f1": 47.79075450693098,
+            "em": 39.4
+          },
+          "3": {
+            "f1": 47.27150343808239,
+            "em": 38.800000000000004
+          },
+          "4": {
+            "f1": 48.314100840679785,
+            "em": 39.800000000000004
+          }
+        },
+        "policy": {
+          "f1": 49.03410084067979,
+          "em": 40.400000000000006,
+          "average_total_searches": 3.624,
+          "average_reader_calls": 3.624,
+          "estimated_latency_seconds": 4.116371180176812,
+          "reader_generated_tokens": 167.528,
+          "search_distribution": {
+            "1": 10,
+            "2": 33,
+            "3": 92,
+            "4": 365
+          }
+        },
+        "fixed4_single_reader": {
+          "estimated_latency_seconds": 2.704896630080475,
+          "reader_generated_tokens": 46.548
+        },
+        "same_model_late_only_ablation": {
+          "f1": 48.91410084067979,
+          "em": 40.400000000000006,
+          "average_total_searches": 3.748,
+          "average_reader_calls": 1.748,
+          "estimated_latency_seconds": 2.9829886756031585,
+          "reader_generated_tokens": 80.304
+        },
+        "f1_change_vs_same_model_late_only_points": 0.12000000000000001,
+        "f1_change_vs_same_model_late_only_ci95": [
+          -0.6799999999999999,
+          1.04
+        ],
+        "matched_depth_random_expected_f1": 47.963375785796586,
+        "f1_change_vs_matched_depth_random_points": 1.0707250548831977,
+        "f1_change_vs_matched_depth_random_ci95": [
+          -0.2139664884604555,
+          2.305045033941807
+        ],
+        "oracle_diagnostic_not_deployable": {
+          "best_prefix_f1": 57.11218307835955,
+          "best_prefix_search_distribution": {
+            "1": 405,
+            "2": 63,
+            "3": 20,
+            "4": 12
+          }
+        },
+        "f1_change_vs_fixed4_points": 0.72,
+        "f1_change_vs_fixed4_ci95": [
+          -0.7404999999999999,
+          2.1399999999999997
+        ]
+      },
+      "2wiki": {
+        "questions": 500,
+        "fixed": {
+          "1": {
+            "f1": 78.84432900432901,
+            "em": 75.6
+          },
+          "2": {
+            "f1": 78.44734487734488,
+            "em": 75.0
+          },
+          "3": {
+            "f1": 80.01734487734488,
+            "em": 77.2
+          },
+          "4": {
+            "f1": 80.42178932178932,
+            "em": 77.60000000000001
+          }
+        },
+        "policy": {
+          "f1": 80.8011544011544,
+          "em": 77.8,
+          "average_total_searches": 2.6799999999999997,
+          "average_reader_calls": 2.6799999999999997,
+          "estimated_latency_seconds": 2.682951214851579,
+          "reader_generated_tokens": 145.614,
+          "search_distribution": {
+            "1": 144,
+            "2": 83,
+            "3": 62,
+            "4": 211
+          }
+        },
+        "fixed4_single_reader": {
+          "estimated_latency_seconds": 2.2346359567291803,
+          "reader_generated_tokens": 56.344
+        },
+        "same_model_late_only_ablation": {
+          "f1": 81.21734487734487,
+          "em": 78.4,
+          "average_total_searches": 3.616,
+          "average_reader_calls": 1.616,
+          "estimated_latency_seconds": 2.4372007326468013,
+          "reader_generated_tokens": 91.254
+        },
+        "f1_change_vs_same_model_late_only_points": -0.41619047619047617,
+        "f1_change_vs_same_model_late_only_ci95": [
+          -1.9591428571428575,
+          1.1314761904761903
+        ],
+        "matched_depth_random_expected_f1": 79.58957186147187,
+        "f1_change_vs_matched_depth_random_points": 1.2115825396825404,
+        "f1_change_vs_matched_depth_random_ci95": [
+          -0.270240428571428,
+          2.758912293650793
+        ],
+        "oracle_diagnostic_not_deployable": {
+          "best_prefix_f1": 87.364329004329,
+          "best_prefix_search_distribution": {
+            "1": 451,
+            "2": 29,
+            "3": 12,
+            "4": 8
+          }
+        },
+        "f1_change_vs_fixed4_points": 0.37936507936507935,
+        "f1_change_vs_fixed4_ci95": [
+          -1.5606666666666666,
+          2.495817460317459
+        ]
+      }
+    }
+  },
+  "notes": [
+    "Initial retrieval is mandatory; STOP/SEARCH is decided after each of the first three prefixes.",
+    "At each decision the reader's current answer is observed, so reader calls equal total searches.",
+    "Gold answer and future prefixes are used only for offline training labels/evaluation.",
+    "Evaluation is cached-trajectory replay, not live end-to-end execution.",
+    "Validation was used during earlier project development; the train-derived holdout has 500 questions per dataset."
+  ]
+}

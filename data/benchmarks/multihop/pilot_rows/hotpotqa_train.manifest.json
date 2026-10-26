@@ -1,0 +1,42 @@
+{
+  "format_version": 2,
+  "dataset": "hotpotqa",
+  "split": "train",
+  "example_fingerprint": "2e45a5178e6375e2d4b71dd1451bc1ec9acfc3477680d33ce2abeab8a5beef20",
+  "example_count": 100,
+  "top_k": 5,
+  "extra_candidate_penalty": 0.02,
+  "joint_recall_weight": 0.7,
+  "actions": [
+    "vector",
+    "graph_1hop_small",
+    "graph_1hop_large",
+    "graph_2hop_small",
+    "graph_2hop_large"
+  ],
+  "feature_names": [
+    "score_concentration",
+    "score_margin",
+    "source_dispersion",
+    "graph_connectivity",
+    "redundancy",
+    "one_hop_gain",
+    "two_hop_gain",
+    "uncertainty"
+  ],
+  "graph_format_version": 4,
+  "retrieval_config": {
+    "embedding_model": "intfloat/multilingual-e5-base",
+    "reranker_model": "BAAI/bge-reranker-v2-m3",
+    "reranker_candidates": 20,
+    "router_seed_count": 8,
+    "graph_small_budget": 3,
+    "graph_large_budget": 6,
+    "graph_expansion_decay": 0.58,
+    "graph_semantic_neighbors": 24,
+    "graph_title_bridges": true,
+    "graph_max_title_bridges_per_chunk": 8
+  },
+  "status": "complete",
+  "completed": 100
+}

@@ -1,0 +1,27 @@
+{
+  "format_version": 1,
+  "experiment": "local_graph_proof_repair_reader",
+  "dataset": "musique",
+  "split": "validation",
+  "requested_rows": 500,
+  "baseline_root": "data/benchmarks/multihop/causal_evidence_reader/topology3_adaptive_validation_2000",
+  "support_model": "data/models/counterfactual_proof_completion_policy.joblib",
+  "width_model": "data/models/evidence_width_policy.joblib",
+  "repair_model": "data/models/local_graph_proof_repair_policy.joblib",
+  "repair_threshold": 0.95,
+  "context_character_budget": 6000,
+  "reader": {
+    "host": "http://127.0.0.1:11434",
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "max_tokens": 64,
+    "timeout_seconds": 300,
+    "seed": 42,
+    "temperature": 0.0,
+    "keep_alive": "30m",
+    "prompt_version": "multihop_short_answer_v2_json",
+    "thinking": false
+  },
+  "status": "ready",
+  "completed_rows": 500
+}

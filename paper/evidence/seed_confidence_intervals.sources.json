@@ -1,0 +1,29 @@
+{
+  "export_only": true,
+  "source_reports": [
+    {
+      "path": "data/benchmarks/multihop/context_reader_aware/analysis/sequential_multiseed/policy_seed42.json",
+      "sha256": "28bcc7e9da1201ff3141b38f4e72fc7ed5c910436f885a2bf953c9584c7aab36"
+    },
+    {
+      "path": "data/benchmarks/multihop/context_reader_aware/analysis/sequential_multiseed/policy_seed43.json",
+      "sha256": "2b4a48e3994bcdbfbee48fa995bc5d043cdd0389e7ff179ead431f25c2e22450"
+    },
+    {
+      "path": "data/benchmarks/multihop/context_reader_aware/analysis/sequential_multiseed/policy_seed44.json",
+      "sha256": "94bda3fd11ffac5ce6e23d810f6f7e778d67a626bfcea2b82971e69b23bb94ed"
+    },
+    {
+      "path": "data/benchmarks/multihop/context_reader_aware/analysis/sequential_multiseed/policy_seed45.json",
+      "sha256": "726f9a4b01450d44b52fcb79d35e22ec88c3ca61834764b09c66a6c4d7ecf4e8"
+    },
+    {
+      "path": "data/benchmarks/multihop/context_reader_aware/analysis/sequential_multiseed/policy_seed46.json",
+      "sha256": "5a1ae2be826a5eeaf73fe3dae275b742e8a5a68c31a5e9cb4de5f02f50117afe"
+    }
+  ],
+  "rows": 15,
+  "score_unit": "F1 points on a 0-100 scale",
+  "bootstrap_replicates_configured": 2000,
+  "bootstrap_replicates_recorded_in_original_reports": false
+}

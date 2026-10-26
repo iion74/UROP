@@ -1,0 +1,673 @@
+{
+  "format_version": 1,
+  "split": "validation",
+  "datasets": [
+    "hotpotqa",
+    "musique",
+    "2wiki"
+  ],
+  "rows": 3000,
+  "answer_oracle_signature": {
+    "context_mode": null,
+    "top_k": 5,
+    "initial_candidates": null,
+    "context_character_budget": 6000,
+    "corpus_seed": 42,
+    "query_seed": 42,
+    "query_sampling_version": "stable_hash_v1",
+    "actions": [
+      "vector",
+      "graph_1hop_small",
+      "graph_1hop_large",
+      "graph_2hop_small",
+      "graph_2hop_large"
+    ],
+    "chunk_size": null,
+    "chunk_overlap": null,
+    "embedding_model": null,
+    "reranker_model": null,
+    "reranker_candidates": null,
+    "graph_format_version": null,
+    "graph_semantic_neighbors": null,
+    "graph_title_bridges": null,
+    "graph_max_title_bridges_per_chunk": null,
+    "router_seed_count": null,
+    "graph_small_budget": null,
+    "graph_large_budget": null,
+    "graph_expansion_decay": null,
+    "graph_rerank_prior_weight": null,
+    "graph_source_diversity_bonus": null,
+    "graph_min_expanded_results": null,
+    "reader": {
+      "model": "qwen3:8b",
+      "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+      "max_tokens": 64,
+      "seed": 42,
+      "temperature": 0.0,
+      "prompt_version": "multihop_short_answer_v2_json"
+    }
+  },
+  "models": [
+    {
+      "model": "data/models/gated_answer_policy_1000.joblib",
+      "model_label": "gated_answer_policy_1000",
+      "seed": 42,
+      "threshold": 0.31999999999999995,
+      "frozen_static_action": "graph_1hop_large",
+      "metrics": {
+        "hotpotqa": {
+          "n": 1000,
+          "direct_em": 0.474,
+          "direct_f1": 0.6093725718725719,
+          "static_em": 0.485,
+          "static_f1": 0.6142613997113997,
+          "policy_em": 0.479,
+          "policy_f1": 0.6157567821067821,
+          "oracle_em": 0.523,
+          "oracle_f1": 0.655604317904318,
+          "em_gain": 0.0050000000000000044,
+          "f1_gain": 0.006384210234210208,
+          "static_em_gain": 0.01100000000000001,
+          "static_f1_gain": 0.004888827838827825,
+          "policy_minus_static_em": -0.006000000000000005,
+          "policy_minus_static_f1": 0.001495382395382383,
+          "oracle_potential_f1": 0.04623174603174607,
+          "oracle_potential_capture": 0.13809148003682029,
+          "graph_rate": 0.18,
+          "actions": {
+            "graph_1hop_large": 103,
+            "graph_1hop_small": 40,
+            "graph_2hop_large": 27,
+            "graph_2hop_small": 10,
+            "vector": 820
+          }
+        },
+        "musique": {
+          "n": 1000,
+          "direct_em": 0.174,
+          "direct_f1": 0.24253528138528138,
+          "static_em": 0.158,
+          "static_f1": 0.2229682663741487,
+          "policy_em": 0.168,
+          "policy_f1": 0.2367871739371739,
+          "oracle_em": 0.209,
+          "oracle_f1": 0.289711306667189,
+          "em_gain": -0.005999999999999978,
+          "f1_gain": -0.00574810744810747,
+          "static_em_gain": -0.015999999999999986,
+          "static_f1_gain": -0.01956701501113267,
+          "policy_minus_static_em": 0.010000000000000009,
+          "policy_minus_static_f1": 0.013818907563025201,
+          "oracle_potential_f1": 0.04717602528190759,
+          "oracle_potential_capture": -0.12184382668439679,
+          "graph_rate": 0.441,
+          "actions": {
+            "graph_1hop_large": 279,
+            "graph_1hop_small": 96,
+            "graph_2hop_large": 53,
+            "graph_2hop_small": 13,
+            "vector": 559
+          }
+        },
+        "2wiki": {
+          "n": 1000,
+          "direct_em": 0.319,
+          "direct_f1": 0.37735366855366853,
+          "static_em": 0.342,
+          "static_f1": 0.3980095127095127,
+          "policy_em": 0.337,
+          "policy_f1": 0.3955521534021534,
+          "oracle_em": 0.411,
+          "oracle_f1": 0.47881340881340884,
+          "em_gain": 0.018000000000000016,
+          "f1_gain": 0.018198484848484853,
+          "static_em_gain": 0.02300000000000002,
+          "static_f1_gain": 0.02065584415584415,
+          "policy_minus_static_em": -0.0050000000000000044,
+          "policy_minus_static_f1": -0.002457359307359297,
+          "oracle_potential_f1": 0.1014597402597403,
+          "oracle_potential_capture": 0.17936656255866737,
+          "graph_rate": 0.602,
+          "actions": {
+            "graph_1hop_large": 384,
+            "graph_1hop_small": 59,
+            "graph_2hop_large": 148,
+            "graph_2hop_small": 11,
+            "vector": 398
+          }
+        },
+        "Macro": {
+          "n": 3000,
+          "direct_em": 0.3223333333333333,
+          "direct_f1": 0.40975384060384057,
+          "static_em": 0.32833333333333337,
+          "static_f1": 0.41174639293168697,
+          "policy_em": 0.328,
+          "policy_f1": 0.41603203648203646,
+          "oracle_em": 0.381,
+          "oracle_f1": 0.4747096777949719,
+          "em_gain": 0.005666666666666709,
+          "f1_gain": 0.006278195878195891,
+          "static_em_gain": 0.006000000000000061,
+          "static_f1_gain": 0.0019925523278463975,
+          "policy_minus_static_em": -0.00033333333333335213,
+          "policy_minus_static_f1": 0.004285643550349494,
+          "oracle_potential_f1": 0.06495583719113135,
+          "oracle_potential_capture": 0.09665329783561123,
+          "graph_rate": 0.4076666666666667,
+          "actions": {
+            "graph_1hop_large": 766,
+            "graph_1hop_small": 195,
+            "graph_2hop_large": 228,
+            "graph_2hop_small": 34,
+            "vector": 1777
+          }
+        }
+      },
+      "paired_bootstrap": {
+        "policy_vs_direct": {
+          "em": {
+            "observed_gain": 0.005666666666666666,
+            "ci95_low": -0.0016666666666666668,
+            "ci95_high": 0.013,
+            "probability_positive": 0.9354532273386331
+          },
+          "f1": {
+            "observed_gain": 0.006278195878195878,
+            "ci95_low": -0.0012122760110260125,
+            "ci95_high": 0.013878429533429524,
+            "probability_positive": 0.9512024398780061
+          }
+        },
+        "policy_vs_frozen_static": {
+          "em": {
+            "observed_gain": -0.0003333333333333333,
+            "ci95_low": -0.007666666666666666,
+            "ci95_high": 0.006999999999999999,
+            "probability_positive": 0.4504274786260687
+          },
+          "f1": {
+            "observed_gain": 0.004285643550349432,
+            "ci95_low": -0.0029370912556941978,
+            "ci95_high": 0.0116028272217978,
+            "probability_positive": 0.8735563221838908
+          }
+        }
+      }
+    },
+    {
+      "model": "data/models/gated_answer_policy_1000_seed43.joblib",
+      "model_label": "gated_answer_policy_1000_seed43",
+      "seed": 43,
+      "threshold": 0.31999999999999995,
+      "frozen_static_action": "graph_1hop_large",
+      "metrics": {
+        "hotpotqa": {
+          "n": 1000,
+          "direct_em": 0.474,
+          "direct_f1": 0.6093725718725719,
+          "static_em": 0.485,
+          "static_f1": 0.6142613997113997,
+          "policy_em": 0.479,
+          "policy_f1": 0.6160234487734487,
+          "oracle_em": 0.523,
+          "oracle_f1": 0.655604317904318,
+          "em_gain": 0.0050000000000000044,
+          "f1_gain": 0.006650876900876845,
+          "static_em_gain": 0.01100000000000001,
+          "static_f1_gain": 0.004888827838827825,
+          "policy_minus_static_em": -0.006000000000000005,
+          "policy_minus_static_f1": 0.0017620490620490203,
+          "oracle_potential_f1": 0.04623174603174607,
+          "oracle_potential_capture": 0.14385952233579652,
+          "graph_rate": 0.18,
+          "actions": {
+            "graph_1hop_large": 104,
+            "graph_1hop_small": 40,
+            "graph_2hop_large": 26,
+            "graph_2hop_small": 10,
+            "vector": 820
+          }
+        },
+        "musique": {
+          "n": 1000,
+          "direct_em": 0.174,
+          "direct_f1": 0.24253528138528138,
+          "static_em": 0.158,
+          "static_f1": 0.2229682663741487,
+          "policy_em": 0.168,
+          "policy_f1": 0.2367871739371739,
+          "oracle_em": 0.209,
+          "oracle_f1": 0.289711306667189,
+          "em_gain": -0.005999999999999978,
+          "f1_gain": -0.00574810744810747,
+          "static_em_gain": -0.015999999999999986,
+          "static_f1_gain": -0.01956701501113267,
+          "policy_minus_static_em": 0.010000000000000009,
+          "policy_minus_static_f1": 0.013818907563025201,
+          "oracle_potential_f1": 0.04717602528190759,
+          "oracle_potential_capture": -0.12184382668439679,
+          "graph_rate": 0.441,
+          "actions": {
+            "graph_1hop_large": 283,
+            "graph_1hop_small": 91,
+            "graph_2hop_large": 49,
+            "graph_2hop_small": 18,
+            "vector": 559
+          }
+        },
+        "2wiki": {
+          "n": 1000,
+          "direct_em": 0.319,
+          "direct_f1": 0.37735366855366853,
+          "static_em": 0.342,
+          "static_f1": 0.3980095127095127,
+          "policy_em": 0.339,
+          "policy_f1": 0.39821882006882003,
+          "oracle_em": 0.411,
+          "oracle_f1": 0.47881340881340884,
+          "em_gain": 0.020000000000000018,
+          "f1_gain": 0.020865151515151503,
+          "static_em_gain": 0.02300000000000002,
+          "static_f1_gain": 0.02065584415584415,
+          "policy_minus_static_em": -0.0030000000000000027,
+          "policy_minus_static_f1": 0.00020930735930735356,
+          "oracle_potential_f1": 0.1014597402597403,
+          "oracle_potential_capture": 0.20564956564777342,
+          "graph_rate": 0.602,
+          "actions": {
+            "graph_1hop_large": 375,
+            "graph_1hop_small": 61,
+            "graph_2hop_large": 155,
+            "graph_2hop_small": 11,
+            "vector": 398
+          }
+        },
+        "Macro": {
+          "n": 3000,
+          "direct_em": 0.3223333333333333,
+          "direct_f1": 0.40975384060384057,
+          "static_em": 0.32833333333333337,
+          "static_f1": 0.41174639293168697,
+          "policy_em": 0.32866666666666666,
+          "policy_f1": 0.41700981425981426,
+          "oracle_em": 0.381,
+          "oracle_f1": 0.4747096777949719,
+          "em_gain": 0.0063333333333333575,
+          "f1_gain": 0.007255973655973691,
+          "static_em_gain": 0.006000000000000061,
+          "static_f1_gain": 0.0019925523278463975,
+          "policy_minus_static_em": 0.0003333333333332966,
+          "policy_minus_static_f1": 0.0052634213281272935,
+          "oracle_potential_f1": 0.06495583719113135,
+          "oracle_potential_capture": 0.1117062602799364,
+          "graph_rate": 0.4076666666666667,
+          "actions": {
+            "graph_1hop_large": 762,
+            "graph_1hop_small": 192,
+            "graph_2hop_large": 230,
+            "graph_2hop_small": 39,
+            "vector": 1777
+          }
+        }
+      },
+      "paired_bootstrap": {
+        "policy_vs_direct": {
+          "em": {
+            "observed_gain": 0.006333333333333333,
+            "ci95_low": -0.0009999999999999998,
+            "ci95_high": 0.013666666666666666,
+            "probability_positive": 0.9538023098845058
+          },
+          "f1": {
+            "observed_gain": 0.007255973655973656,
+            "ci95_low": -0.0003293960668960664,
+            "ci95_high": 0.014619473304473293,
+            "probability_positive": 0.9702014899255037
+          }
+        },
+        "policy_vs_frozen_static": {
+          "em": {
+            "observed_gain": 0.0003333333333333333,
+            "ci95_low": -0.007,
+            "ci95_high": 0.007666666666666666,
+            "probability_positive": 0.5236238188090595
+          },
+          "f1": {
+            "observed_gain": 0.00526342132812721,
+            "ci95_low": -0.002172802818096936,
+            "ci95_high": 0.012691484098689981,
+            "probability_positive": 0.9180540972951352
+          }
+        }
+      }
+    },
+    {
+      "model": "data/models/gated_answer_policy_1000_seed44.joblib",
+      "model_label": "gated_answer_policy_1000_seed44",
+      "seed": 44,
+      "threshold": 0.49999999999999994,
+      "frozen_static_action": "graph_1hop_large",
+      "metrics": {
+        "hotpotqa": {
+          "n": 1000,
+          "direct_em": 0.474,
+          "direct_f1": 0.6093725718725719,
+          "static_em": 0.485,
+          "static_f1": 0.6142613997113997,
+          "policy_em": 0.475,
+          "policy_f1": 0.6113725718725719,
+          "oracle_em": 0.523,
+          "oracle_f1": 0.655604317904318,
+          "em_gain": 0.0010000000000000009,
+          "f1_gain": 0.0020000000000000018,
+          "static_em_gain": 0.01100000000000001,
+          "static_f1_gain": 0.004888827838827825,
+          "policy_minus_static_em": -0.010000000000000009,
+          "policy_minus_static_f1": -0.0028888278388278232,
+          "oracle_potential_f1": 0.04623174603174607,
+          "oracle_potential_capture": 0.04326031724232645,
+          "graph_rate": 0.036,
+          "actions": {
+            "graph_1hop_large": 19,
+            "graph_1hop_small": 13,
+            "graph_2hop_large": 2,
+            "graph_2hop_small": 2,
+            "vector": 964
+          }
+        },
+        "musique": {
+          "n": 1000,
+          "direct_em": 0.174,
+          "direct_f1": 0.24253528138528138,
+          "static_em": 0.158,
+          "static_f1": 0.2229682663741487,
+          "policy_em": 0.175,
+          "policy_f1": 0.24496495171495172,
+          "oracle_em": 0.209,
+          "oracle_f1": 0.289711306667189,
+          "em_gain": 0.0010000000000000009,
+          "f1_gain": 0.0024296703296703415,
+          "static_em_gain": -0.015999999999999986,
+          "static_f1_gain": -0.01956701501113267,
+          "policy_minus_static_em": 0.016999999999999987,
+          "policy_minus_static_f1": 0.021996685340803013,
+          "oracle_potential_f1": 0.04717602528190759,
+          "oracle_potential_capture": 0.051502226292941655,
+          "graph_rate": 0.15,
+          "actions": {
+            "graph_1hop_large": 94,
+            "graph_1hop_small": 40,
+            "graph_2hop_large": 11,
+            "graph_2hop_small": 5,
+            "vector": 850
+          }
+        },
+        "2wiki": {
+          "n": 1000,
+          "direct_em": 0.319,
+          "direct_f1": 0.37735366855366853,
+          "static_em": 0.342,
+          "static_f1": 0.3980095127095127,
+          "policy_em": 0.339,
+          "policy_f1": 0.39808548673548677,
+          "oracle_em": 0.411,
+          "oracle_f1": 0.47881340881340884,
+          "em_gain": 0.020000000000000018,
+          "f1_gain": 0.02073181818181824,
+          "static_em_gain": 0.02300000000000002,
+          "static_f1_gain": 0.02065584415584415,
+          "policy_minus_static_em": -0.0030000000000000027,
+          "policy_minus_static_f1": 7.597402597409042e-05,
+          "oracle_potential_f1": 0.1014597402597403,
+          "oracle_potential_capture": 0.2043354154933188,
+          "graph_rate": 0.39,
+          "actions": {
+            "graph_1hop_large": 246,
+            "graph_1hop_small": 39,
+            "graph_2hop_large": 96,
+            "graph_2hop_small": 9,
+            "vector": 610
+          }
+        },
+        "Macro": {
+          "n": 3000,
+          "direct_em": 0.3223333333333333,
+          "direct_f1": 0.40975384060384057,
+          "static_em": 0.32833333333333337,
+          "static_f1": 0.41174639293168697,
+          "policy_em": 0.3296666666666666,
+          "policy_f1": 0.4181410034410034,
+          "oracle_em": 0.381,
+          "oracle_f1": 0.4747096777949719,
+          "em_gain": 0.007333333333333303,
+          "f1_gain": 0.008387162837162843,
+          "static_em_gain": 0.006000000000000061,
+          "static_f1_gain": 0.0019925523278463975,
+          "policy_minus_static_em": 0.001333333333333242,
+          "policy_minus_static_f1": 0.006394610509316445,
+          "oracle_potential_f1": 0.06495583719113135,
+          "oracle_potential_capture": 0.12912100282048203,
+          "graph_rate": 0.192,
+          "actions": {
+            "graph_1hop_large": 359,
+            "graph_1hop_small": 92,
+            "graph_2hop_large": 109,
+            "graph_2hop_small": 16,
+            "vector": 2424
+          }
+        }
+      },
+      "paired_bootstrap": {
+        "policy_vs_direct": {
+          "em": {
+            "observed_gain": 0.007333333333333333,
+            "ci95_low": 0.002333333333333333,
+            "ci95_high": 0.012333333333333335,
+            "probability_positive": 0.9978001099945003
+          },
+          "f1": {
+            "observed_gain": 0.008387162837162837,
+            "ci95_low": 0.0030115477577977575,
+            "ci95_high": 0.013810793650793638,
+            "probability_positive": 0.9989000549972501
+          }
+        },
+        "policy_vs_frozen_static": {
+          "em": {
+            "observed_gain": 0.0013333333333333337,
+            "ci95_low": -0.007333333333333333,
+            "ci95_high": 0.010333333333333333,
+            "probability_positive": 0.6104694765261737
+          },
+          "f1": {
+            "observed_gain": 0.006394610509316394,
+            "ci95_low": -0.002270060288295582,
+            "ci95_high": 0.015179099503437734,
+            "probability_positive": 0.9268036598170092
+          }
+        }
+      }
+    }
+  ],
+  "across_policy_seeds": {
+    "hotpotqa": {
+      "policy_em": {
+        "mean": 0.47766666666666663,
+        "std": 0.0023094010767585054,
+        "min": 0.475,
+        "max": 0.479
+      },
+      "policy_f1": {
+        "mean": 0.6143842675842676,
+        "std": 0.0026116108195254513,
+        "min": 0.6113725718725719,
+        "max": 0.6160234487734487
+      },
+      "em_gain": {
+        "mean": 0.00366666666666667,
+        "std": 0.0023094010767585054,
+        "min": 0.0010000000000000009,
+        "max": 0.0050000000000000044
+      },
+      "f1_gain": {
+        "mean": 0.005011695711695685,
+        "std": 0.0026116108195254513,
+        "min": 0.0020000000000000018,
+        "max": 0.006650876900876845
+      },
+      "policy_minus_static_em": {
+        "mean": -0.00733333333333334,
+        "std": 0.0023094010767585054,
+        "min": -0.010000000000000009,
+        "max": -0.006000000000000005
+      },
+      "policy_minus_static_f1": {
+        "mean": 0.00012286787286786005,
+        "std": 0.0026116108195254513,
+        "min": -0.0028888278388278232,
+        "max": 0.0017620490620490203
+      },
+      "graph_rate": {
+        "mean": 0.13199999999999998,
+        "std": 0.08313843876330611,
+        "min": 0.036,
+        "max": 0.18
+      }
+    },
+    "musique": {
+      "policy_em": {
+        "mean": 0.17033333333333334,
+        "std": 0.004041451884327368,
+        "min": 0.168,
+        "max": 0.175
+      },
+      "policy_f1": {
+        "mean": 0.23951309986309985,
+        "std": 0.004721442201372959,
+        "min": 0.2367871739371739,
+        "max": 0.24496495171495172
+      },
+      "em_gain": {
+        "mean": -0.0036666666666666514,
+        "std": 0.004041451884327368,
+        "min": -0.005999999999999978,
+        "max": 0.0010000000000000009
+      },
+      "f1_gain": {
+        "mean": -0.003022181522181533,
+        "std": 0.004721442201372959,
+        "min": -0.00574810744810747,
+        "max": 0.0024296703296703415
+      },
+      "policy_minus_static_em": {
+        "mean": 0.012333333333333335,
+        "std": 0.004041451884327368,
+        "min": 0.010000000000000009,
+        "max": 0.016999999999999987
+      },
+      "policy_minus_static_f1": {
+        "mean": 0.01654483348895114,
+        "std": 0.004721442201372959,
+        "min": 0.013818907563025201,
+        "max": 0.021996685340803013
+      },
+      "graph_rate": {
+        "mean": 0.34400000000000003,
+        "std": 0.1680089283341811,
+        "min": 0.15,
+        "max": 0.441
+      }
+    },
+    "2wiki": {
+      "policy_em": {
+        "mean": 0.3383333333333334,
+        "std": 0.0011547005383792527,
+        "min": 0.337,
+        "max": 0.339
+      },
+      "policy_f1": {
+        "mean": 0.39728548673548675,
+        "std": 0.0015025903559446286,
+        "min": 0.3955521534021534,
+        "max": 0.39821882006882003
+      },
+      "em_gain": {
+        "mean": 0.01933333333333335,
+        "std": 0.0011547005383792525,
+        "min": 0.018000000000000016,
+        "max": 0.020000000000000018
+      },
+      "f1_gain": {
+        "mean": 0.0199318181818182,
+        "std": 0.0015025903559446286,
+        "min": 0.018198484848484853,
+        "max": 0.020865151515151503
+      },
+      "policy_minus_static_em": {
+        "mean": -0.00366666666666667,
+        "std": 0.0011547005383792527,
+        "min": -0.0050000000000000044,
+        "max": -0.0030000000000000027
+      },
+      "policy_minus_static_f1": {
+        "mean": -0.000724025974025951,
+        "std": 0.0015025903559446286,
+        "min": -0.002457359307359297,
+        "max": 0.00020930735930735356
+      },
+      "graph_rate": {
+        "mean": 0.5313333333333333,
+        "std": 0.12239825706820064,
+        "min": 0.39,
+        "max": 0.602
+      }
+    },
+    "Macro": {
+      "policy_em": {
+        "mean": 0.3287777777777778,
+        "std": 0.0008388704928078239,
+        "min": 0.328,
+        "max": 0.3296666666666666
+      },
+      "policy_f1": {
+        "mean": 0.4170609513942847,
+        "std": 0.0010554130297636866,
+        "min": 0.41603203648203646,
+        "max": 0.4181410034410034
+      },
+      "em_gain": {
+        "mean": 0.006444444444444457,
+        "std": 0.0008388704928078239,
+        "min": 0.005666666666666709,
+        "max": 0.007333333333333303
+      },
+      "f1_gain": {
+        "mean": 0.007307110790444142,
+        "std": 0.0010554130297636866,
+        "min": 0.006278195878195891,
+        "max": 0.008387162837162843
+      },
+      "policy_minus_static_em": {
+        "mean": 0.0004444444444443955,
+        "std": 0.0008388704928078239,
+        "min": -0.00033333333333335213,
+        "max": 0.001333333333333242
+      },
+      "policy_minus_static_f1": {
+        "mean": 0.0053145584625977444,
+        "std": 0.0010554130297636866,
+        "min": 0.004285643550349494,
+        "max": 0.006394610509316445
+      },
+      "graph_rate": {
+        "mean": 0.3357777777777778,
+        "std": 0.1245152080552293,
+        "min": 0.192,
+        "max": 0.4076666666666667
+      }
+    }
+  },
+  "bootstrap_samples": 20000,
+  "bootstrap_seed": 42
+}

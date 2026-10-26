@@ -1,0 +1,73 @@
+{
+  "format_version": 6,
+  "experiment": "structured_gap_evidence_survival_retrieval_v6",
+  "dataset": "musique",
+  "split": "validation",
+  "corpus_fingerprint": "72c60c26da7a1d136190c176747ddd22b9b7c34bdbb6506b76bf3e02f20e2cd5",
+  "corpus_examples_per_dataset": 2000,
+  "corpus_seed": 42,
+  "query_seed": 42,
+  "report_hops": [
+    2,
+    3,
+    4
+  ],
+  "max_evidence_hops": 4,
+  "max_search_steps": 3,
+  "queries_by_hop": {
+    "2": 1046,
+    "3": 630,
+    "4": 324
+  },
+  "top_k": 5,
+  "initial_candidates": 15,
+  "actions": [
+    "vector",
+    "planned_continue_1",
+    "planned_continue_2",
+    "planned_continue_3"
+  ],
+  "enable_iterative": false,
+  "graph_format_version": 5,
+  "bridge_config": {
+    "seed_count": 4,
+    "graph_hops": 1,
+    "candidates_per_seed": 12,
+    "anchor_text_characters": 700,
+    "conditioned_weight": 0.6,
+    "anchor_weight": 0.15,
+    "title_mention_weight": 0.15,
+    "semantic_weight": 0.1
+  },
+  "iterative_config": {
+    "max_evidence_hops": 4,
+    "beam_width": 8,
+    "candidates_per_state": 8,
+    "retrieval_candidates_per_state": 8,
+    "chain_text_characters": 1200,
+    "conditioned_weight": 0.7,
+    "previous_path_weight": 0.15,
+    "title_mention_weight": 0.07,
+    "semantic_weight": 0.08
+  },
+  "planner_config": {
+    "host": "http://127.0.0.1:11434",
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "max_tokens": 80,
+    "timeout_seconds": 300,
+    "seed": 42,
+    "temperature": 0.0,
+    "keep_alive": "30m",
+    "prompt_version": "multihop_next_search_query_v1_json"
+  },
+  "planner_search_candidates": 8,
+  "planner_context_characters": 4000,
+  "planner_anchor_slots": 2,
+  "planner_reader_source_cap": 5,
+  "planner_additions_per_step": 1,
+  "planner_replace_when_full": true,
+  "status": "ready",
+  "completed_rows": 2000,
+  "requested_rows": 2000
+}

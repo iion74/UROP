@@ -1,0 +1,168 @@
+{
+  "format_version": 1,
+  "method": "reader_aware_counterfactual_sufficiency",
+  "model": "data/models/reader_aware_sufficiency_policy_pilot_v2.joblib",
+  "fit": {
+    "states": 720,
+    "stop_states": 621,
+    "stop_rate": 0.8625,
+    "roc_auc": 1.0,
+    "average_precision": 1.0,
+    "mean_absolute_regret_error": 0.10808764658381899
+  },
+  "chosen_parameters": {
+    "parameters": [
+      0.95,
+      0.05,
+      0.5,
+      0.25
+    ],
+    "datasets": {
+      "hotpotqa": {
+        "count": 20,
+        "em": 0.7,
+        "f1": 0.7685714285714285,
+        "fixed3_em": 0.7,
+        "fixed3_f1": 0.7685714285714285,
+        "em_change_points": 0.0,
+        "f1_change_points": 0.0,
+        "average_additional_searches": 2.45,
+        "step_distribution": {
+          "1": 5,
+          "2": 1,
+          "3": 14
+        }
+      },
+      "musique": {
+        "count": 20,
+        "em": 0.45,
+        "f1": 0.5666666666666667,
+        "fixed3_em": 0.45,
+        "fixed3_f1": 0.5666666666666667,
+        "em_change_points": 0.0,
+        "f1_change_points": 0.0,
+        "average_additional_searches": 2.6,
+        "step_distribution": {
+          "1": 3,
+          "2": 2,
+          "3": 15
+        }
+      },
+      "2wiki": {
+        "count": 20,
+        "em": 0.7,
+        "f1": 0.7,
+        "fixed3_em": 0.7,
+        "fixed3_f1": 0.7,
+        "em_change_points": 0.0,
+        "f1_change_points": 0.0,
+        "average_additional_searches": 2.65,
+        "step_distribution": {
+          "1": 3,
+          "2": 1,
+          "3": 16
+        }
+      }
+    },
+    "worst_f1_change_points": 0.0,
+    "worst_em_change_points": 0.0,
+    "sum_average_searches": 7.7
+  },
+  "train_tune": {
+    "hotpotqa": {
+      "count": 20,
+      "em": 0.7,
+      "f1": 0.7685714285714285,
+      "fixed3_em": 0.7,
+      "fixed3_f1": 0.7685714285714285,
+      "em_change_points": 0.0,
+      "f1_change_points": 0.0,
+      "average_additional_searches": 2.45,
+      "step_distribution": {
+        "1": 5,
+        "2": 1,
+        "3": 14
+      }
+    },
+    "musique": {
+      "count": 20,
+      "em": 0.45,
+      "f1": 0.5666666666666667,
+      "fixed3_em": 0.45,
+      "fixed3_f1": 0.5666666666666667,
+      "em_change_points": 0.0,
+      "f1_change_points": 0.0,
+      "average_additional_searches": 2.6,
+      "step_distribution": {
+        "1": 3,
+        "2": 2,
+        "3": 15
+      }
+    },
+    "2wiki": {
+      "count": 20,
+      "em": 0.7,
+      "f1": 0.7,
+      "fixed3_em": 0.7,
+      "fixed3_f1": 0.7,
+      "em_change_points": 0.0,
+      "f1_change_points": 0.0,
+      "average_additional_searches": 2.65,
+      "step_distribution": {
+        "1": 3,
+        "2": 1,
+        "3": 16
+      }
+    }
+  },
+  "validation": {
+    "hotpotqa": {
+      "count": 100,
+      "em": 0.52,
+      "f1": 0.7035824175824176,
+      "fixed3_em": 0.52,
+      "fixed3_f1": 0.697010989010989,
+      "em_change_points": 0.0,
+      "f1_change_points": 0.6571428571428571,
+      "average_additional_searches": 2.41,
+      "step_distribution": {
+        "1": 23,
+        "2": 13,
+        "3": 64
+      }
+    },
+    "musique": {
+      "count": 100,
+      "em": 0.41,
+      "f1": 0.49971428571428567,
+      "fixed3_em": 0.39,
+      "fixed3_f1": 0.47871428571428565,
+      "em_change_points": 2.0,
+      "f1_change_points": 2.1,
+      "average_additional_searches": 2.79,
+      "step_distribution": {
+        "1": 9,
+        "2": 3,
+        "3": 88
+      }
+    },
+    "2wiki": {
+      "count": 100,
+      "em": 0.57,
+      "f1": 0.6476839826839828,
+      "fixed3_em": 0.57,
+      "fixed3_f1": 0.6476839826839828,
+      "em_change_points": 0.0,
+      "f1_change_points": 0.0,
+      "average_additional_searches": 2.51,
+      "step_distribution": {
+        "1": 20,
+        "2": 9,
+        "3": 71
+      }
+    }
+  },
+  "parameter_candidates": 594,
+  "train_tune_predictions": "data/models/reader_aware_sufficiency_policy_pilot_v2.report.train_tune_predictions.jsonl",
+  "validation_predictions": "data/models/reader_aware_sufficiency_policy_pilot_v2.report.validation_predictions.jsonl"
+}

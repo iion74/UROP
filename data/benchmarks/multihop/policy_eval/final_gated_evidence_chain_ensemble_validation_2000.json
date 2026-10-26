@@ -1,0 +1,243 @@
+{
+  "format_version": 1,
+  "policy": "five_seed_stop_vote_with_validation_gated_reader",
+  "policy_predictions": "data/benchmarks/multihop/policy_eval/stop_value_ensemble5_cost005_validation_2000_predictions.jsonl",
+  "chain_datasets": [
+    "musique",
+    "2wiki"
+  ],
+  "chain_action": "planned_continue_3",
+  "gate_rows_per_chain_dataset": 200,
+  "validation": {
+    "hotpotqa": {
+      "n": 2000,
+      "em": 0.5245,
+      "f1": 0.6601447580197581,
+      "baseline_policy_em": 0.5245,
+      "baseline_policy_f1": 0.6601447580197581,
+      "direct_em": 0.4775,
+      "direct_f1": 0.6096332861582862,
+      "average_extra_searches": 2.9795,
+      "reader_routes": {
+        "baseline_v2": 2000
+      }
+    },
+    "musique": {
+      "n": 2000,
+      "em": 0.2815,
+      "f1": 0.36461732033446437,
+      "baseline_policy_em": 0.246,
+      "baseline_policy_f1": 0.32579078748049334,
+      "direct_em": 0.172,
+      "direct_f1": 0.23813841713841713,
+      "average_extra_searches": 2.9705,
+      "reader_routes": {
+        "baseline_v2": 59,
+        "evidence_chain_v3": 1941
+      }
+    },
+    "2wiki": {
+      "n": 2000,
+      "em": 0.5225,
+      "f1": 0.5899383708692194,
+      "baseline_policy_em": 0.454,
+      "baseline_policy_f1": 0.5195765800376094,
+      "direct_em": 0.308,
+      "direct_f1": 0.3660987040737041,
+      "average_extra_searches": 2.9955,
+      "reader_routes": {
+        "baseline_v2": 9,
+        "evidence_chain_v3": 1991
+      }
+    }
+  },
+  "paired_bootstrap": {
+    "hotpotqa": {
+      "vs_direct": {
+        "em": {
+          "observed_gain": 0.047,
+          "ci95_low": 0.034,
+          "ci95_high": 0.0605,
+          "probability_positive": 1.0
+        },
+        "f1": {
+          "observed_gain": 0.05051147186147186,
+          "ci95_low": 0.037574749278499284,
+          "ci95_high": 0.06367562590187588,
+          "probability_positive": 1.0
+        }
+      },
+      "vs_baseline_policy": {
+        "em": {
+          "observed_gain": 0.0,
+          "ci95_low": 0.0,
+          "ci95_high": 0.0,
+          "probability_positive": 0.0
+        },
+        "f1": {
+          "observed_gain": 0.0,
+          "ci95_low": 0.0,
+          "ci95_high": 0.0,
+          "probability_positive": 0.0
+        }
+      }
+    },
+    "musique": {
+      "vs_direct": {
+        "em": {
+          "observed_gain": 0.1095,
+          "ci95_low": 0.091,
+          "ci95_high": 0.1285,
+          "probability_positive": 1.0
+        },
+        "f1": {
+          "observed_gain": 0.12647890319604715,
+          "ci95_low": 0.10847360611803916,
+          "ci95_high": 0.14445382454888156,
+          "probability_positive": 1.0
+        }
+      },
+      "vs_baseline_policy": {
+        "em": {
+          "observed_gain": 0.0355,
+          "ci95_low": 0.0215,
+          "ci95_high": 0.0495,
+          "probability_positive": 1.0
+        },
+        "f1": {
+          "observed_gain": 0.03882653285397094,
+          "ci95_low": 0.02466957932354024,
+          "ci95_high": 0.05295470193967968,
+          "probability_positive": 1.0
+        }
+      }
+    },
+    "2wiki": {
+      "vs_direct": {
+        "em": {
+          "observed_gain": 0.2145,
+          "ci95_low": 0.1915,
+          "ci95_high": 0.238,
+          "probability_positive": 1.0
+        },
+        "f1": {
+          "observed_gain": 0.22383966679551529,
+          "ci95_low": 0.20126520423882158,
+          "ci95_high": 0.24670126839749515,
+          "probability_positive": 1.0
+        }
+      },
+      "vs_baseline_policy": {
+        "em": {
+          "observed_gain": 0.0685,
+          "ci95_low": 0.048,
+          "ci95_high": 0.0885,
+          "probability_positive": 1.0
+        },
+        "f1": {
+          "observed_gain": 0.07036179083160991,
+          "ci95_low": 0.0511340705093974,
+          "ci95_high": 0.08965367508063024,
+          "probability_positive": 1.0
+        }
+      }
+    }
+  },
+  "bootstrap_samples": 20000,
+  "bootstrap_seed": 42,
+  "held_out_after_gate": {
+    "validation": {
+      "musique": {
+        "n": 1800,
+        "em": 0.2833333333333333,
+        "f1": 0.36573517630651275,
+        "baseline_policy_em": 0.245,
+        "baseline_policy_f1": 0.3247920349439957,
+        "direct_em": 0.16944444444444445,
+        "direct_f1": 0.23641954958621625,
+        "average_extra_searches": 2.9705555555555554,
+        "reader_routes": {
+          "baseline_v2": 53,
+          "evidence_chain_v3": 1747
+        }
+      },
+      "2wiki": {
+        "n": 1800,
+        "em": 0.525,
+        "f1": 0.5926735465967116,
+        "baseline_policy_em": 0.45444444444444443,
+        "baseline_policy_f1": 0.5202975708931591,
+        "direct_em": 0.31277777777777777,
+        "direct_f1": 0.3714632466299133,
+        "average_extra_searches": 2.996111111111111,
+        "reader_routes": {
+          "baseline_v2": 7,
+          "evidence_chain_v3": 1793
+        }
+      }
+    },
+    "paired_bootstrap": {
+      "musique": {
+        "vs_direct": {
+          "em": {
+            "observed_gain": 0.11388888888888889,
+            "ci95_low": 0.095,
+            "ci95_high": 0.13333333333333333,
+            "probability_positive": 1.0
+          },
+          "f1": {
+            "observed_gain": 0.12931562672029648,
+            "ci95_low": 0.11061304749375249,
+            "ci95_high": 0.14782765803931952,
+            "probability_positive": 1.0
+          }
+        },
+        "vs_baseline_policy": {
+          "em": {
+            "observed_gain": 0.03833333333333333,
+            "ci95_low": 0.023333333333333334,
+            "ci95_high": 0.05333333333333334,
+            "probability_positive": 1.0
+          },
+          "f1": {
+            "observed_gain": 0.040943141362517005,
+            "ci95_low": 0.026145115817442315,
+            "ci95_high": 0.05584317783884023,
+            "probability_positive": 1.0
+          }
+        }
+      },
+      "2wiki": {
+        "vs_direct": {
+          "em": {
+            "observed_gain": 0.21222222222222223,
+            "ci95_low": 0.18777777777777777,
+            "ci95_high": 0.23666666666666666,
+            "probability_positive": 1.0
+          },
+          "f1": {
+            "observed_gain": 0.22121029996679825,
+            "ci95_low": 0.1975042348743728,
+            "ci95_high": 0.24466588408594866,
+            "probability_positive": 1.0
+          }
+        },
+        "vs_baseline_policy": {
+          "em": {
+            "observed_gain": 0.07055555555555555,
+            "ci95_low": 0.049444444444444444,
+            "ci95_high": 0.09166666666666666,
+            "probability_positive": 1.0
+          },
+          "f1": {
+            "observed_gain": 0.07237597570355245,
+            "ci95_low": 0.0523623057214066,
+            "ci95_high": 0.0929047450678687,
+            "probability_positive": 1.0
+          }
+        }
+      }
+    }
+  },
+  "predictions": "data/benchmarks/multihop/policy_eval/final_gated_evidence_chain_ensemble_validation_2000_predictions.jsonl"
+}

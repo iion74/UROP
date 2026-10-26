@@ -1,0 +1,389 @@
+{
+  "method": "all_reason_holdout_trained_direct_f1_gain_gate_evaluated_on_full_validation_reason_queue",
+  "model": "hgb",
+  "training_questions": 1500,
+  "training_counts": {
+    "hotpotqa": 500,
+    "musique": 500,
+    "2wiki": 500
+  },
+  "training_label_counts": {
+    "positive": 71,
+    "negative": 39,
+    "zero": 1390
+  },
+  "oof": {
+    "hgb": {
+      "mse": 0.04675873044502106,
+      "rank50_advantage_vs_random_points": 0.301092241092241,
+      "positive_threshold_rate": 0.5746666666666667
+    },
+    "extra_trees": {
+      "mse": 0.04453833625012487,
+      "rank50_advantage_vs_random_points": 0.004151404151404164,
+      "positive_threshold_rate": 0.6413333333333333
+    }
+  },
+  "evaluation": {
+    "hotpotqa": {
+      "questions": 7405,
+      "reason_queue_questions": 1557,
+      "old_full_f1": 72.18349261225228,
+      "old_full_em": 58.02835921674544,
+      "old_full_estimated_latency_seconds": 2.885782449453227,
+      "old_full_reader_generated_tokens": 62.32748143146522,
+      "policies": {
+        "predicted_positive_gain": {
+          "reason_kept": 848,
+          "reason_skipped": 709,
+          "mean_predicted_gain_points": 1.1294367148519433,
+          "mean_actual_gain_kept_points": 2.0210429948513364,
+          "queue_f1": 70.54862422754059,
+          "queue_em": 56.19781631342325,
+          "queue_f1_change_vs_old_points": -0.8418876785645459,
+          "queue_f1_change_vs_old_ci95": [
+            -1.4868187315767505,
+            -0.18928523107940523
+          ],
+          "matched_random_expected_queue_f1": 70.50591363472802,
+          "queue_f1_change_vs_matched_random_points": 0.04271059281256192,
+          "queue_f1_change_vs_matched_random_ci95": [
+            -0.4576909868592151,
+            0.557817986498083
+          ],
+          "fraction_random_at_least_policy": 0.4494,
+          "saved_latency_seconds_per_queue_question": 0.7409071701863815,
+          "saved_reader_generated_tokens_per_queue_question": 24.700706486833653,
+          "full_f1": 72.00647450077017,
+          "full_f1_change_vs_old_points": -0.17701811148210642,
+          "full_f1_change_vs_old_ci95": [
+            -0.3126234659101959,
+            -0.039799744063556235
+          ],
+          "full_f1_change_vs_matched_random_points": 0.008980471709542054,
+          "full_f1_change_vs_matched_random_ci95": [
+            -0.09623563356378095,
+            0.11728867048987376
+          ],
+          "full_em": 57.87981093855503,
+          "full_estimated_latency_seconds": 2.729996836491688,
+          "full_reader_generated_tokens": 57.133828494260634
+        },
+        "predicted_gain_over_1_point": {
+          "reason_kept": 716,
+          "reason_skipped": 841,
+          "mean_predicted_gain_points": 1.1294367148519433,
+          "mean_actual_gain_kept_points": 2.2489544497777376,
+          "queue_f1": 70.48209046158486,
+          "queue_em": 56.00513808606294,
+          "queue_f1_change_vs_old_points": -0.9084214445202771,
+          "queue_f1_change_vs_old_ci95": [
+            -1.5545531430717872,
+            -0.2423299637257475
+          ],
+          "matched_random_expected_queue_f1": 70.34122114978898,
+          "queue_f1_change_vs_matched_random_points": 0.14086931179586912,
+          "queue_f1_change_vs_matched_random_ci95": [
+            -0.36644768368097214,
+            0.6834764647921632
+          ],
+          "fraction_random_at_least_policy": 0.2882,
+          "saved_latency_seconds_per_queue_question": 0.8614247074862433,
+          "saved_reader_generated_tokens_per_queue_question": 29.495183044315993,
+          "full_f1": 71.99248488921135,
+          "full_f1_change_vs_old_points": -0.19100772304092795,
+          "full_f1_change_vs_old_ci95": [
+            -0.3268655292049659,
+            -0.0509531064849411
+          ],
+          "full_f1_change_vs_matched_random_points": 0.02961965137963109,
+          "full_f1_change_vs_matched_random_ci95": [
+            -0.07705051228781548,
+            0.14371004128040488
+          ],
+          "full_em": 57.839297771775826,
+          "full_estimated_latency_seconds": 2.704656417102642,
+          "full_reader_generated_tokens": 56.125725860904794
+        },
+        "ranked_keep_half": {
+          "reason_kept": 778,
+          "reason_skipped": 779,
+          "mean_predicted_gain_points": 1.1294367148519433,
+          "mean_actual_gain_kept_points": 2.1055657762463333,
+          "queue_f1": 70.4999959130163,
+          "queue_em": 56.06936416184971,
+          "queue_f1_change_vs_old_points": -0.8905159930888142,
+          "queue_f1_change_vs_old_ci95": [
+            -1.5277723942577168,
+            -0.22233579405176365
+          ],
+          "matched_random_expected_queue_f1": 70.4185767108967,
+          "queue_f1_change_vs_matched_random_points": 0.08141920211960192,
+          "queue_f1_change_vs_matched_random_ci95": [
+            -0.42897448004124406,
+            0.6117900981147049
+          ],
+          "fraction_random_at_least_policy": 0.3838,
+          "saved_latency_seconds_per_queue_question": 0.8080036494931458,
+          "saved_reader_generated_tokens_per_queue_question": 27.393705844572896,
+          "full_f1": 71.99624974915447,
+          "full_f1_change_vs_old_points": -0.1872428630978101,
+          "full_f1_change_vs_old_ci95": [
+            -0.3212345196298805,
+            -0.0467490656770555
+          ],
+          "full_f1_change_vs_matched_random_points": 0.01711947301826066,
+          "full_f1_change_vs_matched_random_ci95": [
+            -0.09019760505391182,
+            0.12863702670690014
+          ],
+          "full_em": 57.852802160702225,
+          "full_estimated_latency_seconds": 2.7158889069467005,
+          "full_reader_generated_tokens": 56.567589466576635
+        }
+      }
+    },
+    "musique": {
+      "questions": 2417,
+      "reason_queue_questions": 105,
+      "old_full_f1": 44.56805077330245,
+      "old_full_em": 34.960695076541164,
+      "old_full_estimated_latency_seconds": 3.321058214868821,
+      "old_full_reader_generated_tokens": 53.08688456764584,
+      "policies": {
+        "predicted_positive_gain": {
+          "reason_kept": 55,
+          "reason_skipped": 50,
+          "mean_predicted_gain_points": 0.9500252060566615,
+          "mean_actual_gain_kept_points": 5.4978354978354975,
+          "queue_f1": 52.19841534127249,
+          "queue_em": 38.095238095238095,
+          "queue_f1_change_vs_old_points": -0.9639249639249639,
+          "queue_f1_change_vs_old_ci95": [
+            -3.1601731601731604,
+            1.2582972582972582
+          ],
+          "matched_random_expected_queue_f1": 51.331986229945414,
+          "queue_f1_change_vs_matched_random_points": 0.8664291113270707,
+          "queue_f1_change_vs_matched_random_ci95": [
+            -1.2399254940071265,
+            3.2021002051614307
+          ],
+          "fraction_random_at_least_policy": 0.2292,
+          "saved_latency_seconds_per_queue_question": 2.834288398571135,
+          "saved_reader_generated_tokens_per_queue_question": 31.552380952380954,
+          "full_f1": 44.526175671435624,
+          "full_f1_change_vs_old_points": -0.04187510186682714,
+          "full_f1_change_vs_old_ci95": [
+            -0.13728513935381956,
+            0.0546633066285528
+          ],
+          "full_f1_change_vs_matched_random_points": 0.037639659366711806,
+          "full_f1_change_vs_matched_random_ci95": [
+            -0.0538651952299331,
+            0.13910654594205638
+          ],
+          "full_em": 34.87794786925941,
+          "full_estimated_latency_seconds": 3.1979302538220815,
+          "full_reader_generated_tokens": 51.71617707902358
+        },
+        "predicted_gain_over_1_point": {
+          "reason_kept": 47,
+          "reason_skipped": 58,
+          "mean_predicted_gain_points": 0.9500252060566615,
+          "mean_actual_gain_kept_points": 6.899696048632221,
+          "queue_f1": 52.40703212131783,
+          "queue_em": 38.095238095238095,
+          "queue_f1_change_vs_old_points": -0.7553081838796123,
+          "queue_f1_change_vs_old_ci95": [
+            -2.989074417645846,
+            1.4294063079777397
+          ],
+          "matched_random_expected_queue_f1": 51.03912957790509,
+          "queue_f1_change_vs_matched_random_points": 1.3679025434127476,
+          "queue_f1_change_vs_matched_random_ci95": [
+            -0.8780397757948776,
+            3.898433607209118
+          ],
+          "fraction_random_at_least_policy": 0.1178,
+          "saved_latency_seconds_per_queue_question": 3.2645122906570103,
+          "saved_reader_generated_tokens_per_queue_question": 38.31428571428572,
+          "full_f1": 44.53523846080458,
+          "full_f1_change_vs_old_points": -0.03281231249787311,
+          "full_f1_change_vs_old_ci95": [
+            -0.1298522192192031,
+            0.062096674529442564
+          ],
+          "full_f1_change_vs_matched_random_points": 0.05942481053303207,
+          "full_f1_change_vs_matched_random_ci95": [
+            -0.03814405314789497,
+            0.16935685922919214
+          ],
+          "full_em": 34.87794786925941,
+          "full_estimated_latency_seconds": 3.179240345394685,
+          "full_reader_generated_tokens": 51.42242449317335
+        },
+        "ranked_keep_half": {
+          "reason_kept": 52,
+          "reason_skipped": 53,
+          "mean_predicted_gain_points": 0.9500252060566615,
+          "mean_actual_gain_kept_points": 5.815018315018316,
+          "queue_f1": 52.19841534127249,
+          "queue_em": 38.095238095238095,
+          "queue_f1_change_vs_old_points": -0.9639249639249639,
+          "queue_f1_change_vs_old_ci95": [
+            -3.1601731601731604,
+            1.2582972582972582
+          ],
+          "matched_random_expected_queue_f1": 51.2221649854303,
+          "queue_f1_change_vs_matched_random_points": 0.9762503558421928,
+          "queue_f1_change_vs_matched_random_ci95": [
+            -1.20880829676748,
+            3.3820445465343427
+          ],
+          "fraction_random_at_least_policy": 0.2092,
+          "saved_latency_seconds_per_queue_question": 3.011247078896988,
+          "saved_reader_generated_tokens_per_queue_question": 34.0,
+          "full_f1": 44.526175671435624,
+          "full_f1_change_vs_old_points": -0.04187510186682714,
+          "full_f1_change_vs_old_ci95": [
+            -0.13728513935381956,
+            0.0546633066285528
+          ],
+          "full_f1_change_vs_matched_random_points": 0.04241054504072414,
+          "full_f1_change_vs_matched_random_ci95": [
+            -0.05251339311567456,
+            0.146923739092307
+          ],
+          "full_em": 34.87794786925941,
+          "full_estimated_latency_seconds": 3.190242764606436,
+          "full_reader_generated_tokens": 51.60984691766652
+        }
+      }
+    },
+    "2wiki": {
+      "questions": 12576,
+      "reason_queue_questions": 2603,
+      "old_full_f1": 64.60640368458475,
+      "old_full_em": 57.54611959287532,
+      "old_full_estimated_latency_seconds": 2.495380591717055,
+      "old_full_reader_generated_tokens": 75.58770674300254,
+      "policies": {
+        "predicted_positive_gain": {
+          "reason_kept": 1368,
+          "reason_skipped": 1235,
+          "mean_predicted_gain_points": 0.5429312134295016,
+          "mean_actual_gain_kept_points": 4.166410041609404,
+          "queue_f1": 60.01485880810343,
+          "queue_em": 53.284671532846716,
+          "queue_f1_change_vs_old_points": -0.8140192926977408,
+          "queue_f1_change_vs_old_ci95": [
+            -1.8271788505173063,
+            0.25055909429708895
+          ],
+          "matched_random_expected_queue_f1": 59.403781356371255,
+          "queue_f1_change_vs_matched_random_points": 0.6110774517321911,
+          "queue_f1_change_vs_matched_random_ci95": [
+            -0.10738192107874672,
+            1.329622527424385
+          ],
+          "fraction_random_at_least_policy": 0.0446,
+          "saved_latency_seconds_per_queue_question": 0.6613038617300383,
+          "saved_reader_generated_tokens_per_queue_question": 33.990779869381484,
+          "full_f1": 64.43791670789166,
+          "full_f1_change_vs_old_points": -0.1684869766930836,
+          "full_f1_change_vs_old_ci95": [
+            -0.37819231455920393,
+            0.05186111024612934
+          ],
+          "full_f1_change_vs_matched_random_points": 0.1264817594512479,
+          "full_f1_change_vs_matched_random_ci95": [
+            -0.022226076699107644,
+            0.27520733451699064
+          ],
+          "full_em": 57.44274809160306,
+          "full_estimated_latency_seconds": 2.3585028919648847,
+          "full_reader_generated_tokens": 68.55224236641222
+        },
+        "predicted_gain_over_1_point": {
+          "reason_kept": 1205,
+          "reason_skipped": 1398,
+          "mean_predicted_gain_points": 0.5429312134295016,
+          "mean_actual_gain_kept_points": 4.519278994194121,
+          "queue_f1": 59.91731069096255,
+          "queue_em": 53.20783711102573,
+          "queue_f1_change_vs_old_points": -0.9115674098386355,
+          "queue_f1_change_vs_old_ci95": [
+            -1.9709930121954713,
+            0.15111016422003748
+          ],
+          "matched_random_expected_queue_f1": 59.21569166459629,
+          "queue_f1_change_vs_matched_random_points": 0.7016190263662592,
+          "queue_f1_change_vs_matched_random_ci95": [
+            0.02014421866109235,
+            1.418239493172808
+          ],
+          "fraction_random_at_least_policy": 0.029,
+          "saved_latency_seconds_per_queue_question": 0.7501841794197722,
+          "saved_reader_generated_tokens_per_queue_question": 38.26469458317326,
+          "full_f1": 64.41772604719527,
+          "full_f1_change_vs_old_points": -0.1886776373894695,
+          "full_f1_change_vs_old_ci95": [
+            -0.4079591929663496,
+            0.0312770163378465
+          ],
+          "full_f1_change_vs_matched_random_points": 0.1452221951042758,
+          "full_f1_change_vs_matched_random_ci95": [
+            0.00416948164558074,
+            0.2935494116355613
+          ],
+          "full_em": 57.42684478371501,
+          "full_estimated_latency_seconds": 2.3401063058527365,
+          "full_reader_generated_tokens": 67.66762086513995
+        },
+        "ranked_keep_half": {
+          "reason_kept": 1302,
+          "reason_skipped": 1301,
+          "mean_predicted_gain_points": 0.5429312134295016,
+          "mean_actual_gain_kept_points": 4.248322276181514,
+          "queue_f1": 59.950189836404135,
+          "queue_em": 53.284671532846716,
+          "queue_f1_change_vs_old_points": -0.8786882643970619,
+          "queue_f1_change_vs_old_ci95": [
+            -1.9130579317383003,
+            0.20678001406967997
+          ],
+          "matched_random_expected_queue_f1": 59.32762234006973,
+          "queue_f1_change_vs_matched_random_points": 0.6225674963343883,
+          "queue_f1_change_vs_matched_random_ci95": [
+            -0.0802251357014372,
+            1.3381389685082345
+          ],
+          "fraction_random_at_least_policy": 0.04,
+          "saved_latency_seconds_per_queue_question": 0.6988511676629064,
+          "saved_reader_generated_tokens_per_queue_question": 35.73492124471763,
+          "full_f1": 64.42453142375257,
+          "full_f1_change_vs_old_points": -0.1818722608321845,
+          "full_f1_change_vs_old_ci95": [
+            -0.39596770008864474,
+            0.0427996482683983
+          ],
+          "full_f1_change_vs_matched_random_points": 0.12885998671743107,
+          "full_f1_change_vs_matched_random_ci95": [
+            -0.016605123109958736,
+            0.2769700807114293
+          ],
+          "full_em": 57.44274809160306,
+          "full_estimated_latency_seconds": 2.3507312923033665,
+          "full_reader_generated_tokens": 68.1912372773537
+        }
+      }
+    }
+  },
+  "notes": [
+    "The policy can only skip existing REASON routes; SEARCH and original REASON-queue membership are fixed.",
+    "The all-REASON training set and full-validation set are ID-disjoint, but both had been inspected in earlier exploratory work.",
+    "Latencies are estimates from cached components, not live end-to-end measurements.",
+    "No Qwen inference was run."
+  ]
+}

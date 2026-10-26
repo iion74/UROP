@@ -1,0 +1,436 @@
+{
+  "method": "sequential_best_future_f1_gain_hgb",
+  "training_sample_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "training_questions_per_dataset_per_seed": 2000,
+  "validation_root": "data/benchmarks/multihop/context_reader_aware/full_validation",
+  "feature_count": 105,
+  "search_cost_f1_fraction": 0.001,
+  "datasets": {
+    "hotpotqa": {
+      "questions": 7405,
+      "fixed4": {
+        "f1": 71.77659445685352,
+        "em": 57.73126266036462,
+        "estimated_latency_seconds": 2.7589914271147995,
+        "reader_generated_tokens": 51.019041188386225,
+        "average_total_searches": 4.0
+      },
+      "per_seed": [
+        {
+          "training_sample_seed": 42,
+          "training_root": "data/benchmarks/multihop/context_reader_aware/train_pool_seed42_2000",
+          "training_ids_sha256": "b885073c02bcab6471f3762e6e73f86fd9cf33803335c1b456262a890c19517f",
+          "f1": 71.92432791807578,
+          "em": 57.83929777177582,
+          "average_total_searches": 3.3663740715732615,
+          "delta_f1_points": 0.14773346122225917,
+          "delta_em_points": 0.1080351114111977,
+          "delta_searches": -0.6336259284267385,
+          "search_reduction_percent": 15.840648210668462,
+          "estimated_latency_seconds": 4.072319883047624,
+          "reader_generated_tokens": 166.6607697501688,
+          "delta_estimated_latency_seconds": 1.3133284559328242,
+          "delta_reader_generated_tokens": 115.64172856178259
+        },
+        {
+          "training_sample_seed": 43,
+          "training_root": "data/benchmarks/multihop/context_reader_aware/train_pool_seed43_2000",
+          "training_ids_sha256": "172fee166a9efa546ee813d36f24e410693b9af61a6b4cc79e9f1b659797bf9d",
+          "f1": 72.17346118786848,
+          "em": 58.14989871708305,
+          "average_total_searches": 2.899797434166104,
+          "delta_f1_points": 0.39686673101496694,
+          "delta_em_points": 0.41863605671842663,
+          "delta_searches": -1.100202565833896,
+          "search_reduction_percent": 27.505064145847403,
+          "estimated_latency_seconds": 3.469689504468162,
+          "reader_generated_tokens": 141.585685347738,
+          "delta_estimated_latency_seconds": 0.7106980773533627,
+          "delta_reader_generated_tokens": 90.56664415935178
+        },
+        {
+          "training_sample_seed": 44,
+          "training_root": "data/benchmarks/multihop/context_reader_aware/train_pool_seed44_2000",
+          "training_ids_sha256": "4caa6c34556421425b09689f9fe54595f9f60b7083d243d9bf359b350fe7bbc0",
+          "f1": 71.86152136962457,
+          "em": 57.94733288318703,
+          "average_total_searches": 2.0410533423362596,
+          "delta_f1_points": 0.0849269127710528,
+          "delta_em_points": 0.21607022282240962,
+          "delta_searches": -1.9589466576637404,
+          "search_reduction_percent": 48.97366644159351,
+          "estimated_latency_seconds": 2.2868809549814273,
+          "reader_generated_tokens": 97.11748818365969,
+          "delta_estimated_latency_seconds": -0.4721104721333722,
+          "delta_reader_generated_tokens": 46.09844699527346
+        },
+        {
+          "training_sample_seed": 45,
+          "training_root": "data/benchmarks/multihop/context_reader_aware/train_pool_seed45_2000",
+          "training_ids_sha256": "73150bd311f9261b7ece250f39d9bbb5ad68f7e0a6910c3e85ec86eb08c0f44b",
+          "f1": 72.16345183170111,
+          "em": 58.10938555030385,
+          "average_total_searches": 3.0829169480081027,
+          "delta_f1_points": 0.38685737484759386,
+          "delta_em_points": 0.3781228899392275,
+          "delta_searches": -0.9170830519918973,
+          "search_reduction_percent": 22.927076299797434,
+          "estimated_latency_seconds": 3.6807455025098283,
+          "reader_generated_tokens": 148.16920999324782,
+          "delta_estimated_latency_seconds": 0.9217540753950288,
+          "delta_reader_generated_tokens": 97.1501688048616
+        },
+        {
+          "training_sample_seed": 46,
+          "training_root": "data/benchmarks/multihop/context_reader_aware/train_pool_seed46_2000",
+          "training_ids_sha256": "64ad8835733cbb9e9fa25169ed7e89d428d744f29855c945197defd8d6b28059",
+          "f1": 72.11174874136039,
+          "em": 58.01485482781904,
+          "average_total_searches": 3.1304523970290346,
+          "delta_f1_points": 0.3351542845068707,
+          "delta_em_points": 0.2835921674544224,
+          "delta_searches": -0.8695476029709654,
+          "search_reduction_percent": 21.738690074274135,
+          "estimated_latency_seconds": 3.7738282988953964,
+          "reader_generated_tokens": 154.34058068872383,
+          "delta_estimated_latency_seconds": 1.014836871780597,
+          "delta_reader_generated_tokens": 103.32153950033761
+        }
+      ],
+      "across_seeds": {
+        "f1": {
+          "mean": 72.04690220972607,
+          "sample_std": 0.1442190823420108
+        },
+        "em": {
+          "mean": 58.012153950033756,
+          "sample_std": 0.1250159277356741
+        },
+        "average_total_searches": {
+          "mean": 2.9041188386225523,
+          "sample_std": 0.5103372094477051
+        },
+        "delta_f1_points": {
+          "mean": 0.2703077528725487,
+          "sample_std": 0.1442190823420108
+        },
+        "delta_em_points": {
+          "mean": 0.2808912896691368,
+          "sample_std": 0.1250159277356741
+        },
+        "delta_searches": {
+          "mean": -1.0958811613774475,
+          "sample_std": 0.5103372094477051
+        },
+        "search_reduction_percent": {
+          "mean": 27.397029034436187,
+          "sample_std": 12.758430236192625
+        },
+        "estimated_latency_seconds": {
+          "mean": 3.4566928287804877,
+          "sample_std": 0.6889121697676891
+        },
+        "reader_generated_tokens": {
+          "mean": 141.57474679270763,
+          "sample_std": 26.515137046930278
+        },
+        "delta_estimated_latency_seconds": {
+          "mean": 0.6977014016656881,
+          "sample_std": 0.6889121697676891
+        },
+        "delta_reader_generated_tokens": {
+          "mean": 90.5557056043214,
+          "sample_std": 26.515137046930278
+        }
+      }
+    },
+    "musique": {
+      "questions": 2417,
+      "fixed4": {
+        "f1": 44.48753642716957,
+        "em": 34.919321472900286,
+        "estimated_latency_seconds": 3.102395070752188,
+        "reader_generated_tokens": 50.07654116673562,
+        "average_total_searches": 4.0
+      },
+      "per_seed": [
+        {
+          "training_sample_seed": 42,
+          "training_root": "data/benchmarks/multihop/context_reader_aware/train_pool_seed42_2000",
+          "training_ids_sha256": "4851e415f1315262c8b92116d44f24cbf958c9979197fe485029f86ef5f717b6",
+          "f1": 45.235664140786824,
+          "em": 35.41580471659081,
+          "average_total_searches": 3.594952420355813,
+          "delta_f1_points": 0.7481277136172508,
+          "delta_em_points": 0.4964832436905269,
+          "delta_searches": -0.40504757964418703,
+          "search_reduction_percent": 10.126189491104675,
+          "estimated_latency_seconds": 4.732947529079454,
+          "reader_generated_tokens": 178.9147703764998,
+          "delta_estimated_latency_seconds": 1.6305524583272661,
+          "delta_reader_generated_tokens": 128.83822920976417
+        },
+        {
+          "training_sample_seed": 43,
+          "training_root": "data/benchmarks/multihop/context_reader_aware/train_pool_seed43_2000",
+          "training_ids_sha256": "1edad28840d219738ee72d1c5acf14d6543fa920f00177d4633e1650a51b51f5",
+          "f1": 45.20432706890362,
+          "em": 35.6226727347952,
+          "average_total_searches": 3.0314439387670666,
+          "delta_f1_points": 0.7167906417340504,
+          "delta_em_points": 0.703351261894916,
+          "delta_searches": -0.9685560612329334,
+          "search_reduction_percent": 24.213901530823335,
+          "estimated_latency_seconds": 3.959894322971371,
+          "reader_generated_tokens": 150.95159288374018,
+          "delta_estimated_latency_seconds": 0.8574992522191827,
+          "delta_reader_generated_tokens": 100.87505171700455
+        },
+        {
+          "training_sample_seed": 44,
+          "training_root": "data/benchmarks/multihop/context_reader_aware/train_pool_seed44_2000",
+          "training_ids_sha256": "845401b43d3ccc040972afad5f9d873b8655b7ccb67d5ea27d0c437f2b936a13",
+          "f1": 44.110432385946176,
+          "em": 34.29871741828713,
+          "average_total_searches": 2.6801820438560195,
+          "delta_f1_points": -0.37710404122339725,
+          "delta_em_points": -0.6206040546131533,
+          "delta_searches": -1.3198179561439805,
+          "search_reduction_percent": 32.99544890359951,
+          "estimated_latency_seconds": 3.431362975510302,
+          "reader_generated_tokens": 131.2031443938767,
+          "delta_estimated_latency_seconds": 0.32896790475811377,
+          "delta_reader_generated_tokens": 81.12660322714108
+        },
+        {
+          "training_sample_seed": 45,
+          "training_root": "data/benchmarks/multihop/context_reader_aware/train_pool_seed45_2000",
+          "training_ids_sha256": "cba556f6e88c50e0d8b418e2c4bc0cba7e4c6bd0ef85377624fe8c7ae2095ae4",
+          "f1": 45.15017403405926,
+          "em": 35.2503103020273,
+          "average_total_searches": 3.350848158874638,
+          "delta_f1_points": 0.6626376068896889,
+          "delta_em_points": 0.33098882912701555,
+          "delta_searches": -0.6491518411253621,
+          "search_reduction_percent": 16.228796028134052,
+          "estimated_latency_seconds": 4.388339944228813,
+          "reader_generated_tokens": 165.39511791477037,
+          "delta_estimated_latency_seconds": 1.2859448734766246,
+          "delta_reader_generated_tokens": 115.31857674803474
+        },
+        {
+          "training_sample_seed": 46,
+          "training_root": "data/benchmarks/multihop/context_reader_aware/train_pool_seed46_2000",
+          "training_ids_sha256": "0dc6f6ab9aa375e22c6cd880a8bed97cf7b48953a4f480d8e846b0474fe0f8f6",
+          "f1": 45.162588110946224,
+          "em": 35.29168390566819,
+          "average_total_searches": 3.184526272238312,
+          "delta_f1_points": 0.6750516837766511,
+          "delta_em_points": 0.3723624327679005,
+          "delta_searches": -0.8154737277616881,
+          "search_reduction_percent": 20.386843194042203,
+          "estimated_latency_seconds": 4.174919031763197,
+          "reader_generated_tokens": 159.680182043856,
+          "delta_estimated_latency_seconds": 1.0725239610110084,
+          "delta_reader_generated_tokens": 109.60364087712038
+        }
+      ],
+      "across_seeds": {
+        "f1": {
+          "mean": 44.97263714812842,
+          "sample_std": 0.48318246665388115
+        },
+        "em": {
+          "mean": 35.17583781547373,
+          "sample_std": 0.511261238943544
+        },
+        "average_total_searches": {
+          "mean": 3.1683905668183696,
+          "sample_std": 0.34373248668454787
+        },
+        "delta_f1_points": {
+          "mean": 0.4851007209588488,
+          "sample_std": 0.48318246665388115
+        },
+        "delta_em_points": {
+          "mean": 0.25651634257344114,
+          "sample_std": 0.511261238943544
+        },
+        "delta_searches": {
+          "mean": -0.8316094331816302,
+          "sample_std": 0.34373248668454787
+        },
+        "search_reduction_percent": {
+          "mean": 20.790235829540755,
+          "sample_std": 8.593312167113696
+        },
+        "estimated_latency_seconds": {
+          "mean": 4.137492760710627,
+          "sample_std": 0.48709647274733014
+        },
+        "reader_generated_tokens": {
+          "mean": 157.22896152254862,
+          "sample_std": 17.746248985060046
+        },
+        "delta_estimated_latency_seconds": {
+          "mean": 1.0350976899584392,
+          "sample_std": 0.48709647274733014
+        },
+        "delta_reader_generated_tokens": {
+          "mean": 107.15242035581298,
+          "sample_std": 17.74624898506004
+        }
+      }
+    },
+    "2wiki": {
+      "questions": 12576,
+      "fixed4": {
+        "f1": 64.01464263957944,
+        "em": 57.164440203562336,
+        "estimated_latency_seconds": 2.4011557196748052,
+        "reader_generated_tokens": 60.923584605597966,
+        "average_total_searches": 4.0
+      },
+      "per_seed": [
+        {
+          "training_sample_seed": 42,
+          "training_root": "data/benchmarks/multihop/context_reader_aware/train_pool_seed42_2000",
+          "training_ids_sha256": "1f39599f130cc4a351e75144a43211a648598fbd8181760212686f9c18c4f494",
+          "f1": 64.99136709197182,
+          "em": 58.206106870229014,
+          "average_total_searches": 3.060909669211196,
+          "delta_f1_points": 0.9767244523923893,
+          "delta_em_points": 1.0416666666666785,
+          "delta_searches": -0.9390903307888041,
+          "search_reduction_percent": 23.477258269720103,
+          "estimated_latency_seconds": 3.4086655733938644,
+          "reader_generated_tokens": 182.37929389312978,
+          "delta_estimated_latency_seconds": 1.0075098537190592,
+          "delta_reader_generated_tokens": 121.45570928753182
+        },
+        {
+          "training_sample_seed": 43,
+          "training_root": "data/benchmarks/multihop/context_reader_aware/train_pool_seed43_2000",
+          "training_ids_sha256": "c376cf8a1d85cff453a7f5e3c46f044c2c6f8da17f4823252cfffcefb5ac8d1c",
+          "f1": 65.14125175979794,
+          "em": 58.38899491094147,
+          "average_total_searches": 2.818145674300254,
+          "delta_f1_points": 1.1266091202185038,
+          "delta_em_points": 1.2245547073791343,
+          "delta_searches": -1.1818543256997458,
+          "search_reduction_percent": 29.546358142493645,
+          "estimated_latency_seconds": 3.1302051759676037,
+          "reader_generated_tokens": 167.52425254452928,
+          "delta_estimated_latency_seconds": 0.7290494562927985,
+          "delta_reader_generated_tokens": 106.60066793893131
+        },
+        {
+          "training_sample_seed": 44,
+          "training_root": "data/benchmarks/multihop/context_reader_aware/train_pool_seed44_2000",
+          "training_ids_sha256": "35d47d04bdbf5bdb66e9cd765ce5293cd68838ea82d4ed4b83d073658f280717",
+          "f1": 64.05993722973331,
+          "em": 57.291666666666664,
+          "average_total_searches": 2.219942748091603,
+          "delta_f1_points": 0.045294590153872605,
+          "delta_em_points": 0.1272264631043285,
+          "delta_searches": -1.780057251908397,
+          "search_reduction_percent": 44.50143129770993,
+          "estimated_latency_seconds": 2.4257400837365735,
+          "reader_generated_tokens": 135.40911259541986,
+          "delta_estimated_latency_seconds": 0.024584364061768227,
+          "delta_reader_generated_tokens": 74.48552798982189
+        },
+        {
+          "training_sample_seed": 45,
+          "training_root": "data/benchmarks/multihop/context_reader_aware/train_pool_seed45_2000",
+          "training_ids_sha256": "c9c9d8c3bd7f6f62131c1700079d2e8f832f544475276ea39bfba0b75762a528",
+          "f1": 65.22749504736394,
+          "em": 58.32538167938931,
+          "average_total_searches": 3.0221055979643765,
+          "delta_f1_points": 1.21285240778451,
+          "delta_em_points": 1.1609414758269736,
+          "delta_searches": -0.9778944020356235,
+          "search_reduction_percent": 24.447360050890588,
+          "estimated_latency_seconds": 3.3504241782242628,
+          "reader_generated_tokens": 177.67557251908397,
+          "delta_estimated_latency_seconds": 0.9492684585494575,
+          "delta_reader_generated_tokens": 116.751987913486
+        },
+        {
+          "training_sample_seed": 46,
+          "training_root": "data/benchmarks/multihop/context_reader_aware/train_pool_seed46_2000",
+          "training_ids_sha256": "a0ab1955c5b9b0e10cb750172d6550738d2513f159d231fed41d209c7c5a5507",
+          "f1": 64.61243440839132,
+          "em": 57.81647582697202,
+          "average_total_searches": 3.080311704834606,
+          "delta_f1_points": 0.5977917688118879,
+          "delta_em_points": 0.6520356234096809,
+          "delta_searches": -0.9196882951653942,
+          "search_reduction_percent": 22.992207379134854,
+          "estimated_latency_seconds": 3.462242472954289,
+          "reader_generated_tokens": 186.61203880407123,
+          "delta_estimated_latency_seconds": 1.0610867532794837,
+          "delta_reader_generated_tokens": 125.68845419847327
+        }
+      ],
+      "across_seeds": {
+        "f1": {
+          "mean": 64.80649710745166,
+          "sample_std": 0.47918911612216736
+        },
+        "em": {
+          "mean": 58.0057251908397,
+          "sample_std": 0.4568707870180951
+        },
+        "average_total_searches": {
+          "mean": 2.840283078880407,
+          "sample_std": 0.3621675899252993
+        },
+        "delta_f1_points": {
+          "mean": 0.7918544678722327,
+          "sample_std": 0.47918911612216736
+        },
+        "delta_em_points": {
+          "mean": 0.8412849872773591,
+          "sample_std": 0.4568707870180951
+        },
+        "delta_searches": {
+          "mean": -1.159716921119593,
+          "sample_std": 0.3621675899252993
+        },
+        "search_reduction_percent": {
+          "mean": 28.992923027989825,
+          "sample_std": 9.054189748132483
+        },
+        "estimated_latency_seconds": {
+          "mean": 3.1554554968553186,
+          "sample_std": 0.4270153806150736
+        },
+        "reader_generated_tokens": {
+          "mean": 169.92005407124682,
+          "sample_std": 20.559353249544085
+        },
+        "delta_estimated_latency_seconds": {
+          "mean": 0.7542997771805134,
+          "sample_std": 0.4270153806150736
+        },
+        "delta_reader_generated_tokens": {
+          "mean": 108.99646946564886,
+          "sample_std": 20.559353249544085
+        }
+      }
+    }
+  },
+  "notes": [
+    "All scores are percentage points out of 100; search counts include the mandatory first search.",
+    "Standard deviations use the sample formula (ddof=1) across independent train-sample seeds.",
+    "These are cached-trajectory replay results, not measured online end-to-end latency.",
+    "The full validation splits were used during method development; they are not untouched test sets."
+  ]
+}

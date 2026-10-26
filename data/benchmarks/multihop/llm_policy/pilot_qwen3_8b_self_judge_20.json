@@ -1,0 +1,82 @@
+{
+  "format_version": 1,
+  "policy": "qwen3_8b_zero_shot_evidence_sufficiency_v1",
+  "split": "validation",
+  "judge": {
+    "host": "http://127.0.0.1:11434",
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "max_tokens": 120,
+    "timeout_seconds": 300,
+    "seed": 42,
+    "temperature": 0.0,
+    "keep_alive": "30m",
+    "thinking": false,
+    "prompt_version": "multihop_evidence_sufficiency_v1_json"
+  },
+  "datasets": {
+    "hotpotqa": {
+      "n": 20,
+      "direct": {
+        "em": 0.6,
+        "f1": 0.6876190476190477
+      },
+      "policy": {
+        "em": 0.6,
+        "f1": 0.6876190476190477
+      },
+      "gain": {
+        "em": 0.0,
+        "f1": 0.0
+      },
+      "average_extra_searches": 0.45,
+      "average_total_searches": 1.45,
+      "average_judge_calls": 1.4,
+      "average_judge_latency_seconds": 1.0406079780485016,
+      "average_judge_prompt_tokens": 1332.75,
+      "average_judge_output_tokens": 55.65,
+      "invalid_judgment_rate": 0.0,
+      "stop_steps": {
+        "0": {
+          "count": 13,
+          "rate": 0.65
+        },
+        "1": {
+          "count": 6,
+          "rate": 0.3
+        },
+        "2": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "3": {
+          "count": 1,
+          "rate": 0.05
+        }
+      },
+      "source_recall": 0.95,
+      "all_support_recall": 0.9,
+      "oracle_f1": 0.720952380952381,
+      "oracle_regret_f1": 0.03333333333333333
+    }
+  },
+  "paired_bootstrap_vs_direct": {
+    "hotpotqa": {
+      "em": {
+        "observed_gain": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "probability_positive": 0.0
+      },
+      "f1": {
+        "observed_gain": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "probability_positive": 0.0
+      }
+    }
+  },
+  "bootstrap_samples": 1000,
+  "bootstrap_seed": 42,
+  "elapsed_seconds": 21.339919266989455
+}

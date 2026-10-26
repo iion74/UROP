@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="247.748031pt" height="314.418898pt" viewBox="0 0 247.748031 314.418898" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-30T17:06:05.009856</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 314.418898 
+L 247.748031 314.418898 
+L 247.748031 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 123.874016 41.205194 
+Q 123.874016 48.452819 123.874016 54.582411 
+" clip-path="url(#p97b40899e7)" style="fill: none; stroke: #4b5563; stroke-linecap: round"/>
+    <path d="M 125.674016 50.982411 
+L 123.874016 54.582411 
+L 122.074016 50.982411 
+z
+" clip-path="url(#p97b40899e7)" style="fill: #4b5563; stroke: #4b5563; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 123.874016 83.207839 
+Q 123.874016 90.455465 123.874016 96.585056 
+" clip-path="url(#p97b40899e7)" style="fill: none; stroke: #4b5563; stroke-linecap: round"/>
+    <path d="M 125.674016 92.985056 
+L 123.874016 96.585056 
+L 122.074016 92.985056 
+z
+" clip-path="url(#p97b40899e7)" style="fill: #4b5563; stroke: #4b5563; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 123.874016 125.210485 
+Q 123.874016 132.458111 123.874016 138.587702 
+" clip-path="url(#p97b40899e7)" style="fill: none; stroke: #4b5563; stroke-linecap: round"/>
+    <path d="M 125.674016 134.987702 
+L 123.874016 138.587702 
+L 122.074016 134.987702 
+z
+" clip-path="url(#p97b40899e7)" style="fill: #4b5563; stroke: #4b5563; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 123.874016 167.214596 
+Q 123.874016 175.963926 123.874016 183.595222 
+" clip-path="url(#p97b40899e7)" style="fill: none; stroke: #4b5563; stroke-linecap: round"/>
+    <path d="M 125.674016 179.995222 
+L 123.874016 183.595222 
+L 122.074016 179.995222 
+z
+" clip-path="url(#p97b40899e7)" style="fill: #4b5563; stroke: #4b5563; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 123.874016 212.213859 
+Q 123.874016 222.088772 123.874016 230.84565 
+" clip-path="url(#p97b40899e7)" style="fill: none; stroke: #4b5563; stroke-linecap: round"/>
+    <path d="M 125.674016 227.24565 
+L 123.874016 230.84565 
+L 122.074016 227.24565 
+z
+" clip-path="url(#p97b40899e7)" style="fill: #4b5563; stroke: #4b5563; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 164.332782 250.824427 
+Q 167.042443 252.914737 168.866864 254.322148 
+" clip-path="url(#p97b40899e7)" style="fill: none; stroke: #d97706; stroke-linecap: round"/>
+    <path d="M 167.115894 250.698048 
+L 168.866864 254.322148 
+L 164.917002 253.548464 
+z
+" clip-path="url(#p97b40899e7)" style="fill: #d97706; stroke: #d97706; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 123.874016 268.470974 
+Q 123.874016 272.342204 123.874016 275.095401 
+" clip-path="url(#p97b40899e7)" style="fill: none; stroke: #d97706; stroke-linecap: round"/>
+    <path d="M 125.674016 271.495401 
+L 123.874016 275.095401 
+L 122.074016 271.495401 
+z
+" clip-path="url(#p97b40899e7)" style="fill: #d97706; stroke: #d97706; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 88.207192 289.970879 
+Q 19.529763 212.464603 48.599225 114.238363 
+" clip-path="url(#p97b40899e7)" style="fill: none; stroke: #d97706; stroke-linecap: round"/>
+    <path d="M 45.851623 117.179567 
+L 48.599225 114.238363 
+L 49.303627 118.201167 
+z
+" clip-path="url(#p97b40899e7)" style="fill: #d97706; stroke: #d97706; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 50.136038 42.60223 
+L 197.611994 42.60223 
+Q 200.41217 42.60223 200.41217 39.002003 
+L 200.41217 15.900548 
+Q 200.41217 12.300321 197.611994 12.300321 
+L 50.136038 12.300321 
+Q 47.335861 12.300321 47.335861 15.900548 
+L 47.335861 39.002003 
+Q 47.335861 42.60223 50.136038 42.60223 
+z
+" clip-path="url(#p97b40899e7)" style="fill: #dceefe; stroke: #2979b8; stroke-width: 1.05; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 50.136038 84.604876 
+L 197.611994 84.604876 
+Q 200.41217 84.604876 200.41217 81.004649 
+L 200.41217 57.903194 
+Q 200.41217 54.302967 197.611994 54.302967 
+L 50.136038 54.302967 
+Q 47.335861 54.302967 47.335861 57.903194 
+L 47.335861 81.004649 
+Q 47.335861 84.604876 50.136038 84.604876 
+z
+" clip-path="url(#p97b40899e7)" style="fill: #eff1f3; stroke: #6c757d; stroke-width: 1.05; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 50.136038 126.607521 
+L 197.611994 126.607521 
+Q 200.41217 126.607521 200.41217 123.007294 
+L 200.41217 99.905839 
+Q 200.41217 96.305613 197.611994 96.305613 
+L 50.136038 96.305613 
+Q 47.335861 96.305613 47.335861 99.905839 
+L 47.335861 123.007294 
+Q 47.335861 126.607521 50.136038 126.607521 
+z
+" clip-path="url(#p97b40899e7)" style="fill: #eff1f3; stroke: #6c757d; stroke-width: 1.05; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 50.136038 168.610167 
+L 197.611994 168.610167 
+Q 200.41217 168.610167 200.41217 165.00994 
+L 200.41217 141.908485 
+Q 200.41217 138.308258 197.611994 138.308258 
+L 50.136038 138.308258 
+Q 47.335861 138.308258 47.335861 141.908485 
+L 47.335861 165.00994 
+Q 47.335861 168.610167 50.136038 168.610167 
+z
+" clip-path="url(#p97b40899e7)" style="fill: #dceefe; stroke: #2979b8; stroke-width: 1.05; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 50.136038 213.613002 
+L 197.611994 213.613002 
+Q 200.41217 213.613002 200.41217 210.012775 
+L 200.41217 186.91132 
+Q 200.41217 183.311093 197.611994 183.311093 
+L 50.136038 183.311093 
+Q 47.335861 183.311093 47.335861 186.91132 
+L 47.335861 210.012775 
+Q 47.335861 213.613002 50.136038 213.613002 
+z
+" clip-path="url(#p97b40899e7)" style="fill: #ddf3e8; stroke: #198754; stroke-width: 1.05; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 123.874016 232.96422 
+L 163.543181 250.215307 
+L 123.874016 267.466394 
+L 84.20485 250.215307 
+z
+" clip-path="url(#p97b40899e7)" style="fill: #fff0d6; stroke: #d97706; stroke-width: 1.05; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 171.477014 270.616592 
+L 232.614198 270.616592 
+Q 235.414375 270.616592 235.414375 267.016365 
+L 235.414375 243.91491 
+Q 235.414375 240.314683 232.614198 240.314683 
+L 171.477014 240.314683 
+Q 168.676838 240.314683 168.676838 243.91491 
+L 168.676838 267.016365 
+Q 168.676838 270.616592 171.477014 270.616592 
+z
+" clip-path="url(#p97b40899e7)" style="fill: #fff0d6; stroke: #d97706; stroke-width: 1.05; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 89.805203 305.118765 
+L 157.942828 305.118765 
+Q 160.743005 305.118765 160.743005 301.518539 
+L 160.743005 278.417083 
+Q 160.743005 274.816857 157.942828 274.816857 
+L 89.805203 274.816857 
+Q 87.005027 274.816857 87.005027 278.417083 
+L 87.005027 301.518539 
+Q 87.005027 305.118765 89.805203 305.118765 
+z
+" clip-path="url(#p97b40899e7)" style="fill: #fff0d6; stroke: #d97706; stroke-width: 1.05; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <!-- 입력 질문 $q_i$ -->
+    <g style="fill: #20252b" transform="translate(106.409016 29.621276)">
+     <text>
+      <tspan x="0" y="-0.21875" style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b">입</tspan>
+      <tspan x="6.439972" y="-0.21875" style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b">력</tspan>
+      <tspan x="12.879944" y="-0.21875" style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="14.447937" y="-0.21875" style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b">질</tspan>
+      <tspan x="20.887909" y="-0.21875" style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b">문</tspan>
+      <tspan x="27.327881" y="-0.21875" style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="28.895874" y="-0.21875" style="font-style: oblique; font-size: 7px; font-family: 'DejaVu Sans'; fill: #20252b">q</tspan>
+      <tspan x="33.339233" y="0.831247" style="font-style: oblique; font-size: 4.9px; font-family: 'DejaVu Sans'; fill: #20252b">i</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 7px; font-family: 'Noto Sans CJK JP'; text-anchor: middle; fill: #20252b" x="123.874016" y="71.662749" transform="rotate(-0 123.874016 71.662749)">최초 검색 (필수)</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(95.761359 109.808286)">근거 기반 현재 답변</text>
+    <text style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(97.420578 117.935395)">Qwen3-8B (고정)</text>
+   </g>
+   <g id="text_4">
+    <!-- 현재 상태 특징 $\mathbf{s}_{i,t}$ -->
+    <g style="fill: #20252b" transform="translate(97.064016 151.254213)">
+     <text>
+      <tspan x="0" y="-0.21875" style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b">현</tspan>
+      <tspan x="6.439972" y="-0.21875" style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b">재</tspan>
+      <tspan x="12.879944" y="-0.21875" style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="14.447937" y="-0.21875" style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b">상</tspan>
+      <tspan x="20.887909" y="-0.21875" style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b">태</tspan>
+      <tspan x="27.327881" y="-0.21875" style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="28.895874" y="-0.21875" style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b">특</tspan>
+      <tspan x="35.335846" y="-0.21875" style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b">징</tspan>
+      <tspan x="41.775818" y="-0.21875" style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="43.343811" y="-0.21875" style="font-weight: 700; font-size: 7px; font-family: 'DejaVu Sans'; fill: #20252b">s</tspan>
+      <tspan x="47.577307" y="0.831247" style="font-style: oblique; font-size: 4.9px; font-family: 'DejaVu Sans'; fill: #20252b">i</tspan>
+      <tspan x="51.450891" y="0.831247" style="font-style: oblique; font-size: 4.9px; font-family: 'DejaVu Sans'; fill: #20252b">t</tspan>
+      <tspan x="48.938684" y="0.831247" style="font-size: 4.9px; font-family: 'DejaVu Sans'; fill: #20252b">,</tspan>
+     </text>
+    </g>
+    <text style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(76.806672 159.938041)">질문·검색·근거·답변 (105차원)</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(102.985578 196.799547)">예상 답변 이득</text>
+    <!-- $\hat{g}_{i,t}=f_\theta(\mathbf{s}_{i,t})$ -->
+    <g style="fill: #20252b" transform="translate(103.644016 204.832047)">
+     <text>
+      <tspan x="4.95459" y="-1.40625" style="font-size: 7px; font-family: 'DejaVu Sans'; fill: #20252b">̂</tspan>
+      <tspan x="11.860352" y="-0.53125" style="font-size: 7px; font-family: 'DejaVu Sans'; fill: #20252b">=</tspan>
+      <tspan x="24.743018" y="-0.53125" style="font-size: 7px; font-family: 'DejaVu Sans'; fill: #20252b">(</tspan>
+      <tspan x="37.693701" y="-0.53125" style="font-size: 7px; font-family: 'DejaVu Sans'; fill: #20252b">)</tspan>
+      <tspan x="0" y="-0.53125" style="font-style: oblique; font-size: 7px; font-family: 'DejaVu Sans'; fill: #20252b">g</tspan>
+      <tspan x="19.089355" y="-0.53125" style="font-style: oblique; font-size: 7px; font-family: 'DejaVu Sans'; fill: #20252b">f</tspan>
+      <tspan x="4.510352" y="1.166875" style="font-style: oblique; font-size: 4.9px; font-family: 'DejaVu Sans'; fill: #20252b">i</tspan>
+      <tspan x="8.383936" y="1.166875" style="font-style: oblique; font-size: 4.9px; font-family: 'DejaVu Sans'; fill: #20252b">t</tspan>
+      <tspan x="21.553711" y="0.518747" style="font-style: oblique; font-size: 4.9px; font-family: 'DejaVu Sans'; fill: #20252b">θ</tspan>
+      <tspan x="31.707471" y="0.518747" style="font-style: oblique; font-size: 4.9px; font-family: 'DejaVu Sans'; fill: #20252b">i</tspan>
+      <tspan x="35.581055" y="0.518747" style="font-style: oblique; font-size: 4.9px; font-family: 'DejaVu Sans'; fill: #20252b">t</tspan>
+      <tspan x="5.871729" y="1.166875" style="font-size: 4.9px; font-family: 'DejaVu Sans'; fill: #20252b">,</tspan>
+      <tspan x="33.068848" y="0.518747" style="font-size: 4.9px; font-family: 'DejaVu Sans'; fill: #20252b">,</tspan>
+      <tspan x="27.473975" y="-0.53125" style="font-weight: 700; font-size: 7px; font-family: 'DejaVu Sans'; fill: #20252b">s</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_6">
+    <!-- $\hat{g}_{i,t}&gt;\tau_t$ ? -->
+    <g style="fill: #20252b" transform="translate(108.719016 252.315307)">
+     <text>
+      <tspan x="4.95459" y="-1.40625" style="font-size: 7px; font-family: 'DejaVu Sans'; fill: #20252b">̂</tspan>
+      <tspan x="11.860352" y="-0.53125" style="font-size: 7px; font-family: 'DejaVu Sans'; fill: #20252b">&gt;</tspan>
+      <tspan x="0" y="-0.53125" style="font-style: oblique; font-size: 7px; font-family: 'DejaVu Sans'; fill: #20252b">g</tspan>
+      <tspan x="19.089355" y="-0.53125" style="font-style: oblique; font-size: 7px; font-family: 'DejaVu Sans'; fill: #20252b">τ</tspan>
+      <tspan x="4.510352" y="1.166875" style="font-style: oblique; font-size: 4.9px; font-family: 'DejaVu Sans'; fill: #20252b">i</tspan>
+      <tspan x="8.383936" y="1.166875" style="font-style: oblique; font-size: 4.9px; font-family: 'DejaVu Sans'; fill: #20252b">t</tspan>
+      <tspan x="23.303711" y="0.518747" style="font-style: oblique; font-size: 4.9px; font-family: 'DejaVu Sans'; fill: #20252b">t</tspan>
+      <tspan x="5.871729" y="1.166875" style="font-size: 4.9px; font-family: 'DejaVu Sans'; fill: #20252b">,</tspan>
+      <tspan x="25.416357" y="-0.53125" style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b"> </tspan>
+      <tspan x="26.984351" y="-0.53125" style="font-size: 7px; font-family: 'Noto Sans CJK JP'; fill: #20252b">?</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 6.7px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(193.227778 253.857638)">STOP</text>
+    <text style="font-weight: 700; font-size: 6.7px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(182.032497 262.078747)">현재 답변 반환</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 6.2px; font-family: 'Noto Sans CJK JP'; text-anchor: middle; fill: #d97706" x="169.376882" y="245.070835" transform="rotate(-0 169.376882 245.070835)">아니오</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 6.7px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(110.557766 288.359811)">SEARCH</text>
+    <text style="font-weight: 700; font-size: 6.7px; font-family: 'Noto Sans CJK JP'; fill: #20252b" transform="translate(95.713602 296.56417)">질의 갱신·추가 검색</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 6.2px; font-family: 'Noto Sans CJK JP'; text-anchor: middle; fill: #d97706" x="137.874898" y="274.772706" transform="rotate(-0 137.874898 274.772706)">예</text>
+   </g>
+   <g id="text_11">
+    <g id="patch_18">
+     <path d="M 23.269542 208.670628 
+L 77.46923 208.670628 
+L 77.46923 200.254222 
+L 23.269542 200.254222 
+z
+" style="fill: #ffffff"/>
+    </g>
+    <text style="font-size: 6.3px; font-family: 'Noto Sans CJK JP'; text-anchor: middle; fill: #d97706" x="50.369386" y="206.617222" transform="rotate(-0 50.369386 206.617222)">다음 단계 (최대 4회)</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p97b40899e7">
+   <rect x="7.2" y="7.2" width="233.348031" height="300.018898"/>
+  </clipPath>
+ </defs>
+</svg>

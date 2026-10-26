@@ -1,0 +1,19 @@
+{
+  "corpus_fingerprint": "a04d2e413e81da59c20a07f77f4ebfd820b3ec35befaadbd4e5b80a45633aac2",
+  "dataset": "musique",
+  "examples": 100,
+  "documents": 1906,
+  "chunk_size": 900,
+  "chunk_overlap": 140,
+  "graph_format_version": 4,
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "reranker_model": "BAAI/bge-reranker-v2-m3",
+  "reranker_candidates": 20,
+  "router_seed_count": 8,
+  "graph_small_budget": 3,
+  "graph_large_budget": 6,
+  "graph_expansion_decay": 0.58,
+  "graph_semantic_neighbors": 24,
+  "graph_title_bridges": true,
+  "graph_max_title_bridges_per_chunk": 8
+}

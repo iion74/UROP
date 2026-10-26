@@ -1,6 +1,7 @@
 # Publish source code and setup documentation only; keep local research assets private.
 /*
 !/.gitignore
+!/.gitattributes
 !/.env.example
 !/AGENTS.md
 !/README.md
@@ -11,6 +12,20 @@
 !/scripts/
 !/tests/
 !/docs/
+!/paper/
+!/requirements-research.txt
+!/requirements-research-snapshot.txt
+!/*.md
+!/data/
+
+# Keep data closed by default; allow only reviewed research reports and final policies.
+/data/*
+!/data/benchmarks/
+!/data/models/
+/data/benchmarks/*
+!/data/benchmarks/multihop/
+/data/models/*
+!/data/models/sequential_answer_gain_multiseed/
 
 # Credentials and machine-specific configuration, including nested files.
 .env
@@ -41,8 +56,6 @@ htmlcov/
 *.tmp
 
 # Datasets, models, results, and unpublished manuscripts.
-data/
-paper/
 *.joblib
 *.pkl
 *.pickle
@@ -63,3 +76,22 @@ paper/
 *.zip
 *.tar
 *.gz
+
+# Explicit publication requested by the project owner on 2026-10-26.
+!/*.hwp
+!/*.pdf
+!/paper/**/*.pdf
+!/paper/**/*.csv
+!/docs/*.csv
+!/data/models/*.json
+!/data/models/sequential_answer_gain_multiseed/*.joblib
+/data/benchmarks/multihop/**
+!/data/benchmarks/multihop/**/
+!/data/benchmarks/multihop/**/*.json
+/data/benchmarks/multihop/**/chunks.json
+/data/benchmarks/multihop/**/chunk_graph.json
+/data/benchmarks/multihop/**/chunk_graph_meta.json
+/data/benchmarks/multihop/**/index_manifest.json
+
+# Release bundles are generated locally, not committed to Git.
+/artifacts/

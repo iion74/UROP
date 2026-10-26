@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "experiment": "accumulated_evidence_iterative_hop_retrieval_v1",
+  "dataset": "musique",
+  "split": "train",
+  "corpus_fingerprint": "8dbc5c73784f33b67456317661b408ef5bf26b235d3282c7354f5e0b0e22e909",
+  "corpus_examples_per_dataset": 2000,
+  "corpus_seed": 42,
+  "query_seed": 42,
+  "hops": [
+    2,
+    3,
+    4
+  ],
+  "queries_per_hop": 20,
+  "top_k": 5,
+  "initial_candidates": 15,
+  "actions": [
+    "vector",
+    "iterative_2hop",
+    "iterative_3hop",
+    "iterative_4hop"
+  ],
+  "graph_format_version": 5,
+  "bridge_config": {
+    "seed_count": 4,
+    "graph_hops": 1,
+    "candidates_per_seed": 12,
+    "anchor_text_characters": 700,
+    "conditioned_weight": 0.6,
+    "anchor_weight": 0.15,
+    "title_mention_weight": 0.15,
+    "semantic_weight": 0.1
+  },
+  "iterative_config": {
+    "max_evidence_hops": 4,
+    "beam_width": 8,
+    "candidates_per_state": 8,
+    "chain_text_characters": 1200,
+    "conditioned_weight": 0.6,
+    "previous_path_weight": 0.18,
+    "title_mention_weight": 0.14,
+    "semantic_weight": 0.08
+  },
+  "status": "ready",
+  "completed_rows": 60,
+  "requested_rows": 60
+}

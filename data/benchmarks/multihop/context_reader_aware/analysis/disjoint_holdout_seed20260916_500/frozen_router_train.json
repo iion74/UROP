@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "method": "frozen_dual_value_router_five_seed_majority",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "model_root": "data/models/dual_value_router",
+  "split": "train",
+  "prefix_root": "data/benchmarks/multihop/context_reader_aware/disjoint_holdout_seed20260916_500",
+  "predictions": "data/benchmarks/multihop/context_reader_aware/analysis/disjoint_holdout_seed20260916_500/frozen_router_train.predictions.jsonl",
+  "reason_queue": "data/benchmarks/multihop/context_reader_aware/analysis/disjoint_holdout_seed20260916_500/frozen_router_train.reason_queue.jsonl",
+  "ids_sha256": "6ab985e98dcfbc3fd0c344863a1530da421bdeeecc03d9c6c61cf312b0bdd726",
+  "datasets": {
+    "hotpotqa": {
+      "count": 500,
+      "route_distribution": {
+        "SEARCH": 325,
+        "REASON": 106,
+        "STOP": 69
+      }
+    },
+    "musique": {
+      "count": 500,
+      "route_distribution": {
+        "SEARCH": 465,
+        "STOP": 8,
+        "REASON": 27
+      }
+    },
+    "2wiki": {
+      "count": 500,
+      "route_distribution": {
+        "SEARCH": 270,
+        "STOP": 130,
+        "REASON": 100
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "format_version": 1,
+  "policy": "five_seed_stop_value_vote_ensemble",
+  "mode": "rule_guard",
+  "models": [
+    "stop_value_policy_v7_evidence_survival_bellman_em_f1_1000",
+    "stop_value_policy_v7_evidence_survival_seed43_1000",
+    "stop_value_policy_v7_evidence_survival_seed44_1000",
+    "stop_value_policy_v7_evidence_survival_seed45_1000",
+    "stop_value_policy_v7_evidence_survival_seed46_1000"
+  ],
+  "calibration_split": "train_out_of_fold_predictions",
+  "validation_labels_used_for_calibration": false,
+  "rule_weight": 2,
+  "vote_thresholds": [
+    0,
+    0,
+    3
+  ],
+  "utility": {
+    "f1_weight": 0.5,
+    "em_weight": 0.5,
+    "search_cost": 0.01,
+    "dataset_harm_penalty": 2.0
+  },
+  "train_oof_audit": {
+    "candidates": 5300,
+    "protected_utility": 0.5498309935434936,
+    "answer_f1": 0.6081619870869871,
+    "average_extra_searches": 2.7416666666666667,
+    "metrics": {
+      "hotpotqa": {
+        "n": 1000,
+        "em": 0.725,
+        "f1": 0.7919511904761906,
+        "average_extra_searches": 2.722,
+        "stop_steps": {
+          "0": 0,
+          "1": 0,
+          "2": 278,
+          "3": 722
+        }
+      },
+      "musique": {
+        "n": 1000,
+        "em": 0.272,
+        "f1": 0.356704884004884,
+        "average_extra_searches": 2.707,
+        "stop_steps": {
+          "0": 0,
+          "1": 0,
+          "2": 293,
+          "3": 707
+        }
+      },
+      "2wiki": {
+        "n": 1000,
+        "em": 0.642,
+        "f1": 0.6758298867798866,
+        "average_extra_searches": 2.796,
+        "stop_steps": {
+          "0": 0,
+          "1": 0,
+          "2": 204,
+          "3": 796
+        }
+      }
+    }
+  },
+  "validation": {
+    "hotpotqa": {
+      "n": 2000,
+      "em": 0.5225,
+      "f1": 0.6589479326229325,
+      "average_extra_searches": 2.742,
+      "stop_steps": {
+        "0": 0,
+        "1": 0,
+        "2": 516,
+        "3": 1484
+      }
+    },
+    "musique": {
+      "n": 2000,
+      "em": 0.247,
+      "f1": 0.32678567184449536,
+      "average_extra_searches": 2.803,
+      "stop_steps": {
+        "0": 0,
+        "1": 0,
+        "2": 394,
+        "3": 1606
+      }
+    },
+    "2wiki": {
+      "n": 2000,
+      "em": 0.4515,
+      "f1": 0.5161146752757048,
+      "average_extra_searches": 2.884,
+      "stop_steps": {
+        "0": 0,
+        "1": 0,
+        "2": 232,
+        "3": 1768
+      }
+    }
+  },
+  "paired_bootstrap_vs_direct": {
+    "hotpotqa": {
+      "em": {
+        "observed_gain": 0.045,
+        "ci95_low": 0.032,
+        "ci95_high": 0.058,
+        "probability_positive": 1.0
+      },
+      "f1": {
+        "observed_gain": 0.049314646464646464,
+        "ci95_low": 0.036427070707070706,
+        "ci95_high": 0.062316992243867234,
+        "probability_positive": 1.0
+      }
+    },
+    "musique": {
+      "em": {
+        "observed_gain": 0.075,
+        "ci95_low": 0.0595,
+        "ci95_high": 0.091,
+        "probability_positive": 1.0
+      },
+      "f1": {
+        "observed_gain": 0.08864725470607823,
+        "ci95_low": 0.07304396740514388,
+        "ci95_high": 0.10417369429590018,
+        "probability_positive": 1.0
+      }
+    },
+    "2wiki": {
+      "em": {
+        "observed_gain": 0.1435,
+        "ci95_low": 0.1245,
+        "ci95_high": 0.163,
+        "probability_positive": 1.0
+      },
+      "f1": {
+        "observed_gain": 0.15001597120200064,
+        "ci95_low": 0.13113850873187274,
+        "ci95_high": 0.16922090383676777,
+        "probability_positive": 1.0
+      }
+    }
+  },
+  "bootstrap_samples": 20000,
+  "bootstrap_seed": 42
+}

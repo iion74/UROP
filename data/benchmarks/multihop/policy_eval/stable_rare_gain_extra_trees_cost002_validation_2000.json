@@ -1,0 +1,538 @@
+{
+  "format_version": 1,
+  "policy": "stable_rare_gain_extra_trees_ensemble",
+  "validation_labels_used_for_selection": false,
+  "selected_config": {
+    "min_samples_leaf": 40,
+    "max_features": 1.0
+  },
+  "thresholds": [
+    0.10777491969432614,
+    0.11790894203428777,
+    0.20120545149177224
+  ],
+  "ensemble_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "feature_count": 26,
+  "utility": {
+    "f1_weight": 0.5,
+    "em_weight": 0.5,
+    "search_cost": 0.002,
+    "dataset_harm_penalty": 2.0
+  },
+  "selected_train_oof": {
+    "config": {
+      "min_samples_leaf": 40,
+      "max_features": 1.0
+    },
+    "thresholds": [
+      0.10777491969432614,
+      0.11790894203428777,
+      0.20120545149177224
+    ],
+    "protected_utility": 0.5721370426055427,
+    "f1": 0.6061194185444185,
+    "average_extra_searches": 2.211333333333333,
+    "metrics": {
+      "hotpotqa": {
+        "n": 1000,
+        "em": 0.723,
+        "f1": 0.7891178571428572,
+        "average_extra_searches": 2.049,
+        "stop_steps": {
+          "0": 1,
+          "1": 108,
+          "2": 732,
+          "3": 159
+        }
+      },
+      "musique": {
+        "n": 1000,
+        "em": 0.272,
+        "f1": 0.35332955932955934,
+        "average_extra_searches": 2.335,
+        "stop_steps": {
+          "0": 0,
+          "1": 18,
+          "2": 629,
+          "3": 353
+        }
+      },
+      "2wiki": {
+        "n": 1000,
+        "em": 0.646,
+        "f1": 0.6759108391608392,
+        "average_extra_searches": 2.25,
+        "stop_steps": {
+          "0": 0,
+          "1": 23,
+          "2": 704,
+          "3": 273
+        }
+      }
+    }
+  },
+  "train_oof_candidates": [
+    {
+      "config": {
+        "min_samples_leaf": 5,
+        "max_features": 0.7
+      },
+      "thresholds": [
+        -0.24063300612197605,
+        -0.2751297474979521,
+        0.07191544352378514
+      ],
+      "protected_utility": 0.5719080055685057,
+      "f1": 0.6062786778036778,
+      "average_extra_searches": 2.365666666666667,
+      "metrics": {
+        "hotpotqa": {
+          "n": 1000,
+          "em": 0.722,
+          "f1": 0.7879289682539684,
+          "average_extra_searches": 2.29,
+          "stop_steps": {
+            "0": 0,
+            "1": 1,
+            "2": 708,
+            "3": 291
+          }
+        },
+        "musique": {
+          "n": 1000,
+          "em": 0.276,
+          "f1": 0.35649622599622605,
+          "average_extra_searches": 2.452,
+          "stop_steps": {
+            "0": 0,
+            "1": 0,
+            "2": 548,
+            "3": 452
+          }
+        },
+        "2wiki": {
+          "n": 1000,
+          "em": 0.643,
+          "f1": 0.6744108391608391,
+          "average_extra_searches": 2.355,
+          "stop_steps": {
+            "0": 1,
+            "1": 0,
+            "2": 642,
+            "3": 357
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "min_samples_leaf": 5,
+        "max_features": 1.0
+      },
+      "thresholds": [
+        -0.2933616789958135,
+        -0.3058809665102952,
+        -0.04566745335516317
+      ],
+      "protected_utility": 0.5717283706478705,
+      "f1": 0.6077207412957413,
+      "average_extra_searches": 2.816,
+      "metrics": {
+        "hotpotqa": {
+          "n": 1000,
+          "em": 0.721,
+          "f1": 0.7884623015873016,
+          "average_extra_searches": 2.811,
+          "stop_steps": {
+            "0": 0,
+            "1": 0,
+            "2": 189,
+            "3": 811
+          }
+        },
+        "musique": {
+          "n": 1000,
+          "em": 0.272,
+          "f1": 0.35528908313908314,
+          "average_extra_searches": 2.871,
+          "stop_steps": {
+            "0": 0,
+            "1": 0,
+            "2": 129,
+            "3": 871
+          }
+        },
+        "2wiki": {
+          "n": 1000,
+          "em": 0.648,
+          "f1": 0.6794108391608391,
+          "average_extra_searches": 2.766,
+          "stop_steps": {
+            "0": 0,
+            "1": 1,
+            "2": 232,
+            "3": 767
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "min_samples_leaf": 10,
+        "max_features": 0.7
+      },
+      "thresholds": [
+        -0.15735663481753392,
+        -0.2230676058429321,
+        0.12348143975911158
+      ],
+      "protected_utility": 0.5717135611240612,
+      "f1": 0.6060897889147888,
+      "average_extra_searches": 2.332333333333333,
+      "metrics": {
+        "hotpotqa": {
+          "n": 1000,
+          "em": 0.721,
+          "f1": 0.7869289682539684,
+          "average_extra_searches": 2.254,
+          "stop_steps": {
+            "0": 0,
+            "1": 1,
+            "2": 744,
+            "3": 255
+          }
+        },
+        "musique": {
+          "n": 1000,
+          "em": 0.275,
+          "f1": 0.3557628926628927,
+          "average_extra_searches": 2.424,
+          "stop_steps": {
+            "0": 0,
+            "1": 0,
+            "2": 576,
+            "3": 424
+          }
+        },
+        "2wiki": {
+          "n": 1000,
+          "em": 0.644,
+          "f1": 0.6755775058275058,
+          "average_extra_searches": 2.319,
+          "stop_steps": {
+            "0": 1,
+            "1": 0,
+            "2": 678,
+            "3": 321
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "min_samples_leaf": 10,
+        "max_features": 1.0
+      },
+      "thresholds": [
+        0.09250510830732721,
+        -0.27670073178785787,
+        -0.3047406903437703
+      ],
+      "protected_utility": 0.5716820676175676,
+      "f1": 0.6077601352351352,
+      "average_extra_searches": 2.849,
+      "metrics": {
+        "hotpotqa": {
+          "n": 1000,
+          "em": 0.726,
+          "f1": 0.7931003968253968,
+          "average_extra_searches": 2.713,
+          "stop_steps": {
+            "0": 95,
+            "1": 1,
+            "2": 0,
+            "3": 904
+          }
+        },
+        "musique": {
+          "n": 1000,
+          "em": 0.272,
+          "f1": 0.3543501221001221,
+          "average_extra_searches": 2.973,
+          "stop_steps": {
+            "0": 9,
+            "1": 0,
+            "2": 0,
+            "3": 991
+          }
+        },
+        "2wiki": {
+          "n": 1000,
+          "em": 0.643,
+          "f1": 0.6758298867798866,
+          "average_extra_searches": 2.861,
+          "stop_steps": {
+            "0": 46,
+            "1": 0,
+            "2": 1,
+            "3": 953
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "min_samples_leaf": 20,
+        "max_features": 0.7
+      },
+      "thresholds": [
+        0.023721363139325904,
+        -0.11365546625254341,
+        -0.2231382345035822
+      ],
+      "protected_utility": 0.5716443850778851,
+      "f1": 0.6082807701557702,
+      "average_extra_searches": 2.998,
+      "metrics": {
+        "hotpotqa": {
+          "n": 1000,
+          "em": 0.723,
+          "f1": 0.7916623015873017,
+          "average_extra_searches": 2.997,
+          "stop_steps": {
+            "0": 0,
+            "1": 1,
+            "2": 1,
+            "3": 998
+          }
+        },
+        "musique": {
+          "n": 1000,
+          "em": 0.272,
+          "f1": 0.3543501221001221,
+          "average_extra_searches": 3.0,
+          "stop_steps": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 1000
+          }
+        },
+        "2wiki": {
+          "n": 1000,
+          "em": 0.646,
+          "f1": 0.6788298867798866,
+          "average_extra_searches": 2.997,
+          "stop_steps": {
+            "0": 1,
+            "1": 0,
+            "2": 0,
+            "3": 999
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "min_samples_leaf": 20,
+        "max_features": 1.0
+      },
+      "thresholds": [
+        -0.04512772126489297,
+        -0.15275131377761533,
+        0.16695847180679338
+      ],
+      "protected_utility": 0.5719191166796168,
+      "f1": 0.6060342333592333,
+      "average_extra_searches": 2.299,
+      "metrics": {
+        "hotpotqa": {
+          "n": 1000,
+          "em": 0.722,
+          "f1": 0.7877623015873016,
+          "average_extra_searches": 2.209,
+          "stop_steps": {
+            "0": 0,
+            "1": 1,
+            "2": 789,
+            "3": 210
+          }
+        },
+        "musique": {
+          "n": 1000,
+          "em": 0.274,
+          "f1": 0.3547628926628927,
+          "average_extra_searches": 2.392,
+          "stop_steps": {
+            "0": 0,
+            "1": 0,
+            "2": 608,
+            "3": 392
+          }
+        },
+        "2wiki": {
+          "n": 1000,
+          "em": 0.645,
+          "f1": 0.6755775058275058,
+          "average_extra_searches": 2.296,
+          "stop_steps": {
+            "0": 1,
+            "1": 0,
+            "2": 701,
+            "3": 298
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "min_samples_leaf": 40,
+        "max_features": 0.7
+      },
+      "thresholds": [
+        0.14665568892586106,
+        0.13688370368954692,
+        0.2077206230761832
+      ],
+      "protected_utility": 0.5720579314944315,
+      "f1": 0.6058971963221963,
+      "average_extra_searches": 2.195333333333333,
+      "metrics": {
+        "hotpotqa": {
+          "n": 1000,
+          "em": 0.723,
+          "f1": 0.7891178571428572,
+          "average_extra_searches": 2.04,
+          "stop_steps": {
+            "0": 1,
+            "1": 106,
+            "2": 745,
+            "3": 148
+          }
+        },
+        "musique": {
+          "n": 1000,
+          "em": 0.272,
+          "f1": 0.35266289266289264,
+          "average_extra_searches": 2.314,
+          "stop_steps": {
+            "0": 0,
+            "1": 20,
+            "2": 646,
+            "3": 334
+          }
+        },
+        "2wiki": {
+          "n": 1000,
+          "em": 0.646,
+          "f1": 0.6759108391608392,
+          "average_extra_searches": 2.232,
+          "stop_steps": {
+            "0": 0,
+            "1": 23,
+            "2": 722,
+            "3": 255
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "min_samples_leaf": 40,
+        "max_features": 1.0
+      },
+      "thresholds": [
+        0.10777491969432614,
+        0.11790894203428777,
+        0.20120545149177224
+      ],
+      "protected_utility": 0.5721370426055427,
+      "f1": 0.6061194185444185,
+      "average_extra_searches": 2.211333333333333,
+      "metrics": {
+        "hotpotqa": {
+          "n": 1000,
+          "em": 0.723,
+          "f1": 0.7891178571428572,
+          "average_extra_searches": 2.049,
+          "stop_steps": {
+            "0": 1,
+            "1": 108,
+            "2": 732,
+            "3": 159
+          }
+        },
+        "musique": {
+          "n": 1000,
+          "em": 0.272,
+          "f1": 0.35332955932955934,
+          "average_extra_searches": 2.335,
+          "stop_steps": {
+            "0": 0,
+            "1": 18,
+            "2": 629,
+            "3": 353
+          }
+        },
+        "2wiki": {
+          "n": 1000,
+          "em": 0.646,
+          "f1": 0.6759108391608392,
+          "average_extra_searches": 2.25,
+          "stop_steps": {
+            "0": 0,
+            "1": 23,
+            "2": 704,
+            "3": 273
+          }
+        }
+      }
+    }
+  ],
+  "validation": {
+    "hotpotqa": {
+      "n": 2000,
+      "em": 0.529,
+      "f1": 0.6593856365856365,
+      "average_extra_searches": 2.163,
+      "stop_steps": {
+        "0": 0,
+        "1": 235,
+        "2": 1204,
+        "3": 561
+      }
+    },
+    "musique": {
+      "n": 2000,
+      "em": 0.2385,
+      "f1": 0.31964140075610664,
+      "average_extra_searches": 2.498,
+      "stop_steps": {
+        "0": 0,
+        "1": 51,
+        "2": 902,
+        "3": 1047
+      }
+    },
+    "2wiki": {
+      "n": 2000,
+      "em": 0.448,
+      "f1": 0.5131474341834635,
+      "average_extra_searches": 2.307,
+      "stop_steps": {
+        "0": 0,
+        "1": 59,
+        "2": 1268,
+        "3": 673
+      }
+    }
+  },
+  "model": "data/models/stable_rare_gain_extra_trees_ensemble_cost002_1000.joblib",
+  "predictions": "data/benchmarks/multihop/policy_eval/stable_rare_gain_extra_trees_cost002_validation_2000_predictions.jsonl"
+}

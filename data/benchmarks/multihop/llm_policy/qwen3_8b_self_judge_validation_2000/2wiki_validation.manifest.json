@@ -1,0 +1,38 @@
+{
+  "format_version": 1,
+  "experiment": "frozen_llm_self_judgment_stop_policy",
+  "policy": "qwen3_8b_zero_shot_evidence_sufficiency_v1",
+  "dataset": "2wiki",
+  "split": "validation",
+  "maximum_rows": 2000,
+  "actions": [
+    "vector",
+    "planned_continue_1",
+    "planned_continue_2",
+    "planned_continue_3"
+  ],
+  "answer_signature": "44729404688a4d65981a71d2294a10f2408229d7a4bc5b1aa09df97e4d27895a",
+  "trajectory_signature": "7f00867149192486c416f716071e64e4031ea944a2bf949b4c1a67a92b0082e3",
+  "chunk_signature": "6ff249010362585fcd8887298b0d84d054f87c88678e511059eeb01b6989b7d1",
+  "context_character_budget": 6000,
+  "context_allocation": "sequential",
+  "context_source_order": "trajectory",
+  "context_compression": "none",
+  "focused_sentences_per_source": 2,
+  "judge": {
+    "host": "http://127.0.0.1:11434",
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "max_tokens": 120,
+    "timeout_seconds": 300,
+    "seed": 42,
+    "temperature": 0.0,
+    "keep_alive": "30m",
+    "thinking": false,
+    "prompt_version": "multihop_evidence_sufficiency_v1_json"
+  },
+  "gold_inputs_exposed_to_policy": [],
+  "status": "ready",
+  "completed_rows": 2000,
+  "requested_rows": 2000
+}

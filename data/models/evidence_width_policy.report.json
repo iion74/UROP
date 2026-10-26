@@ -1,0 +1,75 @@
+{
+  "format_version": 1,
+  "method": "question_specific_evidence_width",
+  "training_target_distribution": {
+    "2": 1885,
+    "3": 221,
+    "4": 198,
+    "5": 32,
+    "6": 5,
+    "7": 1,
+    "8": 658
+  },
+  "training_external_search_rate": 0.219,
+  "validation": {
+    "hotpotqa": {
+      "n": 2000,
+      "predicted_width": 4.092,
+      "target_width": 2.6895,
+      "exact_width": 0.1065,
+      "external_search_rate": 0.0625,
+      "source_recall": 0.956,
+      "all_support_recall": 0.913,
+      "support_precision": 0.55375,
+      "width_distribution": {
+        "2": 77,
+        "3": 1251,
+        "4": 130,
+        "5": 123,
+        "6": 68,
+        "7": 74,
+        "8": 277
+      }
+    },
+    "musique": {
+      "n": 2000,
+      "predicted_width": 6.358,
+      "target_width": 6.0465,
+      "exact_width": 0.4055,
+      "external_search_rate": 0.5615,
+      "source_recall": 0.680125,
+      "all_support_recall": 0.405,
+      "support_precision": 0.321025,
+      "width_distribution": {
+        "2": 7,
+        "3": 410,
+        "4": 84,
+        "5": 139,
+        "6": 133,
+        "7": 173,
+        "8": 1054
+      }
+    },
+    "2wiki": {
+      "n": 2000,
+      "predicted_width": 4.1135,
+      "target_width": 3.3365,
+      "exact_width": 0.228,
+      "external_search_rate": 0.1385,
+      "source_recall": 0.932625,
+      "all_support_recall": 0.843,
+      "support_precision": 0.6406797619047618,
+      "width_distribution": {
+        "2": 65,
+        "3": 1015,
+        "4": 360,
+        "5": 210,
+        "6": 82,
+        "7": 74,
+        "8": 194
+      }
+    }
+  },
+  "model": "data/models/evidence_width_policy.joblib",
+  "predictions": "data/models/evidence_width_policy.report.predictions.jsonl"
+}
