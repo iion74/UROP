@@ -78,8 +78,7 @@ htmlcov/
 *.gz
 
 # Explicit publication requested by the project owner on 2026-10-26.
-!/*.hwp
-!/*.pdf
+!/paper/**/*.hwp
 !/paper/**/*.pdf
 !/paper/**/*.csv
 !/docs/*.csv

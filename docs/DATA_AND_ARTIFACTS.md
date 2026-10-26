@@ -1,14 +1,15 @@
 # 자료·모델·공개 범위
 
-이 저장소는 공개 저장소다. 코드와 함께 소유자가 공개 요청한 원고·그림·
-검토 메모·실험 보고서·최종 정책 모델을 포함한다. 문서는 연구 진행
+이 저장소는 공개 저장소다. 코드와 함께 소유자가 공개 요청한 최종 원고·그림·
+실험 보고서·최종 정책 모델을 포함한다. 문서는 연구 진행
 기록이며 게재·심사 완료를 뜻하지 않는다.
 
 ## 저장 위치
 
 | 자료 | 위치 |
 |---|---|
-| 원고 HWP/PDF와 계획서 | 프로젝트 루트, [논문 안내](../paper/README.md) |
+| 최종 원고 HWP와 계획서 | [paper](../paper/), [논문 안내](../paper/README.md) |
+| 이전 단계 실험 보고서 | [history](history/) |
 | 그림·시드별 신뢰구간 | [paper](../paper/) |
 | 최종 5개 시드 보고서 | [sequential_multiseed](../data/benchmarks/multihop/context_reader_aware/analysis/sequential_multiseed/) |
 | 최종 집계 JSON | [sequential_answer_gain_multiseed.json](../data/benchmarks/multihop/context_reader_aware/analysis/sequential_answer_gain_multiseed.json) |

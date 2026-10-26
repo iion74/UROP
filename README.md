@@ -103,14 +103,14 @@ experiments/            최종 정책과 이전 탐색 실험
 scripts/                그림·동기화·공개 자료 생성·재생
 tests/                  단위 테스트
 docs/                   방법·재현·자료·실험 목록
-paper/                  그림·신뢰구간 증빙·원고 안내
+docs/history/           이전 단계 실험 계획·보고서
+paper/                  최종 원고 HWP·계획서·그림·신뢰구간 증빙
 data/benchmarks/...     검토한 요약 JSON·manifest
 data/models/...         최종 5개 경량 정책 모델
-UROP 논문.hwp / .pdf     현재 저장된 원고 초안
 ```
 
-루트의 과거 보고서와 `UROP_논문_*.md` 퇴고 메모도 보존합니다. 파일명에
-FINAL이 있어도 현재 최종 실험이 아닐 수 있으므로 위의 최종 JSON을 기준으로 읽으세요.
+`docs/history/`의 과거 보고서는 파일명에 FINAL이 있어도 현재 최종 실험이
+아닐 수 있으므로 위의 최종 JSON을 기준으로 읽으세요.
 
 ## 대용량 자료와 검증
 
