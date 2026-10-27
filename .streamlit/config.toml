@@ -1,0 +1,11 @@
+# The custom CSS in src/ui.py assumes a light page; a browser or OS dark mode
+# otherwise draws dark widgets under dark text.
+[theme]
+base = "light"
+primaryColor = "#244b9b"
+backgroundColor = "#f6f7fb"
+secondaryBackgroundColor = "#eef1f6"
+textColor = "#111827"
+
+[browser]
+gatherUsageStats = false

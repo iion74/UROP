@@ -60,8 +60,13 @@ def inject_styles() -> None:
         .rec-card .rec-title { font-weight: 750; color: #101828; font-size: .9rem; }
         .rec-card .rec-reason { color: #667085; font-size: .77rem; margin-top: .2rem; }
         [data-testid="stForm"] { border: 1px solid #e4e7ec; border-radius: 16px; background: white; padding: 1.1rem; }
-        .stButton > button[kind="primary"] { background: #244b9b; border-color: #244b9b; border-radius: 9px; font-weight: 700; }
-        .stButton > button[kind="primary"]:hover { background: #173875; border-color: #173875; }
+        .stButton > button[kind="primary"], [data-testid="stFormSubmitButton"] > button { background: #244b9b; border-color: #244b9b; color: #ffffff; border-radius: 9px; font-weight: 700; }
+        .stButton > button[kind="primary"]:hover, [data-testid="stFormSubmitButton"] > button:hover { background: #173875; border-color: #173875; color: #ffffff; }
+        .stButton > button[kind="primary"] *, [data-testid="stFormSubmitButton"] > button * { color: #ffffff; }
+        .stButton > button[kind="secondary"] { background: #ffffff; border: 1px solid #d0d5dd; color: #101828; border-radius: 9px; font-weight: 600; }
+        .stButton > button[kind="secondary"] * { color: #101828; }
+        .stButton > button[kind="secondary"]:hover { background: #eef4ff; border-color: #3157a9; color: #173875; }
+        .stButton > button[kind="secondary"]:hover * { color: #173875; }
         .stProgress > div > div { background: #3157a9; }
         </style>
         """,

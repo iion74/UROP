@@ -17,6 +17,9 @@
 !/requirements-research-snapshot.txt
 !/*.md
 !/data/
+!/.streamlit/
+/.streamlit/*
+!/.streamlit/config.toml
 
 # Keep data closed by default; allow only reviewed research reports and final policies.
 /data/*
