@@ -16,10 +16,8 @@
 - [정밀도 유지 CSV](evidence/seed_confidence_intervals.csv)
 - [원본 보고서 SHA-256](evidence/seed_confidence_intervals.sources.json)
 
-## 과거 기록은 최종 결과와 구분
+## 결과 수치의 기준
 
-[docs/history/](../docs/history/)의 `EXPERIMENT_PLAN.md`, `FINAL_EXPERIMENT_REPORT.md`,
-`FULL_VALIDATION_FINAL_REPORT.md`, `STUDENT_POLICY_IMPROVEMENT_REPORT.md`는
-이전 단계의 실험 기록이다. 이름에 FINAL이 있어도 현재 최종 정책과
-동일하지 않을 수 있다. 과거의 추가 검색 3회는 최초 검색을 포함하면
-총 4회라는 점도 구분해야 한다.
+원고의 표·그림 수치는 [최종 5개 시드 보고서](../data/benchmarks/multihop/context_reader_aware/analysis/sequential_multiseed/)와
+[집계 JSON](../data/benchmarks/multihop/context_reader_aware/analysis/sequential_answer_gain_multiseed.json)을
+기준으로 한다. 검색 횟수는 최초 검색을 포함한 총 1~4회다.

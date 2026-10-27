@@ -19,10 +19,9 @@ NCS 자격증 수험자의 학습 메모·질문·퀴즈를 NCS 지식 지도에
 | 웹 앱 기능·실행 | 아래 **학습량 분석 웹 앱** |
 | 최종 정책의 구조·학습·105차원 입력 | [연구 방법](docs/RESEARCH_METHOD.md) |
 | 결과 확인·오프라인 재생·전체 재생성 | [재현 가이드](docs/REPRODUCIBILITY.md) |
-| 코드별 역할과 과거 실험 구분 | [실험 코드 목록](docs/EXPERIMENT_CATALOG.md) |
-| 논문 HWP/PDF·그림·신뢰구간 | [논문 안내](paper/README.md) |
-| 전체 파일 목록·공개/제외 사유 | [자료 안내](docs/DATA_AND_ARTIFACTS.md) |
-| 수정 후 GitHub 반영 | [동기화 안내](docs/GITHUB_SYNC.md) |
+| 웹 앱 정량 평가(정확도·속도·에이전트) | [평가 결과](docs/STUDY_APP_EVALUATION.md) |
+| 논문 HWP·그림·신뢰구간 | [논문 안내](paper/README.md) |
+| 자료·모델 위치와 공개 범위 | [자료 안내](docs/DATA_AND_ARTIFACTS.md) |
 
 ## 최종 연구: 무엇을 학습했나
 
@@ -118,26 +117,26 @@ ollama pull qwen3:8b
 사이드바의 **자료 읽기 및 인덱스 생성**을 누릅니다. 파일명에 `LM2001070101` 같은 모듈 코드가
 있어야 단원에 연결됩니다. NCS 원본은 재배포하지 않으므로 저장소에 포함하지 않습니다.
 
-`SEARCH_CONTROL=graph`로 바꾸면 이전 그래프 라우팅으로 답합니다.
-[기존 MVP 상세 설명](docs/LEGACY_MVP_GUIDE.md)은 개발 이력으로 보존했습니다.
+`SEARCH_CONTROL=graph`로 바꾸면 논문 정책 대신 검색 1회 그래프 라우팅으로 빠르게 답합니다.
 
 ## 저장소 구조
 
+저장소에는 웹 앱과 논문 최종 방법을 실행·재현하는 데 필요한 파일만 둡니다.
+
 ```text
-UROP.py                 Streamlit 앱 진입점
-src/                    검색·생성·상태 특징·평가 공통 모듈
-experiments/            최종 정책과 이전 탐색 실험
-scripts/                그림·동기화·공개 자료 생성·재생
+UROP.py                 Streamlit 웹 앱 진입점
+src/                    웹 앱과 논문 정책이 함께 쓰는 검색·생성·특징·분석 모듈
+experiments/            논문 최종 정책의 데이터 준비·궤적 생성·학습·평가·집계
+scripts/                논문 그림·정책 재생, 웹 앱 정량 평가
 tests/                  단위 테스트
-docs/                   방법·재현·자료·실험 목록
-docs/history/           이전 단계 실험 계획·보고서
+docs/                   연구 방법·재현·자료·웹 앱 평가
 paper/                  최종 원고 HWP·계획서·그림·신뢰구간 증빙
-data/benchmarks/...     검토한 요약 JSON·manifest
+data/benchmarks/...     최종 5개 시드 보고서·집계 JSON·궤적 manifest
 data/models/...         최종 5개 경량 정책 모델
 ```
 
-`docs/history/`의 과거 보고서는 파일명에 FINAL이 있어도 현재 최종 실험이
-아닐 수 있으므로 위의 최종 JSON을 기준으로 읽으세요.
+`experiments/`의 일부 파일은 이름이 이전 실험이지만, 최종 정책 코드가 그 안의
+함수(데이터 적재·특징·통계)를 가져다 쓰므로 함께 둡니다.
 
 ## 대용량 자료와 검증
 
@@ -145,7 +144,6 @@ data/models/...         최종 5개 경량 정책 모델
 정책 모델 묶음과 문서 전문을 제외한 수치형 재생 자료를 제공합니다.
 원본 벤치마크와 NCS 자료는 원저작자 배포 조건을 따르며 저장소에 그대로 올리지 않습니다.
 인증정보·가상환경·개인 학습기록·재생성 가능한 캐시도 제외합니다.
-파일별 구분은 [전체 목록](docs/workspace_inventory.csv)을 확인하세요.
 
 ```bash
 pip install -r requirements-research.txt

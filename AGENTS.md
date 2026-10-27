@@ -1,31 +1,30 @@
 # UROP workspace instructions
 
+## Scope
+
+The repository holds only the NCS learning-volume web app and the paper's
+final method (code, results, manuscript). Earlier exploratory experiments were
+removed on 2026-10-27 at the user's request; they remain in Git history.
+
 ## Preserve local research data
 
 - Never delete or overwrite unrelated user changes.
-- Never publish `.env`, credentials, private study logs, virtual environments,
-  caches, or third-party source documents without verified redistribution rights.
-- On 2026-10-26 the user authorized publication of project code, manuscripts,
-  figures, review notes, experiment reports and learned policy models. Respect
-  the reviewed `.gitignore` publication scope; do not force-add ignored files.
+- Never publish `.env`, credentials, private study logs (`data/index/`), NCS
+  source PDFs (`data/ncs/`), virtual environments, caches, or third-party
+  source documents without verified redistribution rights.
+- Respect the reviewed `.gitignore` publication scope; do not force-add ignored files.
 - Keep large model bundles and numerical replay data in GitHub Releases, not
   regular Git. Do not change repository visibility or invent a software license.
-- Do not launch experiments, model servers, or GPU workloads merely to sync Git.
 
 ## GitHub synchronization
 
-The user requested completed code changes be reflected in
-`https://github.com/iion74/UROP` on branch `main`.
+The user wants completed changes reflected in `https://github.com/iion74/UROP`
+on branch `main`.
 
-- After implementation tasks, run relevant checks, then commit and push only
-  task files: `bash scripts/sync_github.sh "Describe the change" path/to/file ...`.
-- This is a task-completion workflow, not a background file watcher. Do not
-  commit or push for explanation-only or review-only requests.
-- Do not stage unrelated changes, consume pre-existing staged changes,
-  force-push, rewrite history, or automatically merge/rebase conflicts.
-- If authentication, network, permissions, or remote changes block a push,
-  preserve local work and report what is unsynchronized. Never claim a
-  successful GitHub update until the push succeeds.
-- Report verification and commit/push status briefly at handoff.
-
-See `docs/GITHUB_SYNC.md` for initial authentication and manual usage.
+- After implementation tasks, run `python -m pytest -q`, then commit only the
+  task's files and push. Do not commit for explanation-only requests.
+- Commits are authored by `iion74`; do not add `Co-Authored-By` trailers.
+- Do not stage unrelated changes or force-push without the user's explicit request.
+- If authentication, network, or remote changes block a push, keep local work
+  and report what is unsynchronized. Never claim a push that did not succeed.
+- Communicate with the user in Korean.

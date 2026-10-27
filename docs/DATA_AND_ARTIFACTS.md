@@ -9,13 +9,11 @@
 | 자료 | 위치 |
 |---|---|
 | 최종 원고 HWP와 계획서 | [paper](../paper/), [논문 안내](../paper/README.md) |
-| 이전 단계 실험 보고서 | [history](history/) |
 | 그림·시드별 신뢰구간 | [paper](../paper/) |
 | 최종 5개 시드 보고서 | [sequential_multiseed](../data/benchmarks/multihop/context_reader_aware/analysis/sequential_multiseed/) |
 | 최종 집계 JSON | [sequential_answer_gain_multiseed.json](../data/benchmarks/multihop/context_reader_aware/analysis/sequential_answer_gain_multiseed.json) |
 | 최종 5개 정책 | [sequential_answer_gain_multiseed](../data/models/sequential_answer_gain_multiseed/) |
 | 대용량 정책 모델·수치형 재생 입력 | [GitHub Releases](https://github.com/iion74/UROP/releases/tag/workspace-2026-10-26) |
-| 파일별 공개 위치·용량 | [workspace_inventory.csv](workspace_inventory.csv) |
 
 파일을 보기 좋게 정리하되 기존 코드가 참조하는 경로는 바꾸지 않았다.
 Release 압축파일도 기존 상대경로를 유지한다. `artifacts/`는 로컬 생성
