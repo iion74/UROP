@@ -24,6 +24,8 @@ from datetime import date, datetime
 import numpy as np
 
 from .curriculum import MODULES, LearningUnit, Module, all_units
+from .ncs_structure import label_chunks
+from .retriever import reranker_probability
 
 
 STATUS_SCORE = {"완료": 1.0, "학습 중": 0.5, "복습 필요": 0.35}
@@ -251,12 +253,14 @@ def _recommend(analytics: tuple[UnitAnalytics, ...], limit: int = 5) -> tuple[Re
 class SemanticUnitIndex:
     """Ground curriculum units in the indexed NCS passages.
 
-    Each unit is anchored to the passages of its own module that best match
-    the unit name.  Free text (a question) is mapped to the unit that is most
-    similar on average to both the unit name and its anchors, because
-    neighbouring units of one module often share passages; notes are scored
-    against their unit's anchors with the cross-encoder so density is a
-    calibrated 0-1 relevance.
+    NCS passages are labelled with their unit from the documents' own section
+    structure (``ncs_structure``).  Each unit is anchored to the passages of
+    its own section that best match the unit name.  Free text (a question) is
+    mapped by retrieving passages and voting with their section labels, which
+    measured far more accurate than comparing embeddings with unit names;
+    without labels it falls back to that embedding comparison.  Notes are
+    scored against their unit's anchors with the cross-encoder so density is
+    a calibrated 0-1 relevance.
     """
 
     def __init__(
@@ -266,27 +270,38 @@ class SemanticUnitIndex:
         anchors_per_unit: int = 3,
         candidates_per_unit: int = 20,
         match_threshold: float = 0.80,
+        vote_passages: int = 8,
+        min_relevance: float = 0.20,
     ) -> None:
         self.retriever = retriever
         self.match_threshold = match_threshold
+        self.vote_passages = vote_passages
+        self.min_relevance = min_relevance
         self.units = all_units()
         self.anchor_indices: dict[str, list[int]] = {}
         self.anchor_relevance: dict[str, list[float]] = {}
         self.anchor_vectors: dict[str, np.ndarray] = {}
         self.unit_vectors: dict[str, np.ndarray] = {}
+        self.labels: dict[str, str] = {}
         self._density_cache: dict[tuple[str, str], float] = {}
         if not retriever.ready:
             return
+        self.labels = label_chunks(
+            [{"chunk_id": c.chunk_id, "source": c.source, "text": c.text} for c in retriever.chunks]
+        )
         vectors = retriever.index.reconstruct_n(0, len(retriever.chunks))
         modules = {module.module_id: module for module in MODULES}
         queries = [f"query: {modules[unit.module_id].name} {unit.name}" for unit in self.units]
         unit_vectors = np.asarray(retriever._model().encode(queries, normalize_embeddings=True), dtype="float32")
         for unit, unit_vector in zip(self.units, unit_vectors, strict=True):
             prefix = modules[unit.module_id].filename_prefix
-            candidates = [
+            in_module = [
                 index for index, chunk in enumerate(retriever.chunks)
                 if prefix in chunk.source and not _is_table_of_contents(chunk.text)
             ]
+            in_section = [index for index in in_module
+                          if self.labels.get(retriever.chunks[index].chunk_id) == unit.unit_id]
+            candidates = in_section or in_module
             if not candidates:
                 continue
             # Embeddings shortlist; the cross-encoder picks passages that are
@@ -324,20 +339,42 @@ class SemanticUnitIndex:
             dtype="float64",
         )
 
-    def unit_for_text(self, text: str) -> tuple[str | None, float]:
+    def rank_units(self, text: str) -> list[tuple[str, float]]:
+        """Units ranked for free text; scores are vote shares (labels) or similarities."""
         if not self.ready or not text.strip():
-            return None, 0.0
+            return []
+        if self.labels:
+            votes: dict[str, float] = defaultdict(float)
+            hits = self.retriever.search(text, top_k=self.vote_passages)
+            if not hits or reranker_probability(hits[0][1]) < self.min_relevance:
+                return []  # nothing in the NCS material is about this text
+            for chunk, score in hits:
+                unit_id = self.labels.get(chunk.chunk_id)
+                if unit_id:
+                    votes[unit_id] += reranker_probability(score)
+            total = sum(votes.values()) or 1.0
+            return sorted(((unit_id, value / total) for unit_id, value in votes.items()),
+                          key=lambda item: item[1], reverse=True)
         vector = np.asarray(
             self.retriever._model().encode([f"query: {text}"], normalize_embeddings=True)[0], dtype="float32"
         )
-        unit_id, score = max(
+        return sorted(
             (
                 (unit_id, 0.5 * float((anchors @ vector).max()) + 0.5 * float(self.unit_vectors[unit_id] @ vector))
                 for unit_id, anchors in self.anchor_vectors.items()
             ),
             key=lambda item: item[1],
+            reverse=True,
         )
-        return (unit_id if score >= self.match_threshold else None), score
+
+    def unit_for_text(self, text: str) -> tuple[str | None, float]:
+        ranked = self.rank_units(text)
+        if not ranked:
+            return None, 0.0
+        unit_id, score = ranked[0]
+        if not self.labels and score < self.match_threshold:
+            return None, score
+        return unit_id, score
 
     def densities(self, notes_by_unit: Mapping[str, list[str]]) -> dict[str, float]:
         """Mean over notes of the best cross-encoder relevance to the unit's NCS anchors."""
