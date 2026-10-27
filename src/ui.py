@@ -28,7 +28,11 @@ def inject_styles() -> None:
         [data-testid="stSidebar"] .stCaption { color: #98a2b3 !important; }
         [data-testid="stSidebar"] .stRadio label { border-radius: 10px; padding: 5px 8px; }
         [data-testid="stSidebar"] .stRadio label:hover { background: #1d2939; }
-        [data-testid="stSidebar"] input { color: #101828 !important; }
+        /* Sidebar text is white, but its input fields keep a white box, so they need dark text. */
+        [data-testid="stSidebar"] [data-testid="stDateInputField"], [data-testid="stSidebar"] [data-baseweb="input"], [data-testid="stSidebar"] [data-baseweb="select"] > div { background: #ffffff !important; border-color: #d0d5dd !important; }
+        [data-testid="stSidebar"] [data-testid="stDateInputField"] *, [data-testid="stSidebar"] [data-baseweb="input"] *, [data-testid="stSidebar"] [data-baseweb="select"] * { color: #101828 !important; -webkit-text-fill-color: #101828 !important; }
+        [data-testid="stSidebar"] [data-testid="stDateInput"] svg, [data-testid="stSidebar"] [data-baseweb="input"] svg { fill: #475467 !important; color: #475467 !important; }
+        [data-testid="stSidebar"] code { background: #1d2939 !important; color: #c7d7fe !important; }
         h1 { font-weight: 800 !important; letter-spacing: -0.04em; }
         h2, h3 { letter-spacing: -0.025em; }
         .block-container { padding-top: 2.1rem; padding-bottom: 3rem; max-width: 1280px; }
@@ -66,9 +70,7 @@ def inject_styles() -> None:
         .stButton > button[kind="secondary"] { background: #ffffff; border: 1px solid #d0d5dd; color: #101828; border-radius: 9px; font-weight: 600; }
         .stButton > button[kind="secondary"] * { color: #101828; }
         .stButton > button[kind="secondary"]:hover { background: #eef4ff; border-color: #3157a9; color: #173875; }
-        .stButton > button[kind="secondary"]:hover * { color: #173875; }
-        .stProgress > div > div { background: #3157a9; }
-        </style>
+        .stButton > button[kind="secondary"]:hover * { color: #173875; }        </style>
         """,
         unsafe_allow_html=True,
     )
