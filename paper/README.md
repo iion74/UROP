@@ -15,6 +15,10 @@
 - [시드별 신뢰구간](evidence/seed_confidence_intervals.md)
 - [정밀도 유지 CSV](evidence/seed_confidence_intervals.csv)
 - [원본 보고서 SHA-256](evidence/seed_confidence_intervals.sources.json)
+- [심사 대응 추가 분석 JSON](../data/benchmarks/multihop/context_reader_aware/analysis/reviewer_requests.json):
+  λ 곡선, 특징 범주 기여도, 오라클 대비 손실 분해, 생성 비용 완화.
+  Release 수치형 재생 자료를 `artifacts/replay/`에 풀고
+  `python -m experiments.analyze_reviewer_requests`, `python scripts/plot_reviewer_figures.py`로 다시 만든다.
 
 ## 결과 수치의 기준
 
